@@ -41,11 +41,11 @@ cd ~ && mkdir .cdotfiles && cd ~/.cdotfiles && git clone https://github.com/cywi
 
 Create folder in home dir:
 ```
-cd ~ && mkdir .codfiles
+mkdir ~/.codfiles
 ```
 Go to your new dir:
 ```
-cd .codfiles
+cd ~/.codfiles
 ```
 Git clone by https or SHH in that folder
 
@@ -61,4 +61,5 @@ or pick one by using:
 ```
 stow <package_name>
 ```
+## Remember to delete existings dirs in the .config and $HOME before running 'stow'
 
