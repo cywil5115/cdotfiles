@@ -29,12 +29,12 @@ cd ~ && mkdir .ohmyposh && curl -s https://ohmyposh.dev/install.sh | bash -s -- 
 (by SSH)
 
 ```
-cd ~ && mkdir .codfiles && cd .codfiles && git clone git@github.com:cywil5115/cdotfiles.git && stow */
+cd ~ && mkdir .cdotfiles && cd ~/.cdotfiles && git clone git@github.com:cywil5115/cdotfiles.git && mv -v ~/.cdotfiles/cdotfiles/* ~/.cdotfiles && cd ~/.cdotfiles && rm -rf ~/.cdotfiles/cdotfiles && stow */
 ```
 (by https)
 
 ```
-cd ~ && mkdir .codfiles && cd .codfiles && git clone https://github.com/cywil5115/cdotfiles.git && stow */
+cd ~ && mkdir .cdotfiles && cd ~/.cdotfiles && git clone https://github.com/cywil5115/cdotfiles.git && mv -v ~/.cdotfiles/cdotfiles/* ~/.cdotfiles && cd ~/.cdotfiles && rm -rf ~/.cdotfiles/cdotfiles && stow */
 ```
 
 ## Step by step
@@ -49,6 +49,10 @@ cd .codfiles
 ```
 Git clone by https or SHH in that folder
 
+Move files one dir higher:
+```
+mv -v ~/.cdotfiles/cdotfiles/* ~/.cdotfiles && cd .cdotfiles && rm -rf ~/.cdotfiles/cdotfiles
+```
 Useful command to add all:
 ```
 stow */
