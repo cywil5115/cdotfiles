@@ -48,7 +48,14 @@ Go to your new dir:
 cd ~/.codfiles
 ```
 Git clone by https or SHH in that folder
-
+(by SSH)
+```
+git clone git@github.com:cywil5115/cdotfiles.git
+```
+(by HTTPS)
+```
+git clone https://github.com/cywil5115/cdotfiles.git
+```
 Move files one dir higher:
 ```
 mv -v ~/.cdotfiles/cdotfiles/* ~/.cdotfiles && cd .cdotfiles && rm -rf ~/.cdotfiles/cdotfiles
