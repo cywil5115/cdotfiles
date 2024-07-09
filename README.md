@@ -36,7 +36,7 @@ cd ~ && mkdir .cdotfiles && cd ~/.cdotfiles && git clone git@github.com:cywil511
 ```
 cd ~ && mkdir .cdotfiles && cd ~/.cdotfiles && git clone https://github.com/cywil5115/cdotfiles.git && mv -v ~/.cdotfiles/cdotfiles/* ~/.cdotfiles && cd ~/.cdotfiles && rm -rf ~/.cdotfiles/cdotfiles && stow */
 ```
-# Remember to delete existings dirs in the .config and $HOME before running 'stow'
+### Remember to delete existings dirs in the .config and $HOME before running 'stow'
 
 ## Step by step
 
@@ -70,5 +70,5 @@ or pick one by using:
 ```
 stow <package_name>
 ```
-# Remember to delete existings dirs in the .config and $HOME before running 'stow'
+### Remember to delete existings dirs in the .config and $HOME before running 'stow'
 
