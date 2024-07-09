@@ -24,7 +24,7 @@ Then install ohmyposh:
 ```
 cd ~ && mkdir .ohmyposh && curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.ohmyposh
 ```
-## One-Liners
+## One-Liners (for dotfiles)
 
 (by SSH)
 
