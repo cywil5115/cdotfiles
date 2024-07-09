@@ -1,5 +1,29 @@
 # My dotfiles managed by GNU/Stow
 
+## Install stow and any program that you want to add first
+
+For Arch Linux:
+```
+sudo pacman -S stow
+```
+For MacOS (using brew):
+```
+brew install stow
+```
+## If you want to install ohmyposh my way:
+
+Make sure you using zsh (if you using bash):
+```
+echo $SHELL
+```
+Change if you need to (probably need a reboot after this):
+```
+sudo chsh -s $(which zsh) $USER
+```
+Then install ohmyposh:
+```
+cd ~ && mkdir .ohmyposh && curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.ohmyposh
+```
 ## Step by step
 
 Create folder in home dir:
