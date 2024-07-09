@@ -47,6 +47,8 @@ Go to your new dir:
 ```
 cd .codfiles
 ```
+Git clone by https or SHH in that folder
+
 Useful command to add all:
 ```
 stow */
