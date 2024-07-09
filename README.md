@@ -47,7 +47,8 @@ Go to your new dir:
 ```
 cd ~/.codfiles
 ```
-Git clone by https or SHH in that folder
+Clone repo to that folder
+
 (by SSH)
 ```
 git clone git@github.com:cywil5115/cdotfiles.git
