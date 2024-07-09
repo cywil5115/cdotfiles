@@ -24,6 +24,19 @@ Then install ohmyposh:
 ```
 cd ~ && mkdir .ohmyposh && curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.ohmyposh
 ```
+## One-Liners
+
+(by SSH)
+
+```
+cd ~ && mkdir .codfiles && cd .codfiles && git clone git@github.com:cywil5115/cdotfiles.git && stow */
+```
+(by https)
+
+```
+cd ~ && mkdir .codfiles && cd .codfiles && git clone https://github.com/cywil5115/cdotfiles.git && stow */
+```
+
 ## Step by step
 
 Create folder in home dir:
@@ -42,15 +55,4 @@ or pick one by using:
 ```
 stow <package_name>
 ```
-## One-Liners
 
-(by SSH)
-
-```
-cd ~ && mkdir .codfiles && cd .codfiles && git clone git@github.com:cywil5115/cdotfiles.git && stow */
-```
-(by https)
-
-```
-cd ~ && mkdir .codfiles && cd .codfiles && git clone https://github.com/cywil5115/cdotfiles.git && stow */
-```
