@@ -20,9 +20,13 @@ Change if you need to (probably need a reboot after this):
 ```
 sudo chsh -s $(which zsh) $USER
 ```
-Then install ohmyposh:
+Then install ohmyposh (linux):
 ```
 cd ~ && mkdir .ohmyposh && curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.ohmyposh
+```
+MacOS (ohmyposh):
+```
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
 ```
 ## One-Liners (for dotfiles)
 
