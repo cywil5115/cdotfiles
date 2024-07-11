@@ -20,29 +20,25 @@ Change if you need to (probably need a reboot after this):
 ```
 sudo chsh -s $(which zsh) $USER
 ```
-Then install ohmyposh (linux):
+Install ohmyposh (Linux):
 ```
 cd ~ && mkdir .ohmyposh && curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.ohmyposh
 ```
-MacOS (ohmyposh):
+MacOS (ohmyposh using brew):
 ```
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
-```
-Then install ohmyposh:
-```
-cd ~ && mkdir .ohmyposh && curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.ohmyposh
 ```
 ## One-Liners (for dotfiles)
 
 (by SSH)
 
 ```
-cd ~ && mkdir .cdotfiles && cd ~/.cdotfiles && git clone git@github.com:cywil5115/cdotfiles.git && mv -v ~/.cdotfiles/cdotfiles/* ~/.cdotfiles && cd ~/.cdotfiles && rm -rf ~/.cdotfiles/cdotfiles && stow */
+cd ~ && mkdir .cdotfiles && cd ~/.cdotfiles && git clone git@github.com:cywil5115/cdotfiles.git && mv -v ~/.cdotfiles/cdotfiles/* ~/.cdotfiles && cp -r ~/.cdotfiles/cdotfiles/.git ~/.cdotfiles && rm -rf ~/.cdotfiles/cdotfiles && stow */
 ```
 (by https)
 
 ```
-cd ~ && mkdir .cdotfiles && cd ~/.cdotfiles && git clone https://github.com/cywil5115/cdotfiles.git && mv -v ~/.cdotfiles/cdotfiles/* ~/.cdotfiles && cd ~/.cdotfiles && rm -rf ~/.cdotfiles/cdotfiles && stow */
+cd ~ && mkdir .cdotfiles && cd ~/.cdotfiles && git clone https://github.com/cywil5115/cdotfiles.git && mv -v ~/.cdotfiles/cdotfiles/* ~/.cdotfiles && cp -r ~/.cdotfiles/cdotfiles/.git ~/.cdotfiles && rm -rf ~/.cdotfiles/cdotfiles && stow */
 ```
 ### Remember to delete existings dirs in the .config and $HOME before running 'stow'
 
@@ -68,7 +64,7 @@ git clone https://github.com/cywil5115/cdotfiles.git
 ```
 Move files one dir higher:
 ```
-mv -v ~/.cdotfiles/cdotfiles/* ~/.cdotfiles && cd .cdotfiles && rm -rf ~/.cdotfiles/cdotfiles
+mv -v ~/.cdotfiles/cdotfiles/* ~/.cdotfiles && cd .cdotfiles && cp -r ~/.cdotfiles/cdotfiles/.git ~/.cdotfiles && rm -rf ~/.cdotfiles/cdotfiles
 ```
 Useful command to add all:
 ```
