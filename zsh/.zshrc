@@ -4,17 +4,18 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
 # Aliases
 # alias e='nautilus ./' #GNOME
-alias e='nemo ./' #MINT
+# alias e='nemo ./' #MINT
+alias e='open ./' #MACOS
 # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias zzz='sudo shutdown -h' 
 alias zzzz='shutdown -c' #LINUX
 alias noshutdown='shutdown -c' #LINUX
-alias cat='batcat'
+alias cat='bat'
 alias cl='clear'
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias ll='eza --long --all --git --icons=always'
 alias cpv='rsync -ah --info=progress2'
-alias aktualizuj='echo "Wprowadź hasło logowania " && sudo nala update && sudo nala upgrade -y && sudo apt autoremove && sudo apt autoclean && flatpak update -y && flatpak upgrade -y && sudo nala upgrade -y && echo " " && echo "Koniec. Wpisz "exit" by zamknąć terminal."'
+
 # Themes
 #bat
 export BAT_THEME=gruvbox-dark
@@ -128,7 +129,3 @@ alias ......="cd ../../../../.."
 
 # VI Mode
 bindkey jj vi-cmd-mode
-
-echo "Aby zaaktualizować komputer wpisz:"
-echo " "
-echo "aktualizuj"

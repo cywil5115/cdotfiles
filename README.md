@@ -28,6 +28,10 @@ MacOS (ohmyposh):
 ```
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
 ```
+Then install ohmyposh:
+```
+cd ~ && mkdir .ohmyposh && curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.ohmyposh
+```
 ## One-Liners (for dotfiles)
 
 (by SSH)
