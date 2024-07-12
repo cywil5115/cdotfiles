@@ -15,6 +15,7 @@ alias cl='clear'
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias ll='eza --long --all --git --icons=always'
 alias cpv='rsync -ah --info=progress2'
+alias debian='distrobox-enter debian12-distrobox'
 
 # Themes
 #bat
