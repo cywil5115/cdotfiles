@@ -1,6 +1,7 @@
 # Prompt
 export PATH="$HOME/.ohmyposh:$PATH"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+export PATH=$HOME/.local/bin:$PATH
 
 # Aliases
 # alias e='nautilus ./' #GNOME
@@ -140,4 +141,3 @@ alias ......="cd ../../../../.."
 
 # VI Mode
 bindkey jj vi-cmd-mode
-export PATH=$HOME/.local/bin:$PATH
