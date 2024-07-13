@@ -140,3 +140,4 @@ alias ......="cd ../../../../.."
 
 # VI Mode
 bindkey jj vi-cmd-mode
+export PATH=$HOME/.local/bin:$PATH
