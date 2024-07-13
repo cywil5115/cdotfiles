@@ -64,7 +64,7 @@ alias fshow='~/.scripts/fshow.sh'
 
 export VISUAL=nvim
 export EDITOR=nvim
-
+alias hx='helix'
 # Functions 
 function lg()  {
     export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
