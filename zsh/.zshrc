@@ -18,6 +18,7 @@ alias ll='eza --long --all --git --icons=always'
 alias cpv='rsync -ah --info=progress2'
 alias debian='distrobox-enter debian12-distrobox'
 alias flatpak-up='flatpak update -y && flatpak upgrade -y'
+alias updateall='flatpak-up && paru && debian'
 
 # Themes
 #bat
