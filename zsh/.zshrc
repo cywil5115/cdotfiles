@@ -64,8 +64,8 @@ alias fshow='~/.scripts/fshow.sh'
 # Neovim
 # alias kvim='NVIM_APPNAME="kickstart_nvim" nvim'
 
-export VISUAL=nvim
-export EDITOR=nvim
+export VISUAL=helix
+export EDITOR=helix
 alias hx='helix'
 # Functions 
 function lg()  {
