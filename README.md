@@ -76,3 +76,4 @@ stow <package_name>
 ```
 ### Remember to delete existings dirs in the .config and $HOME before running 'stow'
 
+
