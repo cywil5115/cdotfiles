@@ -24,6 +24,20 @@ fetch_status = true
 fetch_upstream_icon = true
 
 [[blocks.segments]]
+type = "go"
+style = "plain"
+foreground = "#ffffff"
+background = "#7FD5EA"
+template = " ‭ﳑ {{ .Full }} "
+
+[[blocks.segments]]
+type = "python"
+style = "plain"
+foreground = "#100e23"
+background = "#906cff"
+template = "  {{ .Full }} "
+
+[[blocks.segments]]
 type = 'path'
 style = 'plain'
 background = 'transparent'
