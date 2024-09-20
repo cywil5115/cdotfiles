@@ -3,70 +3,82 @@ export PATH="$HOME/.ohmyposh:$PATH"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 export PATH=$HOME/.local/bin:$PATH
 
-# Aliases
-# alias e='nautilus ./' #GNOME
-# alias e='nemo ./' #MINT
-alias e='open ./' #MACOS
-# alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias zzz='sudo shutdown -h' 
-alias zzzz='shutdown -c' #LINUX
-alias noshutdown='shutdown -c' #LINUX
-alias cat='bat'
-alias cl='clear'
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias ll='eza --long --all --git --icons=always'
-alias cpv='rsync -ah --info=progress2'
-alias debian='distrobox-enter debian12-distrobox'
-alias flatpak-up='flatpak update -y && flatpak upgrade -y'
-alias updateall='flatpak-up && paru && debian'
+# Aliases for OS
+case "$(uname -sr)" in
 
-# Themes
-#bat
-export BAT_THEME=gruvbox-dark
-#export BAT_THEME=tokyonight-night
-#fzf
-fg="#c4821f"
-bg="#242424"
-bg_highlight="#772c00"
-purple="#B388FF"
-blue="#06BCE4"
-cyan="#2CF9ED"
-#helix - dynamic theme
-alias hx-up='~/.config/helix/lib/bash.sh'
+   Darwin*)
+     echo 'Mac OS X'
+     alias zzz='sudo shutdown -h' 
+     alias nozzz='sudo killall shutdown'
+     alias noshutdown='sudo killall shutdown'
+     alias e='open ./' #MACOS
+     alias cat='bat'
+     alias cl='clear'
+     alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+     alias ll='eza --long --all --git --icons=always'
+     alias cpv='rsync -ah --info=progress2'
+     # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+     
+     ;;
 
-# Git
-alias gc="git commit -m"
-alias gca="git commit -a -m"
-alias gp="git push origin HEAD"
-alias gpu="git pull origin"
-alias gst="git status"
-alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
-alias gdiff="git diff"
-alias gs="git show"
-alias gco="git checkout"
-alias gb='git branch'
-alias gba='git branch -a'
-alias gadd='git add'
-alias ga='git add -p'
-alias gcoall='git checkout -- .'
-alias gr='git remote'
-alias gre='git reset'
+   Linux*Microsoft*)
+     echo 'WSL'  # Windows Subsystem for Linux
+     # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+     ;;
+
+   Linux*)
+     echo 'Linux'
+
+     alias zzz='sudo shutdown -h' 
+     alias zzzz='shutdown -c'
+     alias noshutdown='shutdown -c'
+     alias cat='bat'
+     alias cl='clear'
+     alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+     alias ll='eza --long --all --git --icons=always'
+     alias cpv='rsync -ah --info=progress2'
+     alias debian='distrobox-enter debian12-distrobox'
+     alias flatpak-up='flatpak update -y && flatpak upgrade -y'
+     alias updateall='sudo echo "Aktualizacja!" && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm'
+     # alias e='nautilus ./' #GNOME
+     # alias e='nemo ./' #MINT
+     # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+     ;;
+
+   CYGWIN*|MINGW*|MINGW32*|MSYS*)
+     echo 'MS Windows'
+     ;;
+
+   # Add here more strings to compare
+   # See correspondence table at the bottom of this answer
+
+   *)
+     echo 'Other OS' 
+     ;;
+esac
+
+# Global Aliases
+
+#Git
 alias fsb='~/.scripts/fsb.sh'
 alias fshow='~/.scripts/fshow.sh'
+alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
-# Docker
+
+#Docker
 # alias dco="docker compose"
 # alias dps="docker ps"
 # alias dpa="docker ps -a"
 # alias dl="docker ps -l -q"
 # alias dx="docker exec -it"
 
+# Editor
+export VISUAL=helix
+export EDITOR=helix
+alias hx='helix'
 # Neovim
 # alias kvim='NVIM_APPNAME="kickstart_nvim" nvim'
 
-export VISUAL=nvim
-export EDITOR=nvim
-alias hx='helix'
 # Functions 
 function lg()  {
     export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
@@ -92,10 +104,23 @@ function day {
 }
 alias dzien='day'
 
-# fzf
+# Themes
+
+#bat
+# export BAT_THEME=gruvbox-dark
+export BAT_THEME=tokyonight-night
+#helix - dynamic theme
+alias hx-up='~/.config/helix/lib/bash.sh'
+
+# FZF
 source <(fzf --zsh)
-#themes
-export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+--color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+--color=marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
+--color=selected-bg:#494d64 \
+--multi"
 #fd instead of fzf
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
