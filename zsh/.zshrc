@@ -18,7 +18,7 @@ alias ll='eza --long --all --git --icons=always'
 alias cpv='rsync -ah --info=progress2'
 alias debian='distrobox-enter debian12-distrobox'
 alias flatpak-up='flatpak update -y && flatpak upgrade -y'
-alias updateall='flatpak update && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm'
+alias updateall='flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm'
 
 # Themes
 #bat
