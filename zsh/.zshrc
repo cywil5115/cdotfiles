@@ -27,7 +27,6 @@ case "$(uname -sr)" in
      ;;
 
    Linux*)
-     echo 'Linux'
 
      alias zzz='sudo shutdown -h' 
      alias zzzz='shutdown -c'
@@ -90,6 +89,7 @@ function lg()  {
             rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
     fi
 }
+
 function r() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
@@ -104,11 +104,21 @@ function day {
 }
 alias dzien='day'
 
+function set-bat-theme {
+    bat cache --build
+    sleep 1 && clear
+    selTheme=$(bat --list-themes | fzf --preview="bat --theme={} --color=always ~/.zshrc")
+    echo $selTheme > $(bat --config-dir)/themes/current_theme
+    bat cache --build
+    source ~/.zshrc
+}
 # Themes
+
+export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
 
 #bat
 # export BAT_THEME=gruvbox-dark
-export BAT_THEME=tokyonight-night
+
 #helix - dynamic theme
 alias hx-up='~/.config/helix/lib/bash.sh'
 
