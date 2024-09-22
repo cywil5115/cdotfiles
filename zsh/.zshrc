@@ -3,6 +3,9 @@ export PATH="$HOME/.ohmyposh:$PATH"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 export PATH=$HOME/.local/bin:$PATH
 
+# Launch Fastfetch
+fastfetch
+
 # Aliases for OS
 case "$(uname -sr)" in
 
