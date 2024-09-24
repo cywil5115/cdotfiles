@@ -7,7 +7,7 @@ export PATH=$HOME/.local/bin:$PATH
 case "$(uname -sr)" in
 
    Darwin*)
-     echo 'Mac OS X'
+     
      alias zzz='sudo shutdown -h' 
      alias nozzz='sudo killall shutdown'
      alias noshutdown='sudo killall shutdown'
