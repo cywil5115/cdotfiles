@@ -1,8 +1,7 @@
 # Prompt
-export PATH="$HOME/.ohmyposh:$PATH"
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+# export PATH="$HOME/.ohmyposh:$PATH"
+# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 export PATH=$HOME/.local/bin:$PATH
-
 
 # Aliases for OS
 case "$(uname -sr)" in
@@ -13,13 +12,7 @@ case "$(uname -sr)" in
      alias nozzz='sudo killall shutdown'
      alias noshutdown='sudo killall shutdown'
      alias e='open ./' #MACOS
-     alias cat='bat'
-     alias cl='clear'
-     alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-     alias ll='eza --long --all --git --icons=always'
-     alias cpv='rsync -ah --info=progress2'
      # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-     
      ;;
 
    Linux*Microsoft*)
@@ -32,17 +25,15 @@ case "$(uname -sr)" in
      alias zzz='sudo shutdown -h' 
      alias zzzz='shutdown -c'
      alias noshutdown='shutdown -c'
-     alias cat='bat'
-     alias cl='clear'
-     alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-     alias ll='eza --long --all --git --icons=always'
-     alias cpv='rsync -ah --info=progress2'
      alias debian='distrobox-enter debian12-distrobox'
      alias flatpak-up='flatpak update -y && flatpak upgrade -y'
      alias updateall='sudo echo "Aktualizacja!" && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm'
      # alias e='nautilus ./' #GNOME
      # alias e='nemo ./' #MINT
      # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+     # Homebrew
+     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
      ;;
 
    CYGWIN*|MINGW*|MINGW32*|MSYS*)
@@ -58,6 +49,12 @@ case "$(uname -sr)" in
 esac
 
 # Global Aliases
+
+alias cat='bat'
+alias cl='clear'
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ll='eza --long --all --git --icons=always'
+alias tree='eza --tree'
 
 #Git
 alias fsb='~/.scripts/fsb.sh'
@@ -75,9 +72,9 @@ alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bol
 # Editor
 export VISUAL=helix
 export EDITOR=helix
-alias hx='helix'
 # Neovim
-# alias kvim='NVIM_APPNAME="kickstart_nvim" nvim'
+alias kvim='NVIM_APPNAME="kickstart-nvim" nvim'
+alias tvim='NVIM_APPNAME="test-nvim" nvim'
 
 # Functions 
 function lg()  {
@@ -176,6 +173,13 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
+alias cdd='cd -'
 
 # VI Mode
 bindkey jj vi-cmd-mode
+
+# StarShip
+if command -v starship 2>&1 > /dev/null
+then
+  eval "$(starship init zsh)"
+fi
