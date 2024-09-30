@@ -3,7 +3,7 @@
 local function load_colors()
   local colors = {}
   local home = os.getenv("HOME")
-  local active_folder = home .. "/github/dotfiles-latest/colorscheme/active"
+  local active_folder = home .. "/.scripts/colorscheme/active"
   local active_file = active_folder .. "/active-colorscheme.sh"
 
   -- Check if the active colorscheme file exists

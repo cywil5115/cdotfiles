@@ -1,57 +1,32 @@
 #!/usr/bin/env bash
 
-# Filename: ~/github/dotfiles-latest/colorscheme/list/darkppuccin.sh
-# ~/github/dotfiles-latest/colorscheme/list/darkppuccin.sh
+# Filename: ~/github/dotfiles-latest/colorscheme/list/linkarzu-colors.sh
+# ~/github/dotfiles-latest/colorscheme/list/linkarzu-colors.sh
 
-# Maroon
-linkarzu_color01="#eba0ac"
-# Blue
-linkarzu_color02="#89b4fa"
-# Green
-linkarzu_color03="#a6e3a1"
-# Mauve
-linkarzu_color04="#cba6f7"
-# Lavender
-linkarzu_color05="#b4befe"
-# Sapphire
-linkarzu_color06="#74c7ec"
-# Surface 0
+linkarzu_color01="#949ae5"
+linkarzu_color02="#37f499"
+linkarzu_color03="#04d1f9"
+linkarzu_color04="#987afb"
+linkarzu_color05="#19dfcf"
+linkarzu_color06="#1682ef"
 # Markdown codeblock
-linkarzu_color07="#26263a"
-# Peach
-linkarzu_color08="#fab387"
-# Subtext0
+linkarzu_color07="#1c242f"
+linkarzu_color08="#5fa9f4"
 # Comments
-linkarzu_color09="#a6adc8"
-# Base
+linkarzu_color09="#a5afc2"
 # Terminal and neovim background
-linkarzu_color10="#161622"
-# Red
+linkarzu_color10="#0D1116"
 # Underline spellbad
-linkarzu_color11="#f38ba8"
-# Yellow
+linkarzu_color11="#f16c75"
 # Underline spellcap
-linkarzu_color12="#f9e2af"
-# Surface2
+linkarzu_color12="#f1fc79"
 # line across cursor
-linkarzu_color13="#3d3d5d"
-# Text
+linkarzu_color13="#314154"
 # Cursor and tmux windows text
-linkarzu_color14="#cdd6f4"
-# Surface1
+linkarzu_color14="#ebfafa"
 # Tmux inactive windows
-linkarzu_color15="#353552"
-# Flamingo
+linkarzu_color15="#013e4a"
 # Selected text
-linkarzu_color16="#f2cdcd"
+linkarzu_color16="#e9b3fd"
 # Lualine across
-linkarzu_color17="#1e1e2e"
-# https://www.colorhexa.com/1e1e2e
-# #0f0f16
-# #161622
-# #1e1e2e
-# #26263a
-# #2d2d46
-# #353552
-# #3d3d5d
-# #454569
+linkarzu_color17="#141b22"
