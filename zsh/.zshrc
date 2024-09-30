@@ -3,6 +3,7 @@ export PATH="$HOME/.ohmyposh:$PATH"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 export PATH=$HOME/.local/bin:$PATH
 
+
 # Aliases for OS
 case "$(uname -sr)" in
 
