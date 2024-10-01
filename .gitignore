@@ -1,3 +1,2 @@
-./starship/.config/starship/active-config.toml
-./kitty/.config/kitty/active-theme.conf
-./scripts/.scripts/colorscheme/active/active-colorscheme.sh
+active-config*
+active-colorscheme*
