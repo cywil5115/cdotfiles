@@ -90,7 +90,7 @@ esac
 ######################
 alias cl='clear'
 
-#eza for other
+#bat for other
 if command -v bat &>/dev/null; then
   # --style=plain - removes line numbers and git modifications
   # --paging=never - doesnt pipe it through less
@@ -99,7 +99,7 @@ if command -v bat &>/dev/null; then
   alias cata='bat --show-all --paging=never'
 fi
 
-#eza for ubuntu
+#bat for ubuntu
 if command -v batcat &>/dev/null; then
   # --style=plain - removes line numbers and git modifications
   # --paging=never - doesnt pipe it through less
@@ -112,8 +112,8 @@ fi
 if command -v eza &>/dev/null
 then
   alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-  alias ll='eza --long --all --git --icons=always'
-  alias tree='eza --tree --level=5 --icons=always --git'
+  alias ll='eza --long --all --git --icons=auto'
+  alias tree='eza --tree --level=5 --icons=auto --git'
 fi
 
 #Git
@@ -298,10 +298,8 @@ _fzf_comprun() {
 ######################
 # Zoxide
 ######################
-eval "$(zoxide init zsh)"
-alias cd='z'
-alias cdi='zi'
-alias cdd='z -'
+eval "$(zoxide init zsh --cmd cd)"
+alias cdd='cd -'
 
 ######################
 # Directories
