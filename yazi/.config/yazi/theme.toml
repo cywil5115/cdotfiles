@@ -6,5 +6,5 @@
 # : Flavor {{{
 
 [flavor]
-use = "kanagawa"
+use = "active-colorscheme"
 

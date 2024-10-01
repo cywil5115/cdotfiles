@@ -1,11 +1,11 @@
-# general 
+# general
 [manager]
-marker_copied   = { fg = "#98bb6c", bg = "#98bb6c" } # green
-marker_cut      = { fg = "#e46876", bg = "#e46876" } # red
-marker_marked   = { fg = "#957fb8", bg = "#957fb8" } # magenta
-marker_selected = { fg = "#ffa066", bg = "#ffa066" } # cyan
+marker_copied   = { fg = "#04d1f9", bg = "#04d1f9" } # green
+marker_cut      = { fg = "#f16c75", bg = "#f16c75" } # red
+marker_marked   = { fg = "#987afb", bg = "#987afb" } # magenta
+marker_selected = { fg = "#19dfcf", bg = "#19dfcf" } # cyan
 
-cwd = { fg = "#e6c384" } # yellow
+cwd = { fg = "#f1fc79" } # yellow
 hovered = { reversed = true }
 preview_hovered = { reversed = true }
 
@@ -14,87 +14,87 @@ tab_inactive = {}
 tab_width    = 1
 
 # default bg
-count_copied   = { fg = "#1f1f28", bg = "#98bb6c" } # green
-count_cut      = { fg = "#1f1f28", bg = "#e46876" } # red
-count_selected = { fg = "#1f1f28", bg = "#e6c384" } # yellow
+count_copied   = { fg = "#04d1f9", bg = "#04d1f9" } # green
+count_cut      = { fg = "#f16c75", bg = "#f16c75" } # red
+count_selected = { fg = "#f1fc79", bg = "#f1fc79" } # yellow
 
 border_symbol = "│"
-border_style = { fg = "#dcd7ba"} # white
+border_style = { fg = "#ebfafa"} # white
 
 # status-line
 [status]
 separator_open = ""
 separator_close = ""
-separator_style = { fg = "reset", bg = "#363646" } # light bg
+separator_style = { fg = "reset", bg = "#1c242f" } # light bg
 
 # default bg
-mode_normal = { fg = "#1f1f28", bg = "#85a6ea", bold = true } # blue
-mode_select = { fg = "#1f1f28", bg = "#957fb8", bold = true } # magenta
-mode_unset  = { fg = "#1f1f28", bg = "#e6c384", bold = true } # yellow
+mode_normal = { fg = "#37f499", bg = "#37f499", bold = true } # blue
+mode_select = { fg = "#987afb", bg = "#987afb", bold = true } # magenta
+mode_unset  = { fg = "#f1fc79", bg = "#f1fc79", bold = true } # yellow
 
 # blue - light bg
-progress_label  = { fg = "#85a6ea", bg = "#363646", bold = true }
+progress_label  = { fg = "#37f499", bg = "#37f499", bold = true }
 # light bg - default bg
-progress_normal = { fg = "#363646", bg = "#1f1f28" }
-progress_error  = { fg = "#363646", bg = "#1f1f28" }
+progress_normal = { fg = "#04d1f9", bg = "#04d1f9" }
+progress_error  = { fg = "#f16c75", bg = "#f16c75" }
 
-permissions_t = { fg = "#98bb6c" } # green
-permissions_r = { fg = "#e6c384" } # yellow
-permissions_w = { fg = "#e82424" } # red
-permissions_x = { fg = "#7aa89f" } # cyan
-permissions_s = { fg = "#938aa9" } # magenta
+permissions_t = { fg = "#04d1f9" } # green
+permissions_r = { fg = "#f1fc79" } # yellow
+permissions_w = { fg = "#f16c75" } # red
+permissions_x = { fg = "#37f499" } # cyan
+permissions_s = { fg = "#987afb" } # magenta
 
 [select]
-border   = { fg = "#7fb4ca" } # blue
-active   = { fg = "#938aa9", bold = true } # magenta
+border   = { fg = "#37f499" } # blue
+active   = { fg = "#987afb", bold = true } # magenta
 inactive = {}
 
 [input]
-border   = { fg = "#7fb4ca" } # blue
+border   = { fg = "#37f499" } # blue
 title    = {}
 value    = {}
 selected = { reversed = true }
 
 [completion]
-border   = { fg = "#7fb4ca" } # blue
+border   = { fg = "#37f499" } # blue
 active   = { reversed = true }
 inactive = {}
 
 [tasks]
-border  = { fg = "#7fb4ca" } # blue
+border  = { fg = "#37f499" } # blue
 title   = {}
-hovered = { fg = "#938aa9" } # magenta
+hovered = { fg = "#987afb" } # magenta
 
 [which]
 cols = 2
 separator = " - "
-separator_style = { fg = "#727169" } # darkgrey
-mask = { bg = "#16161d" } # dark bg
-rest = { fg = "#727169" } # darkgrey
-cand = { fg = "#85a6ea" }
-desc = { fg = "#565666" }
+separator_style = { fg = "#013e4a" } # darkgrey
+mask = { bg = "#0D1116" } # dark bg
+rest = { fg = "#013e4a" } # darkgrey
+cand = { fg = "#ebfafa" }
+desc = { fg = "#ebfafa" }
 
 [help]
-on      = { fg = "#7aa89f" } # cyan
-run     = { fg = "#938aa9" } # magenta
+on      = { fg = "#37f499" } # cyan
+run     = { fg = "#19dfcf" } # magenta
 desc    = {}
 hovered = { reversed = true, bold = true }
-footer  = { fg = "#090618", bg = "#dcd7ba" } # white
+footer  = { fg = "#013e4a", bg = "#013e4a" } # white
 
 [notify]
-title_info  = { fg = "#98bb6c" } # green
-title_warn  = { fg = "#e6c384" } # yellow
-title_error = { fg = "#e82424" } # red
+title_info  = { fg = "#04d1f9" } # green
+title_warn  = { fg = "#f1fc79" } # yellow
+title_error = { fg = "#f16c75" } # red
 
 # files
 [filetype]
 rules = [
-    { mime = "image/*", fg = "#e6c384" },
-    { mime = "{audio,video}/*", fg = "#957fb8" },
-    { mime = "application/{,g}zip", fg = "#e46876" },
-    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#e46876" },
-    { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#6a9589" },
-    { name = "*", is = "orphan", fg = "#e46876" },
-    { name = "*", is = "exec", fg = "#957fb8" },
-    { name = "*/", fg = "#85a6ea"}
+    { mime = "image/*", fg = "#949ae5" },
+    { mime = "{audio,video}/*", fg = "#987afb" },
+    { mime = "application/{,g}zip", fg = "#5fa9f4" },
+    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#5fa9f4" },
+    { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#314154" },
+    { name = "*", is = "orphan", fg = "#987afb" },
+    { name = "*", is = "exec", fg = "#987afb" },
+    { name = "*/", fg = "#987afb"}
 ]

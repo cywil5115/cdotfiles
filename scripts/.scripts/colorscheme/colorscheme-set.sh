@@ -41,6 +41,114 @@ else
     UPDATED=false
   fi
 fi
+generate_yazi_config() {
+  yazi_conf_file="$HOME/.config/yazi/flavors/active-colorscheme.yazi/flavor.toml"
+
+  cat >"$yazi_conf_file" <<EOF
+# general
+[manager]
+marker_copied   = { fg = "$ckolor03", bg = "$ckolor03" } # green
+marker_cut      = { fg = "$ckolor11", bg = "$ckolor11" } # red
+marker_marked   = { fg = "$ckolor04", bg = "$ckolor04" } # magenta
+marker_selected = { fg = "$ckolor05", bg = "$ckolor05" } # cyan
+
+cwd = { fg = "$ckolor12" } # yellow
+hovered = { reversed = true }
+preview_hovered = { reversed = true }
+
+tab_active   = { reversed = true }
+tab_inactive = {}
+tab_width    = 1
+
+# default bg
+count_copied   = { fg = "$ckolor03", bg = "$ckolor03" } # green
+count_cut      = { fg = "$ckolor11", bg = "$ckolor11" } # red
+count_selected = { fg = "$ckolor12", bg = "$ckolor12" } # yellow
+
+border_symbol = "│"
+border_style = { fg = "$ckolor14"} # white
+
+# status-line
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "reset", bg = "$ckolor07" } # light bg
+
+# default bg
+mode_normal = { fg = "$ckolor02", bg = "$ckolor02", bold = true } # blue
+mode_select = { fg = "$ckolor04", bg = "$ckolor04", bold = true } # magenta
+mode_unset  = { fg = "$ckolor12", bg = "$ckolor12", bold = true } # yellow
+
+# blue - light bg
+progress_label  = { fg = "$ckolor02", bg = "$ckolor02", bold = true }
+# light bg - default bg
+progress_normal = { fg = "$ckolor03", bg = "$ckolor03" }
+progress_error  = { fg = "$ckolor11", bg = "$ckolor11" }
+
+permissions_t = { fg = "$ckolor03" } # green
+permissions_r = { fg = "$ckolor12" } # yellow
+permissions_w = { fg = "$ckolor11" } # red
+permissions_x = { fg = "$ckolor02" } # cyan
+permissions_s = { fg = "$ckolor04" } # magenta
+
+[select]
+border   = { fg = "$ckolor02" } # blue
+active   = { fg = "$ckolor04", bold = true } # magenta
+inactive = {}
+
+[input]
+border   = { fg = "$ckolor02" } # blue
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+[completion]
+border   = { fg = "$ckolor02" } # blue
+active   = { reversed = true }
+inactive = {}
+
+[tasks]
+border  = { fg = "$ckolor02" } # blue
+title   = {}
+hovered = { fg = "$ckolor04" } # magenta
+
+[which]
+cols = 2
+separator = " - "
+separator_style = { fg = "$ckolor15" } # darkgrey
+mask = { bg = "$ckolor10" } # dark bg
+rest = { fg = "$ckolor15" } # darkgrey
+cand = { fg = "$ckolor14" }
+desc = { fg = "$ckolor14" }
+
+[help]
+on      = { fg = "$ckolor02" } # cyan
+run     = { fg = "$ckolor05" } # magenta
+desc    = {}
+hovered = { reversed = true, bold = true }
+footer  = { fg = "$ckolor15", bg = "$ckolor15" } # white
+
+[notify]
+title_info  = { fg = "$ckolor03" } # green
+title_warn  = { fg = "$ckolor12" } # yellow
+title_error = { fg = "$ckolor11" } # red
+
+# files
+[filetype]
+rules = [
+    { mime = "image/*", fg = "$ckolor01" },
+    { mime = "{audio,video}/*", fg = "$ckolor04" },
+    { mime = "application/{,g}zip", fg = "$ckolor08" },
+    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "$ckolor08" },
+    { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "$ckolor13" },
+    { name = "*", is = "orphan", fg = "$ckolor04" },
+    { name = "*", is = "exec", fg = "$ckolor04" },
+    { name = "*/", fg = "$ckolor04"}
+]
+EOF
+
+  echo "Yazi configuration updated at '$yazi_conf_file'."
+}
 
 generate_kitty_config() {
   kitty_conf_file="$HOME/.config/kitty/active-theme.conf"
@@ -175,6 +283,9 @@ if [ "$UPDATED" = true ]; then
 
   # Generate the Kitty configuration file
   generate_kitty_config
+
+  # Generate the Yazi theme flavor
+  generate_yazi_config
 
   # Set the tmux colors
   # $HOME/.scripts/colorscheme/set_tmux_colors.sh
