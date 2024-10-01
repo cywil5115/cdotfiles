@@ -43,3 +43,8 @@ tmux set -g @catppuccin_window_current_text "#[fg=$linkarzu_color14]#W"
 #
 # Second option shows a message when panes are syncronized
 tmux set -g @catppuccin_window_current_text "#W#{?window_zoomed_flag,#[fg=$linkarzu_color04] (   ),}#{?pane_synchronized,#[fg=$linkarzu_color04] SYNCHRONIZED-PANES,}"
+
+tmux set -g @floax-border-color "$linkarzu_color5"
+tmux set -g @floax-text-color "$linkarzu_color2"
+tmux set -g pane-active-border-style "fg=$linkarzu_color5,bg=default"
+tmux set -g pane-border-style "fg=$linkarzu_color10,bg=default"

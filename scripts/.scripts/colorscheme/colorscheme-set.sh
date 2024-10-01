@@ -177,9 +177,9 @@ if [ "$UPDATED" = true ]; then
   generate_kitty_config
 
   # Set the tmux colors
-  $HOME/.scripts/colorscheme/set_tmux_colors.sh
-  tmux source-file ~/.config/tmux/tmux.conf
-  echo "Tmux colors set and tmux configuration reloaded."
+  # $HOME/.scripts/colorscheme/set_tmux_colors.sh
+  # tmux source-file ~/.config/tmux/tmux.conf
+  # echo "Tmux colors set and tmux configuration reloaded."
 
   generate_starship_config
 
