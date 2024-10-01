@@ -46,49 +46,49 @@ generate_kitty_config() {
   kitty_conf_file="$HOME/.config/kitty/active-theme.conf"
 
   cat >"$kitty_conf_file" <<EOF
-foreground            $linkarzu_color14
-background            $linkarzu_color10
-selection_foreground  $linkarzu_color14
-selection_background   $linkarzu_color16
-url_color             $linkarzu_color03
+foreground            $ckolor14
+background            $ckolor10
+selection_foreground  $ckolor14
+selection_background   $ckolor16
+url_color             $ckolor03
 # black
-color0                $linkarzu_color10
-color8                $linkarzu_color08
+color0                $ckolor10
+color8                $ckolor08
 # red
-color1                $linkarzu_color11
-color9                $linkarzu_color11
+color1                $ckolor11
+color9                $ckolor11
 # green
-color2                $linkarzu_color02
-color10               $linkarzu_color02
+color2                $ckolor02
+color10               $ckolor02
 # yellow
-color3                $linkarzu_color05
-color11               $linkarzu_color05
+color3                $ckolor05
+color11               $ckolor05
 # blue
-color4                $linkarzu_color04
-color12               $linkarzu_color04
+color4                $ckolor04
+color12               $ckolor04
 # magenta
-color5                $linkarzu_color01
-color13               $linkarzu_color01
+color5                $ckolor01
+color13               $ckolor01
 # cyan
-color6                $linkarzu_color03
-color14               $linkarzu_color03
+color6                $ckolor03
+color14               $ckolor03
 # white
-color7                $linkarzu_color14
-color15               $linkarzu_color14
+color7                $ckolor14
+color15               $ckolor14
 # Cursor colors
-cursor                $linkarzu_color02
-cursor_text_color     $linkarzu_color14
+cursor                $ckolor02
+cursor_text_color     $ckolor14
 # Tab bar colors
-active_tab_foreground  $linkarzu_color10
-active_tab_background   $linkarzu_color02
-inactive_tab_foreground $linkarzu_color03
-inactive_tab_background $linkarzu_color10
+active_tab_foreground  $ckolor10
+active_tab_background   $ckolor02
+inactive_tab_foreground $ckolor03
+inactive_tab_background $ckolor10
 # Marks
-mark1_foreground      $linkarzu_color10
-mark1_background      $linkarzu_color11
+mark1_foreground      $ckolor10
+mark1_background      $ckolor11
 # Splits/Windows
-active_border_color   $linkarzu_color04
-inactive_border_color  $linkarzu_color10
+active_border_color   $ckolor04
+inactive_border_color  $ckolor10
 EOF
 
   echo "Kitty configuration updated at '$kitty_conf_file'."
@@ -115,7 +115,7 @@ disabled = true
 disabled = true
 
 [time]
-style = '${linkarzu_color04} bold'
+style = '${ckolor04} bold'
 disabled = false
 format = '[\[\$time\]](\$style) '
 # https://docs.rs/chrono/0.4.7/chrono/format/strftime/index.html
@@ -128,10 +128,10 @@ time_format = '%y/%m/%d'
 [kubernetes]
 disabled = false
 # context = user@cluster
-# format = '[\$user@\$cluster \(\$namespace\)](${linkarzu_color05}) '
-# format = '[\$cluster \(\$namespace\)](${linkarzu_color05}) '
+# format = '[\$user@\$cluster \(\$namespace\)](${ckolor05}) '
+# format = '[\$cluster \(\$namespace\)](${ckolor05}) '
 # Apply separate colors for cluster and namespace
-format = '[\$cluster](${linkarzu_color05} bold) [\(\$namespace\)](${linkarzu_color02} bold) '
+format = '[\$cluster](${ckolor05} bold) [\(\$namespace\)](${ckolor02} bold) '
 # format = 'on [⛵ (\$user on )(\$cluster in )\$context \(\$namespace\)](dimmed green) '
 # Only dirs that have this file inside will show the kubernetes prompt
 # detect_files = ['900-detectkubernetes.sh']
@@ -141,17 +141,17 @@ format = '[\$cluster](${linkarzu_color05} bold) [\(\$namespace\)](${linkarzu_col
 # ]
 
 [username]
-style_user = '${linkarzu_color04} bold'
+style_user = '${ckolor04} bold'
 style_root = 'white bold'
 format = '[\$user](\$style)'
 show_always = true
 
 [hostname]
 ssh_only = false
-format = '[.@.](white bold)[\$hostname](${linkarzu_color02} bold)'
+format = '[.@.](white bold)[\$hostname](${ckolor02} bold)'
 
 [directory]
-style = '${linkarzu_color03} bold'
+style = '${ckolor03} bold'
 truncation_length = 0
 truncate_to_repo = false
 

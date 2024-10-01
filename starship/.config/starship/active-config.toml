@@ -13,7 +13,7 @@ disabled = true
 disabled = true
 
 [time]
-style = '#e19720 bold'
+style = '#cba6f7 bold'
 disabled = false
 format = '[\[$time\]]($style) '
 # https://docs.rs/chrono/0.4.7/chrono/format/strftime/index.html
@@ -26,10 +26,10 @@ time_format = '%y/%m/%d'
 [kubernetes]
 disabled = false
 # context = user@cluster
-# format = '[$user@$cluster \($namespace\)](#ebfafa) '
-# format = '[$cluster \($namespace\)](#ebfafa) '
+# format = '[$user@$cluster \($namespace\)](#b4befe) '
+# format = '[$cluster \($namespace\)](#b4befe) '
 # Apply separate colors for cluster and namespace
-format = '[$cluster](#ebfafa bold) [\($namespace\)](#fad61d bold) '
+format = '[$cluster](#b4befe bold) [\($namespace\)](#89b4fa bold) '
 # format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
 # Only dirs that have this file inside will show the kubernetes prompt
 # detect_files = ['900-detectkubernetes.sh']
@@ -39,17 +39,17 @@ format = '[$cluster](#ebfafa bold) [\($namespace\)](#fad61d bold) '
 # ]
 
 [username]
-style_user = '#e19720 bold'
+style_user = '#cba6f7 bold'
 style_root = 'white bold'
 format = '[$user]($style)'
 show_always = true
 
 [hostname]
 ssh_only = false
-format = '[.@.](white bold)[$hostname](#fad61d bold)'
+format = '[.@.](white bold)[$hostname](#89b4fa bold)'
 
 [directory]
-style = '#fdf2bb bold'
+style = '#a6e3a1 bold'
 truncation_length = 0
 truncate_to_repo = false
 

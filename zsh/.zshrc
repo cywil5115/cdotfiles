@@ -113,7 +113,7 @@ if command -v eza &>/dev/null
 then
   alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
   alias ll='eza --long --all --git --icons=always'
-  alias tree='eza --tree'
+  alias tree='eza --tree --level=5 --icons=always --git'
 fi
 
 #Git

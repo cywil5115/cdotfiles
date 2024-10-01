@@ -1,32 +1,54 @@
 #!/usr/bin/env bash
 
-# Filename: ~/github/dotfiles-latest/colorscheme/list/linkarzu-colors.sh
-# ~/github/dotfiles-latest/colorscheme/list/linkarzu-colors.sh
-
-linkarzu_color01="#fbe260"
-linkarzu_color02="#fad61d"
-linkarzu_color03="#fdf2bb"
-linkarzu_color04="#e19720"
-linkarzu_color05="#ebfafa"
-linkarzu_color06="#f62d14"
+# Maroon
+ckolor01="#eba0ac"
+# Blue
+ckolor02="#89b4fa"
+# Green
+ckolor03="#a6e3a1"
+# Mauve
+ckolor04="#cba6f7"
+# Lavender
+ckolor05="#b4befe"
+# Sapphire
+ckolor06="#74c7ec"
+# Surface 0
 # Markdown codeblock
-linkarzu_color07="#1c242f"
-linkarzu_color08="#811e09"
+ckolor07="#313244"
+# Peach
+ckolor08="#fab387"
+# Subtext0
 # Comments
-linkarzu_color09="#a5afc2"
+ckolor09="#a6adc8"
+# Base
 # Terminal and neovim background
-linkarzu_color10="#0D1116"
+ckolor10="#1e1e2e"
+# Red
 # Underline spellbad
-linkarzu_color11="#f62d14"
+ckolor11="#f38ba8"
+# Yellow
 # Underline spellcap
-linkarzu_color12="#fad61d"
+ckolor12="#f9e2af"
+# Surface2
 # line across cursor
-linkarzu_color13="#314154"
+ckolor13="#585b70"
+# Text
 # Cursor and tmux windows text
-linkarzu_color14="#ebfafa"
+ckolor14="#cdd6f4"
+# Surface1
 # Tmux inactive windows
-linkarzu_color15="#013e4a"
+ckolor15="#45475a"
+# Flamingo
 # Selected text
-linkarzu_color16="#e9b3fd"
+ckolor16="#f2cdcd"
 # Lualine across
-linkarzu_color17="#141b22"
+ckolor17="#313244"
+# https://www.colorhexa.com/1e1e2e
+# #0f0f16
+# #161622
+# #1e1e2e
+# #26263a
+# #2d2d46
+# #353552
+# #3d3d5d
+# #454569

@@ -1,32 +1,29 @@
 #!/usr/bin/env bash
 
-# Filename: ~/github/dotfiles-latest/colorscheme/list/eldritch-colors.sh
-# ~/github/dotfiles-latest/colorscheme/list/eldritch-colors.sh
-
-linkarzu_color01="#f265b5"
-linkarzu_color02="#37f499"
-linkarzu_color03="#04d1f9"
-linkarzu_color04="#a48cf2"
-linkarzu_color05="#f1fc79"
-linkarzu_color06="#f7c67f"
+ckolor01="#f265b5"
+ckolor02="#37f499"
+ckolor03="#04d1f9"
+ckolor04="#a48cf2"
+ckolor05="#f1fc79"
+ckolor06="#f7c67f"
 # Markdown codeblock, lualine color across
-linkarzu_color07="#314154"
-linkarzu_color08="#f16c75"
+ckolor07="#314154"
+ckolor08="#f16c75"
 # Comments
-linkarzu_color09="#a5afc2"
+ckolor09="#a5afc2"
 # Terminal and neovim background
-linkarzu_color10="#212337"
+ckolor10="#212337"
 # Underline spellbad
-linkarzu_color11="#f16c75"
+ckolor11="#f16c75"
 # Underline spellcap
-linkarzu_color12="#f1fc79"
+ckolor12="#f1fc79"
 # line across cursor
-linkarzu_color13="#314154"
+ckolor13="#314154"
 # Cursor and tmux windows text
-linkarzu_color14="#ebfafa"
+ckolor14="#ebfafa"
 # Tmux inactive windows
-linkarzu_color15="#013e4a"
+ckolor15="#013e4a"
 # Selected text
-linkarzu_color16="#d99ffd"
+ckolor16="#d99ffd"
 # Lualine across
-linkarzu_color17="#282b43"
+ckolor17="#282b43"
