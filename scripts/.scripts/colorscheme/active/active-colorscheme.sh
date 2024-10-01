@@ -1,48 +1,32 @@
 #!/usr/bin/env bash
 
-# Filename: ~/github/dotfiles-latest/colorscheme/list/catppuccin-macchiato.sh
-# ~/github/dotfiles-latest/colorscheme/list/catppuccin-macchiato.sh
+# Filename: ~/github/dotfiles-latest/colorscheme/list/linkarzu-colors.sh
+# ~/github/dotfiles-latest/colorscheme/list/linkarzu-colors.sh
 
-# Maroon
-linkarzu_color01="#ee99a0"
-# Blue
-linkarzu_color02="#8aadf4"
-# Green
-linkarzu_color03="#a6da95"
-# Mauve
-linkarzu_color04="#c6a0f6"
-# Lavender
-linkarzu_color05="#b7bdf8"
-# Sapphire
-linkarzu_color06="#7dc4e4"
-# Surface 0
-# Markdown codeblock, lualine color across
-linkarzu_color07="#363a4f"
-# Peach
-linkarzu_color08="#f5a97f"
-# Subtext0
+linkarzu_color01="#fbe260"
+linkarzu_color02="#fad61d"
+linkarzu_color03="#fdf2bb"
+linkarzu_color04="#e19720"
+linkarzu_color05="#ebfafa"
+linkarzu_color06="#f62d14"
+# Markdown codeblock
+linkarzu_color07="#1c242f"
+linkarzu_color08="#811e09"
 # Comments
-linkarzu_color09="#a5adcb"
-# Base
+linkarzu_color09="#a5afc2"
 # Terminal and neovim background
-linkarzu_color10="#24273a"
-# Red
+linkarzu_color10="#0D1116"
 # Underline spellbad
-linkarzu_color11="#ed8796"
-# Yellow
+linkarzu_color11="#f62d14"
 # Underline spellcap
-linkarzu_color12="#eed49f"
-# Surface2
+linkarzu_color12="#fad61d"
 # line across cursor
-linkarzu_color13="#5b6078"
-# Text
+linkarzu_color13="#314154"
 # Cursor and tmux windows text
-linkarzu_color14="#cad3f5"
-# Surface1
+linkarzu_color14="#ebfafa"
 # Tmux inactive windows
-linkarzu_color15="#494d64"
-# Flamingo
+linkarzu_color15="#013e4a"
 # Selected text
-linkarzu_color16="#f0c6c6"
+linkarzu_color16="#e9b3fd"
 # Lualine across
-linkarzu_color17="#363a4f"
+linkarzu_color17="#141b22"
