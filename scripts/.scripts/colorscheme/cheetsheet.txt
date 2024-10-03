@@ -1,0 +1,57 @@
+# Maroon/ Kasztanowaty / Brązowawy
+ckolor01=
+
+# Blue/ Niebieski
+ckolor02=
+
+# Green/ Zielony
+ckolor03=
+
+# Mauve/ Fiołkoworóżowy
+ckolor04=
+
+# Lavender
+ckolor05=
+
+# Sapphire
+ckolor06=
+
+# Surface0
+ckolor07=
+
+# Peach
+ckolor08=
+
+# Subtext0
+# Comments
+ckolor09=
+
+# Base
+# Terminal background
+ckolor10=
+
+# Red/ Czerwony
+# Underline spellbad
+ckolor11=
+
+# Yellow/ Żółty
+# Underline spellcap
+ckolor12=
+
+# Surface2
+# line across cursor
+ckolor13=
+
+# Text
+ckolor14=
+
+# Surface1
+# Tmux inactive windows
+ckolor15=
+
+# Flamingo
+# Selected text
+ckolor16=
+
+# Lualine across
+ckolor17=

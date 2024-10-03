@@ -1,9 +1,46 @@
 # Prompt
-export PATH="$HOME/.ohmyposh:$PATH"
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+# export PATH="$HOME/.ohmyposh:$PATH"
+# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 export PATH=$HOME/.local/bin:$PATH
 
+######################
+# Autocompletion settings
+######################
+fpath=(~/.scripts/zsh/zsh-completions/src $fpath)
+# https://github.com/Phantas0s/.dotfiles/blob/master/zsh/completion.zsh
+# These have to be on the top, I remember I had issues with some autocompletions if not
+zmodload zsh/complist
+autoload -U compinit
+compinit
+_comp_options+=(globdots) # With hidden files
+# setopt MENU_COMPLETE        # Automatically highlight first element of completion menu
+setopt AUTO_LIST        # Automatically list choices on ambiguous completion.
+setopt COMPLETE_IN_WORD # Complete from both ends of a word.
+# Define completers
+zstyle ':completion:*' completer _extensions _complete _approximate
+# Use cache for commands using cache
+zstyle ':completion:*' use-cache on
+# You have to use $HOME, because since in "" it will be treated as a literal string
+zstyle ':completion:*' cache-path "$HOME/.zcompcache"
+# Complete the alias when _expand_alias is used as a function
+zstyle ':completion:*' complete true
+# Allow you to select in a menu
+zstyle ':completion:*' menu select
+# Autocomplete options for cd instead of directory stack
+zstyle ':completion:*' complete-options true
+zstyle ':completion:*' file-sort modification
+zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
+zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %D %d --%f'
+zstyle ':completion:*:*:*:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
+# zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+# Colors for files and directory
+# zstyle ':completion:*:*:*:*:default' list-colors '${(s.:.)LS_COLORS}'
+
+######################
 # Aliases for OS
+######################
+
 case "$(uname -sr)" in
 
    Darwin*)
@@ -12,13 +49,7 @@ case "$(uname -sr)" in
      alias nozzz='sudo killall shutdown'
      alias noshutdown='sudo killall shutdown'
      alias e='open ./' #MACOS
-     alias cat='bat'
-     alias cl='clear'
-     alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-     alias ll='eza --long --all --git --icons=always'
-     alias cpv='rsync -ah --info=progress2'
      # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-     
      ;;
 
    Linux*Microsoft*)
@@ -31,17 +62,15 @@ case "$(uname -sr)" in
      alias zzz='sudo shutdown -h' 
      alias zzzz='shutdown -c'
      alias noshutdown='shutdown -c'
-     alias cat='bat'
-     alias cl='clear'
-     alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-     alias ll='eza --long --all --git --icons=always'
-     alias cpv='rsync -ah --info=progress2'
      alias debian='distrobox-enter debian12-distrobox'
      alias flatpak-up='flatpak update -y && flatpak upgrade -y'
      alias updateall='sudo echo "Aktualizacja!" && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm'
      # alias e='nautilus ./' #GNOME
      # alias e='nemo ./' #MINT
      # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+     # # Homebrew
+     # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
      ;;
 
    CYGWIN*|MINGW*|MINGW32*|MSYS*)
@@ -56,13 +85,41 @@ case "$(uname -sr)" in
      ;;
 esac
 
+######################
 # Global Aliases
+######################
+alias cl='clear'
+
+#bat for other
+if command -v bat &>/dev/null; then
+  # --style=plain - removes line numbers and git modifications
+  # --paging=never - doesnt pipe it through less
+  alias catt='bat --paging=never --style=plain'
+  alias cat='bat'
+  alias cata='bat --show-all --paging=never'
+fi
+
+#bat for ubuntu
+if command -v batcat &>/dev/null; then
+  # --style=plain - removes line numbers and git modifications
+  # --paging=never - doesnt pipe it through less
+  alias catt='batcat --paging=never --style=plain'
+  alias cat='batcat'
+  alias cata='batcat --show-all --paging=never'
+fi
+
+
+if command -v eza &>/dev/null
+then
+  alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+  alias ll='eza --long --all --git --icons=auto'
+  alias tree='eza --tree --level=5 --icons=auto --git'
+fi
 
 #Git
 alias fsb='~/.scripts/fsb.sh'
 alias fshow='~/.scripts/fshow.sh'
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
-
 
 #Docker
 # alias dco="docker compose"
@@ -71,14 +128,20 @@ alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bol
 # alias dl="docker ps -l -q"
 # alias dx="docker exec -it"
 
+######################
 # Editor
+######################
+
+# helix
 export VISUAL=helix
 export EDITOR=helix
-alias hx='helix'
-# Neovim
-# alias kvim='NVIM_APPNAME="kickstart_nvim" nvim'
+# neovim
+alias kvim='NVIM_APPNAME="kickstart-nvim" nvim'
+alias tvim='NVIM_APPNAME="test-nvim" nvim'
 
+######################
 # Functions 
+######################
 function lg()  {
     export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
 
@@ -112,8 +175,74 @@ function set-bat-theme {
     bat cache --build
     source ~/.zshrc
 }
-# Themes
 
+######################
+# Autosuggestions
+######################
+
+  # Source zsh-autosuggestions if file exists
+  install_this_package="no"
+  if [ -f "$HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+    source $HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+  else
+    if [ "$install_this_package" != "no" ]; then
+      echo
+      echo "Installing zsh-autosuggestions, please wait..."
+      # Download github repo
+      mkdir -p $HOME/.scripts/zsh-autosuggestions
+      cd $HOME/.scripts/zsh/zsh-autosuggestions
+      git clone https://github.com/zsh-users/zsh-autosuggestions 2>&1 >/dev/null
+      # Verify if the repo was cloned successfully
+      if [ ! -d "$HOME/.scripts/zsh/zsh-autosuggestions" ]; then
+        echo
+        echo -e "${boldRed}Warning: Failed to clone the zsh-autosuggestions repository. Check this manually${noColor}"
+        # sleep 1
+      else
+        # After installing, initialize it
+        source $HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+        echo "Successfully installed zsh-autosuggestions"
+      fi
+    fi
+  fi
+
+######################
+# History
+######################
+# Current number of entries Zsh is configured to store in memory (HISTSIZE)
+# How many commands Zsh is configured to save to the history file (SAVEHIST)
+# echo "HISTSIZE: $HISTSIZE"
+# echo "SAVEHIST: $SAVEHIST"
+# Store 10,000 entries in the command history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+# Check if the history file exists, if not, create it
+if [[ ! -f $HISTFILE ]]; then
+  touch $HISTFILE
+  chmod 600 $HISTFILE
+fi
+# Append commands to the history file as they are entered
+setopt appendhistory
+# Record timestamp of each command (helpful for auditing)
+setopt extendedhistory
+# Share command history data between all sessions
+setopt sharehistory
+# Incrementally append to the history file, rather than waiting until the shell exits
+setopt incappendhistory
+# Ignore duplicate commands in a row
+setopt histignoredups
+# Exclude commands that start with a space
+setopt histignorespace
+# Custom list of commands to ignore (adjust as needed)
+# HISTIGNORE='ls*:bg*:fg*:exit*:ll*'
+
+# Shows the last 30 entries, default is 15
+alias history='history -30'
+
+######################
+# Themes
+######################
+alias set-colortheme='~/.scripts/colorscheme/colorscheme-selector.sh'
 export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
 
 #bat
@@ -122,7 +251,9 @@ export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
 #helix - dynamic theme
 alias hx-up='~/.config/helix/lib/bash.sh'
 
+######################
 # FZF
+######################
 source <(fzf --zsh)
 
 export FZF_DEFAULT_OPTS=" \
@@ -164,17 +295,37 @@ _fzf_comprun() {
   esac
 }
 
+######################
 # Zoxide
-eval "$(zoxide init zsh)"
-alias cd='z'
-alias cdi='zi'
+######################
+eval "$(zoxide init zsh --cmd cd)"
+alias cdd='cd -'
 
+######################
 # Directories
+######################
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+######################
 # VI Mode
+######################
 bindkey jj vi-cmd-mode
+
+######################
+# StarShip
+######################
+if command -v starship 2>&1 > /dev/null
+then
+  export STARSHIP_CONFIG=$HOME/.config/active-config.toml
+  eval "$(starship init zsh)"
+fi
+
+######################
+# Syntax-highlighting
+######################
+
+source /home/cywil5115/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

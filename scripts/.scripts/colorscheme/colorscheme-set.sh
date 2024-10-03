@@ -1,0 +1,299 @@
+#!/usr/bin/env bash
+
+# Filename: ~/.scripts/colorscheme/colorscheme-set.sh
+# ~/.scripts/colorscheme/colorscheme-set.sh
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Function to display error messages
+error() {
+  echo "Error: $1" >&2
+  exit 1
+}
+
+# Ensure a colorscheme profile is provided
+if [ -z "$1" ]; then
+  error "No colorscheme profile provided"
+fi
+
+colorscheme_profile="$1"
+
+# Define paths
+colorscheme_file="$HOME/.scripts/colorscheme/list/$colorscheme_profile"
+active_file="$HOME/.scripts/colorscheme/active/active-colorscheme.sh"
+
+# Check if the colorscheme file exists
+if [ ! -f "$colorscheme_file" ]; then
+  error "Colorscheme file '$colorscheme_file' does not exist."
+fi
+
+# If active-colorscheme.sh doesn't exist, create it
+if [ ! -f "$active_file" ]; then
+  echo "Active colorscheme file not found. Creating '$active_file'."
+  cp "$colorscheme_file" "$active_file"
+  UPDATED=true
+else
+  # Compare the new colorscheme with the active one
+  if ! diff -q "$active_file" "$colorscheme_file" >/dev/null; then
+    UPDATED=true
+  else
+    UPDATED=false
+  fi
+fi
+generate_yazi_config() {
+  yazi_conf_file="$HOME/.config/yazi/flavors/active-colorscheme.yazi/flavor.toml"
+
+  cat >"$yazi_conf_file" <<EOF
+# general
+[manager]
+marker_copied   = { fg = "$ckolor03", bg = "$ckolor03" } # green
+marker_cut      = { fg = "$ckolor11", bg = "$ckolor11" } # red
+marker_marked   = { fg = "$ckolor04", bg = "$ckolor04" } # magenta
+marker_selected = { fg = "$ckolor05", bg = "$ckolor05" } # cyan
+
+cwd = { fg = "$ckolor12" } # yellow
+hovered = { reversed = true }
+preview_hovered = { reversed = true }
+
+tab_active   = { reversed = true }
+tab_inactive = {}
+tab_width    = 1
+
+# default bg
+count_copied   = { fg = "$ckolor03", bg = "$ckolor03" } # green
+count_cut      = { fg = "$ckolor11", bg = "$ckolor11" } # red
+count_selected = { fg = "$ckolor12", bg = "$ckolor12" } # yellow
+
+border_symbol = "│"
+border_style = { fg = "$ckolor14"} # white
+
+# status-line
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "reset", bg = "$ckolor07" } # light bg
+
+# default bg
+mode_normal = { fg = "$ckolor02", bg = "$ckolor02", bold = true } # blue
+mode_select = { fg = "$ckolor04", bg = "$ckolor04", bold = true } # magenta
+mode_unset  = { fg = "$ckolor12", bg = "$ckolor12", bold = true } # yellow
+
+# blue - light bg
+progress_label  = { fg = "$ckolor02", bg = "$ckolor02", bold = true }
+# light bg - default bg
+progress_normal = { fg = "$ckolor03", bg = "$ckolor03" }
+progress_error  = { fg = "$ckolor11", bg = "$ckolor11" }
+
+permissions_t = { fg = "$ckolor03" } # green
+permissions_r = { fg = "$ckolor12" } # yellow
+permissions_w = { fg = "$ckolor11" } # red
+permissions_x = { fg = "$ckolor02" } # cyan
+permissions_s = { fg = "$ckolor04" } # magenta
+
+[select]
+border   = { fg = "$ckolor02" } # blue
+active   = { fg = "$ckolor04", bold = true } # magenta
+inactive = {}
+
+[input]
+border   = { fg = "$ckolor02" } # blue
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+[completion]
+border   = { fg = "$ckolor02" } # blue
+active   = { reversed = true }
+inactive = {}
+
+[tasks]
+border  = { fg = "$ckolor02" } # blue
+title   = {}
+hovered = { fg = "$ckolor04" } # magenta
+
+[which]
+cols = 2
+separator = " - "
+separator_style = { fg = "$ckolor15" } # darkgrey
+mask = { bg = "$ckolor10" } # dark bg
+rest = { fg = "$ckolor15" } # darkgrey
+cand = { fg = "$ckolor14" }
+desc = { fg = "$ckolor14" }
+
+[help]
+on      = { fg = "$ckolor02" } # cyan
+run     = { fg = "$ckolor05" } # magenta
+desc    = {}
+hovered = { reversed = true, bold = true }
+footer  = { fg = "$ckolor15", bg = "$ckolor15" } # white
+
+[notify]
+title_info  = { fg = "$ckolor03" } # green
+title_warn  = { fg = "$ckolor12" } # yellow
+title_error = { fg = "$ckolor11" } # red
+
+# files
+[filetype]
+rules = [
+    { mime = "image/*", fg = "$ckolor01" },
+    { mime = "{audio,video}/*", fg = "$ckolor04" },
+    { mime = "application/{,g}zip", fg = "$ckolor08" },
+    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "$ckolor08" },
+    { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "$ckolor13" },
+    { name = "*", is = "orphan", fg = "$ckolor04" },
+    { name = "*", is = "exec", fg = "$ckolor04" },
+    { name = "*/", fg = "$ckolor04"}
+]
+EOF
+
+  echo "Yazi configuration updated at '$yazi_conf_file'."
+}
+
+generate_kitty_config() {
+  kitty_conf_file="$HOME/.config/kitty/active-theme.conf"
+
+  cat >"$kitty_conf_file" <<EOF
+foreground            $ckolor14
+background            $ckolor10
+selection_foreground  $ckolor14
+selection_background   $ckolor16
+url_color             $ckolor03
+# black
+color0                $ckolor10
+color8                $ckolor08
+# red
+color1                $ckolor11
+color9                $ckolor11
+# green
+color2                $ckolor02
+color10               $ckolor02
+# yellow
+color3                $ckolor05
+color11               $ckolor05
+# blue
+color4                $ckolor04
+color12               $ckolor04
+# magenta
+color5                $ckolor01
+color13               $ckolor01
+# cyan
+color6                $ckolor03
+color14               $ckolor03
+# white
+color7                $ckolor14
+color15               $ckolor14
+# Cursor colors
+cursor                $ckolor02
+cursor_text_color     $ckolor14
+# Tab bar colors
+active_tab_foreground  $ckolor10
+active_tab_background   $ckolor02
+inactive_tab_foreground $ckolor03
+inactive_tab_background $ckolor10
+# Marks
+mark1_foreground      $ckolor10
+mark1_background      $ckolor11
+# Splits/Windows
+active_border_color   $ckolor04
+inactive_border_color  $ckolor10
+EOF
+
+  echo "Kitty configuration updated at '$kitty_conf_file'."
+}
+
+generate_starship_config() {
+  # Define the path to the active-config.toml
+  starship_conf_file="$HOME/.config/starship/active-config.toml"
+
+  # Generate the Starship configuration file
+  cat >"$starship_conf_file" <<EOF
+# This will show the time on a 2nd line
+# Add a "\\" at the end of an item, if you want the next item to show on the same line
+format = """
+\$all\\
+\$kubernetes
+\$character
+"""
+
+[battery]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[time]
+style = '${ckolor04} bold'
+disabled = false
+format = '[\[\$time\]](\$style) '
+# https://docs.rs/chrono/0.4.7/chrono/format/strftime/index.html
+# %T	00:34:60	Hour-minute-second format. Same to %H:%M:%S.
+# time_format = '%y/%m/%d %T'
+time_format = '%y/%m/%d'
+
+# For this to show up correctly, you need to have cluster access
+# So your ~/.kube/config needs to be configured on the local machine
+[kubernetes]
+disabled = false
+# context = user@cluster
+# format = '[\$user@\$cluster \(\$namespace\)](${ckolor05}) '
+# format = '[\$cluster \(\$namespace\)](${ckolor05}) '
+# Apply separate colors for cluster and namespace
+format = '[\$cluster](${ckolor05} bold) [\(\$namespace\)](${ckolor02} bold) '
+# format = 'on [⛵ (\$user on )(\$cluster in )\$context \(\$namespace\)](dimmed green) '
+# Only dirs that have this file inside will show the kubernetes prompt
+# detect_files = ['900-detectkubernetes.sh']
+# detect_env_vars = ['STAR_USE_KUBE']
+# contexts = [
+#   { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
+# ]
+
+[username]
+style_user = '${ckolor04} bold'
+style_root = 'white bold'
+format = '[\$user](\$style)'
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[.@.](white bold)[\$hostname](${ckolor02} bold)'
+
+[directory]
+style = '${ckolor03} bold'
+truncation_length = 0
+truncate_to_repo = false
+
+[ruby]
+detect_variables = []
+detect_files = ['Gemfile', '.ruby-version']
+EOF
+
+  echo "Starship configuration updated at '$starship_conf_file'."
+}
+
+# If there's an update, replace the active colorscheme and perform necessary actions
+if [ "$UPDATED" = true ]; then
+  echo "Updating active colorscheme to '$colorscheme_profile'."
+
+  # Replace the contents of active-colorscheme.sh
+  cp "$colorscheme_file" "$active_file"
+
+  # Source the active colorscheme to load variables
+  source "$active_file"
+
+  # Generate the Kitty configuration file
+  generate_kitty_config
+
+  # Generate the Yazi theme flavor
+  generate_yazi_config
+
+  # Set the tmux colors
+  # $HOME/.scripts/colorscheme/set_tmux_colors.sh
+  # tmux source-file ~/.config/tmux/tmux.conf
+  # echo "Tmux colors set and tmux configuration reloaded."
+
+  generate_starship_config
+
+  # This reloads kitty config without closing and re-opening
+  kill -SIGUSR1 "$(pgrep -x kitty)"
+fi
