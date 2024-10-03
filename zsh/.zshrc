@@ -69,8 +69,8 @@ case "$(uname -sr)" in
      # alias e='nemo ./' #MINT
      # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
-     # Homebrew
-     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+     # # Homebrew
+     # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
      ;;
 
    CYGWIN*|MINGW*|MINGW32*|MSYS*)
@@ -323,3 +323,9 @@ then
   export STARSHIP_CONFIG=$HOME/.config/active-config.toml
   eval "$(starship init zsh)"
 fi
+
+######################
+# Syntax-highlighting
+######################
+
+source /home/cywil5115/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,45 +1,54 @@
 #!/usr/bin/env bash
 
 # Maroon
-ckolor01="#ee99a0"
+ckolor01="#eba0ac"
 # Blue
-ckolor02="#8aadf4"
+ckolor02="#89b4fa"
 # Green
-ckolor03="#a6da95"
+ckolor03="#a6e3a1"
 # Mauve
-ckolor04="#c6a0f6"
+ckolor04="#cba6f7"
 # Lavender
-ckolor05="#b7bdf8"
+ckolor05="#b4befe"
 # Sapphire
-ckolor06="#7dc4e4"
+ckolor06="#74c7ec"
 # Surface 0
-# Markdown codeblock, lualine color across
-ckolor07="#363a4f"
+# Markdown codeblock
+ckolor07="#26263a"
 # Peach
-ckolor08="#f5a97f"
+ckolor08="#fab387"
 # Subtext0
 # Comments
-ckolor09="#a5adcb"
+ckolor09="#a6adc8"
 # Base
 # Terminal and neovim background
-ckolor10="#24273a"
+ckolor10="#161622"
 # Red
 # Underline spellbad
-ckolor11="#ed8796"
+ckolor11="#f38ba8"
 # Yellow
 # Underline spellcap
-ckolor12="#eed49f"
+ckolor12="#f9e2af"
 # Surface2
 # line across cursor
-ckolor13="#5b6078"
+ckolor13="#3d3d5d"
 # Text
 # Cursor and tmux windows text
-ckolor14="#cad3f5"
+ckolor14="#cdd6f4"
 # Surface1
 # Tmux inactive windows
-ckolor15="#494d64"
+ckolor15="#353552"
 # Flamingo
 # Selected text
-ckolor16="#f0c6c6"
+ckolor16="#f2cdcd"
 # Lualine across
-ckolor17="#363a4f"
+ckolor17="#1e1e2e"
+# https://www.colorhexa.com/1e1e2e
+# #0f0f16
+# #161622
+# #1e1e2e
+# #26263a
+# #2d2d46
+# #353552
+# #3d3d5d
+# #454569
