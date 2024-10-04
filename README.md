@@ -28,6 +28,18 @@ MacOS (ohmyposh using brew):
 ```
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
 ```
+## Install leaves for brew (optional)
+```
+cd ~ && cd .cdotfiles/homebrew/.config/brew/
+```
+Usefull commands (example for my_brew.txt file name):
+```
+# save all your currently used programs:
+brew leaves > my_brew.txt
+
+# Install for a new machine:
+xargs brew install < my_brew.txt
+```
 ## One-Liners (for dotfiles)
 
 (by SSH)
