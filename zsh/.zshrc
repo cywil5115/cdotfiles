@@ -346,4 +346,4 @@ fi
 # Syntax-highlighting
 ######################
 
-source /home/cywil5115/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
