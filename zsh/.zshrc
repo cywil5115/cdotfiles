@@ -110,10 +110,11 @@ fi
 
 if command -v eza &>/dev/null
 then
+  EZA_CONFIG_DIR='~/.config/eza/'
   alias ls="eza --color=always --git -1 --no-filesize --icons=always --no-time --no-user --no-permissions"
   alias ll='eza --long --all --bytes --git --git-repos --icons=auto'
-  alias lld='eza --long -D --all --bytes --octal-permissions --total-size --git --git-repos --icons=auto --no-permissions'
-  alias llf='eza --long -f --all --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
+  alias lld='eza --long -D -H --all --bytes --octal-permissions --total-size --git --git-repos --icons=auto --no-permissions'
+  alias llf='eza --long -f -H --all --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
   alias tree='eza --tree --level=5 --icons=auto --git'
 fi
 
@@ -185,7 +186,16 @@ function fsize() {
   bytesConvert $size
 }
 
-bat cache --build # it's outside to update cache with downloaded custom themes
+function set-yazi-theme {
+  $HOME/.cdotfiles/yazi/.config/yazi/theme.sh
+}
+
+function set-eza-theme {
+  $HOME/.config/eza/theme.sh
+}
+
+bat cache --build > /dev/null 2>&1 # it's outside to update cache with downloaded custom themes
+
 function set-bat-theme {
     bat cache --build
     sleep 1 && clear
@@ -249,6 +259,7 @@ export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
 
 #helix - dynamic theme
 alias hx-up='~/.config/helix/lib/bash.sh'
+alias set-helix-theme='~/.config/helix/lib/bash.sh' # for consistency
 
 ######################
 # FZF
@@ -334,6 +345,14 @@ if [ -f "$HOME/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
 ######################
+# Optional
+######################
+
+if [ -f "$HOME/.aminka_mode" ]; then
+  source $HOME/.aminka_mode
+fi
+
+######################
 # Finishing
 ######################
-# clear && fastfetch
+# clear

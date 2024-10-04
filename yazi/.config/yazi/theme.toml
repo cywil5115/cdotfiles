@@ -1,10 +1,11 @@
+
 # A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+"" = "https://yazi-rs.github.io/schemas/theme.json"
 
 # flavor taken from: https://github.com/dangooddd/kanagawa.yazi
 # : Flavor {{{
 
 [flavor]
-# use = "active-colorscheme"
-use = "kanagawa"
+use = "tokyo-night"
+
