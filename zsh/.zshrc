@@ -316,7 +316,9 @@ _fzf_comprun() {
 ######################
 # Zoxide
 ######################
-eval "$(zoxide init zsh --cmd cd)"
+eval "$(zoxide init zsh)"
+alias cd='z'
+alias cdi'zi'
 alias cdd='cd -'
 
 ######################
