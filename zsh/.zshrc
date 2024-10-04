@@ -111,8 +111,10 @@ fi
 
 if command -v eza &>/dev/null
 then
-  alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-  alias ll='eza --long --all --git --icons=auto'
+  alias ls="eza --color=always --git -1 --no-filesize --icons=always --no-time --no-user --no-permissions"
+  alias ll='eza --long --all --bytes --git --git-repos --icons=auto'
+  alias lld='eza --long -D --all --bytes --octal-permissions --total-size --git --git-repos --icons=auto --no-permissions'
+  alias llf='eza --long -f --all --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
   alias tree='eza --tree --level=5 --icons=auto --git'
 fi
 
@@ -166,6 +168,22 @@ function day {
     date +"%a %b %d %Y"
 }
 alias dzien='day'
+  
+function bytesConvert {
+  if [[ $# -eq 0 ]]
+  then
+      read -p "Size in bytes: " bytesVal
+  else
+      bytesVal=$1
+  fi
+  echo $bytesVal | awk '{ split( "B KB MB GB TB PB EB ZB YB" , v ); s=1; while( $1>1024 && s<9 ){ $1/=1024; s++ } printf "%.2f %s", $1, v[s] }'
+}
+
+function fsize() {
+  filename=$1
+  size="$(wc --bytes $filename)"
+  bytesConvert $size
+}
 
 function set-bat-theme {
     bat cache --build
