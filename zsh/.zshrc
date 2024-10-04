@@ -185,6 +185,7 @@ function fsize() {
   bytesConvert $size
 }
 
+bat cache --build # it's outside to update cache with downloaded custom themes
 function set-bat-theme {
     bat cache --build
     sleep 1 && clear
