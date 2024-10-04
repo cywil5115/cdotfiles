@@ -108,7 +108,6 @@ if command -v batcat &>/dev/null; then
   alias cata='batcat --show-all --paging=never'
 fi
 
-
 if command -v eza &>/dev/null
 then
   alias ls="eza --color=always --git -1 --no-filesize --icons=always --no-time --no-user --no-permissions"
@@ -138,6 +137,7 @@ alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bol
 export VISUAL=helix
 export EDITOR=helix
 # neovim
+alias v='nvim'
 alias kvim='NVIM_APPNAME="kickstart-nvim" nvim'
 alias tvim='NVIM_APPNAME="test-nvim" nvim'
 
@@ -200,29 +200,9 @@ function set-bat-theme {
 ######################
 
   # Source zsh-autosuggestions if file exists
-  install_this_package="no"
-  if [ -f "$HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-    source $HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-  else
-    if [ "$install_this_package" != "no" ]; then
-      echo
-      echo "Installing zsh-autosuggestions, please wait..."
-      # Download github repo
-      mkdir -p $HOME/.scripts/zsh-autosuggestions
-      cd $HOME/.scripts/zsh/zsh-autosuggestions
-      git clone https://github.com/zsh-users/zsh-autosuggestions 2>&1 >/dev/null
-      # Verify if the repo was cloned successfully
-      if [ ! -d "$HOME/.scripts/zsh/zsh-autosuggestions" ]; then
-        echo
-        echo -e "${boldRed}Warning: Failed to clone the zsh-autosuggestions repository. Check this manually${noColor}"
-        # sleep 1
-      else
-        # After installing, initialize it
-        source $HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-        echo "Successfully installed zsh-autosuggestions"
-      fi
-    fi
-  fi
+if [ -f "$HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source $HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 ######################
 # History
@@ -349,4 +329,11 @@ fi
 # Syntax-highlighting
 ######################
 
-source $HOME/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f "$HOME/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source $HOME/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+######################
+# Finishing
+######################
+# clear && fastfetch
