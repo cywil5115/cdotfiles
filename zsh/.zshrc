@@ -194,6 +194,10 @@ function set-eza-theme {
   $HOME/.config/eza/theme.sh
 }
 
+function set-kitty-theme {
+  $HOME/.config/kitty/theme.sh
+}
+
 bat cache --build > /dev/null 2>&1 # it's outside to update cache with downloaded custom themes
 
 function set-bat-theme {
