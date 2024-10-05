@@ -1,8 +1,7 @@
-
 #!/usr/bin/env bash
 
 kitty-choose-theme () {
-  chosen_theme=$(ls ~/.config/kitty/ | grep -v "kitty*" | grep -v *.sh | grep -v "options.conf" | grep -v "current-theme.conf")
+	chosen_theme=$(ls ~/.config/kitty/ |grep -v 'lib' | grep -v "kitty*" | grep -v "options.conf" | grep -v "current-theme.conf" )
 	if [ ! -d ~/.config/kitty/$chosen_theme ]; then
 	  'cat' ~/.config/kitty/$chosen_theme > ~/.config/kitty/current-theme.conf 
 	  if [ ! $chosen_theme == '*.sh' ]; then
@@ -16,8 +15,6 @@ rename-file () {
 	do
 	  if [ -d "$file" ]; then
 	    continue
-	  elif [ $file == theme.sh ]; then
-	  	continue
 	  else
 			newname=`echo $file | sed -e 's/ /_/g'` 
 		  mv "$file" "$newname" 
@@ -35,7 +32,7 @@ backup-config () {
 	'cat' ~/.config/kitty/kitty.conf > ~/.config/kitty/kitty-config 
 }
 
-write-config-from-backup () {
+ write-config-from-backup () {
 	'cat' ~/.config/kitty/kitty-config > ~/.config/kitty/kitty.conf
 	rm ~/.config/kitty/kitty-config
 }
