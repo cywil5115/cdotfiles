@@ -7,5 +7,5 @@
 # : Flavor {{{
 
 [flavor]
-use = "tokyo-night"
+use = "gruvbox-dark"
 

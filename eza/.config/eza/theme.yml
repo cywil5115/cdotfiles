@@ -1,110 +1,103 @@
-colourful: false
+colourful: true
 
 filekinds:
-  normal: {foreground: "#000"}
-  directory: {foreground: "#000"}
-  symlink: {foreground: "#000"}
-  pipe: {foreground: "#000"}
-  block_device: {foreground: "#000"}
-  char_device: {foreground: "#000"}
-  socket: {foreground: "#000"}
-  special: {foreground: "#000"}
-  executable: {foreground: "#000"}
-  mount_point: {foreground: "#000"}
+  normal: {foreground: "#ABB2BF"}
+  directory: {foreground: "#61AFEF"}
+  symlink: {foreground: "#56B6C2"}
+  pipe: {foreground: "#5C6370"}
+  block_device: {foreground: "#E5C07B"}
+  char_device: {foreground: "#E5C07B"}
+  socket: {foreground: "#5C6370"}
+  special: {foreground: "#C678DD"}
+  executable: {foreground: "#98C379"}
+  mount_point: {foreground: "#61AFEF"}
 
 perms:
-  user_read: {foreground: "#000"}
-  user_write: {foreground: "#000"}
-  user_execute_file: {foreground: "#000"}
-  user_execute_other: {foreground: "#000"}
-  group_read: {foreground: "#000"}
-  group_write: {foreground: "#000"}
-  group_execute: {foreground: "#000"}
-  other_read: {foreground: "#000"}
-  other_write: {foreground: "#000"}
-  other_execute: {foreground: "#000"}
-  special_user_file: {foreground: "#000"}
-  special_other: {foreground: "#000"}
-  attribute: {foreground: "#000"}
+  user_read: {foreground: "#ABB2BF"}
+  user_write: {foreground: "#D19A66"}
+  user_execute_file: {foreground: "#98C379"}
+  user_execute_other: {foreground: "#98C379"}
+  group_read: {foreground: "#ABB2BF"}
+  group_write: {foreground: "#D19A66"}
+  group_execute: {foreground: "#98C379"}
+  other_read: {foreground: "#5C6370"}
+  other_write: {foreground: "#D19A66"}
+  other_execute: {foreground: "#98C379"}
+  special_user_file: {foreground: "#C678DD"}
+  special_other: {foreground: "#5C6370"}
+  attribute: {foreground: "#5C6370"}
 
 size:
-  major: {foreground: "#000"}
-  minor: {foreground: "#000"}
-  number_byte: {foreground: "#000"}
-  number_kilo: {foreground: "#000"}
-  number_mega: {foreground: "#000"}
-  number_giga: {foreground: "#000"}
-  number_huge: {foreground: "#000"}
-  unit_byte: {foreground: "#000"}
-  unit_kilo: {foreground: "#000"}
-  unit_mega: {foreground: "#000"}
-  unit_giga: {foreground: "#000"}
-  unit_huge: {foreground: "#000"}
+  major: {foreground: "#5C6370"}
+  minor: {foreground: "#56B6C2"}
+  number_byte: {foreground: "#ABB2BF"}
+  number_kilo: {foreground: "#ABB2BF"}
+  number_mega: {foreground: "#61AFEF"}
+  number_giga: {foreground: "#C678DD"}
+  number_huge: {foreground: "#C678DD"}
+  unit_byte: {foreground: "#5C6370"}
+  unit_kilo: {foreground: "#61AFEF"}
+  unit_mega: {foreground: "#C678DD"}
+  unit_giga: {foreground: "#C678DD"}
+  unit_huge: {foreground: "#61AFEF"}
 
 users:
-  user_you: {foreground: "#000"}
-  user_root: {foreground: "#000"}
-  user_other: {foreground: "#000"}
-  group_yours: {foreground: "#000"}
-  group_other: {foreground: "#000"}
-  group_root: {foreground: "#000"}
+  user_you: {foreground: "#ABB2BF"}
+  user_root: {foreground: "#E06C75"}
+  user_other: {foreground: "#C678DD"}
+  group_yours: {foreground: "#ABB2BF"}
+  group_other: {foreground: "#5C6370"}
+  group_root: {foreground: "#E06C75"}
 
 links:
-  normal: {foreground: "#000"}
-  multi_link_file: {foreground: "#000"}
+  normal: {foreground: "#56B6C2"}
+  multi_link_file: {foreground: "#61AFEF"}
 
 git:
-  new: {foreground: "#000"}
-  modified: {foreground: "#000"}
-  deleted: {foreground: "#000"}
-  renamed: {foreground: "#000"}
-  typechange: {foreground: "#000"}
-  ignored: {foreground: "#000"}
-  conflicted: {foreground: "#000"}
+  new: {foreground: "#98C379"}
+  modified: {foreground: "#E5C07B"}
+  deleted: {foreground: "#E06C75"}
+  renamed: {foreground: "#98C379"}
+  typechange: {foreground: "#C678DD"}
+  ignored: {foreground: "#5C6370"}
+  conflicted: {foreground: "#E06C75"}
 
 git_repo:
-  branch_main: {foreground: "#000"}
-  branch_other: {foreground: "#000"}
-  git_clean: {foreground: "#000"}
-  git_dirty: {foreground: "#000"}
+  branch_main: {foreground: "#ABB2BF"}
+  branch_other: {foreground: "#C678DD"}
+  git_clean: {foreground: "#98C379"}
+  git_dirty: {foreground: "#E06C75"}
 
 security_context:
-  colon: {foreground: "#000"}
-  user: {foreground: "#000"}
-  role: {foreground: "#000"}
-  typ: {foreground: "#000"}
-  range: {foreground: "#000"}
+  colon: {foreground: "#5C6370"}
+  user: {foreground: "#ABB2BF"}
+  role: {foreground: "#C678DD"}
+  typ: {foreground: "#5C6370"}
+  range: {foreground: "#C678DD"}
 
 file_type:
-  image: {foreground: "#000"}
-  video: {foreground: "#000"}
-  music: {foreground: "#000"}
-  lossless: {foreground: "#000"}
-  crypto: {foreground: "#000"}
-  document: {foreground: "#000"}
-  compressed: {foreground: "#000"}
-  temp: {foreground: "#000"}
-  compiled: {foreground: "#000"}
-  build: {foreground: "#000"}
-  source: {foreground: "#000"}
+  image: {foreground: "#E5C07B"}
+  video: {foreground: "#E06C75"}
+  music: {foreground: "#98C379"}
+  lossless: {foreground: "#56B6C2"}
+  crypto: {foreground: "#5C6370"}
+  document: {foreground: "#ABB2BF"}
+  compressed: {foreground: "#C678DD"}
+  temp: {foreground: "#E06C75"}
+  compiled: {foreground: "#61AFEF"}
+  build: {foreground: "#5C6370"}
+  source: {foreground: "#61AFEF"}
 
-punctuation: {foreground: "#000"}
-date: {foreground: "#000"}
-inode: {foreground: "#000"}
-blocks: {foreground: "#000"}
-header: {foreground: "#000"}
-octal: {foreground: "#000"}
-flags: {foreground: "#000"}
+punctuation: {foreground: "#5C6370"}
+date: {foreground: "#E5C07B"}
+inode: {foreground: "#5C6370"}
+blocks: {foreground: "#5C6370"}
+header: {foreground: "#ABB2BF"}
+octal: {foreground: "#56B6C2"}
+flags: {foreground: "#C678DD"}
 
-symlink_path: {foreground: "#000"}
-control_char: {foreground: "#000"}
-broken_symlink: {foreground: "#000"}
-broken_path_overlay: {foreground: "#000"}
+symlink_path: {foreground: "#56B6C2"}
+control_char: {foreground: "#61AFEF"}
+broken_symlink: {foreground: "#E06C75"}
+broken_path_overlay: {foreground: "#5C6370"}
 
-filenames:
-  # Custom filename-based overrides
-  # Cargo.toml: {icon: {glyph: 🦀}}
-
-extensions:
-  # Custom extension-based overrides
-  # rs: {filename: {foreground: Red}, icon: {glyph: 🦀}}

@@ -87,6 +87,11 @@ suppress_preload = false
 
 [plugin]
 
+# prepend_previewers = [
+#   { name = "*.md", run = "glow" },
+#   { name = "*", run = "hexyl" },
+# ]
+
 fetchers = [
   # Mimetype
   { id = "mime", name = "*", run = "mime", if = "!mime", prio = "high" },
