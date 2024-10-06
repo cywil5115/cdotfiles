@@ -213,7 +213,6 @@ function set-bat-theme {
     source ~/.zshrc
 }
 
-alias set-colortheme='~/.scripts/colorscheme/colorscheme-selector.sh'
 export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
 
 #bat
