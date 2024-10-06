@@ -186,6 +186,10 @@ function fsize() {
   bytesConvert $size
 }
 
+######################
+# Themes
+######################
+
 function set-yazi-theme {
   $HOME/.cdotfiles/yazi/.config/yazi/theme.sh
 }
@@ -208,6 +212,17 @@ function set-bat-theme {
     bat cache --build
     source ~/.zshrc
 }
+
+alias set-colortheme='~/.scripts/colorscheme/colorscheme-selector.sh'
+export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
+
+#bat
+# export BAT_THEME=gruvbox-dark
+
+#helix - dynamic theme
+alias hx-up='~/.config/helix/lib/bash.sh'
+alias set-helix-theme='~/.config/helix/lib/bash.sh' # for consistency
+
 
 ######################
 # Autosuggestions
@@ -251,19 +266,6 @@ setopt histignorespace
 
 # Shows the last 30 entries, default is 15
 alias history='history -30'
-
-######################
-# Themes
-######################
-alias set-colortheme='~/.scripts/colorscheme/colorscheme-selector.sh'
-export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
-
-#bat
-# export BAT_THEME=gruvbox-dark
-
-#helix - dynamic theme
-alias hx-up='~/.config/helix/lib/bash.sh'
-alias set-helix-theme='~/.config/helix/lib/bash.sh' # for consistency
 
 ######################
 # FZF
