@@ -266,6 +266,14 @@ setopt histignorespace
 # Shows the last 30 entries, default is 15
 alias history='history -30'
 
+function clearhis () {
+    if [ -f "$HISTFILE" ]; then
+        rm "$HISTFILE"
+    else
+        echo "No history file found."
+    fi
+}
+
 ######################
 # FZF
 ######################
