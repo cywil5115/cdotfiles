@@ -2,6 +2,7 @@
 # export PATH="$HOME/.ohmyposh:$PATH"
 # eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 export PATH=$HOME/.local/bin:$PATH
+#export PATH=$HOME/.config/emacs/bin:$PATH # I want to try it! That's all okey?!
 
 ######################
 # Autocompletion settings
