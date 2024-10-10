@@ -203,6 +203,8 @@ function set-kitty-theme {
   $HOME/.config/kitty/lib/theme.sh
 }
 
+alias switch-kitty-mode='$HOME/.config/kitty/lib/switcher-light-dark.sh'
+
 bat cache --build > /dev/null 2>&1 # it's outside to update cache with downloaded custom themes
 
 function set-bat-theme {
