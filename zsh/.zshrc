@@ -42,97 +42,7 @@ zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
 # Aliases for OS
 ######################
 
-case "$(uname -sr)" in
-
-   Darwin*)
-     
-     alias zzz='sudo shutdown -h' 
-     alias nozzz='sudo killall shutdown'
-     alias noshutdown='sudo killall shutdown'
-     alias e='open ./' #MACOS
-     # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
-     ;;
-
-   Linux*Microsoft*)
-     echo 'WSL'  # Windows Subsystem for Linux
-
-     # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-     ;;
-
-   Linux*)
-
-     alias zzz='sudo shutdown -h' 
-     alias zzzz='shutdown -c'
-     alias noshutdown='shutdown -c'
-     alias debian='distrobox-enter debian12-distrobox'
-     alias flatpak-up='flatpak update -y && flatpak upgrade -y'
-     alias updateall='sudo echo "Aktualizacja!" && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm'
-     # alias e='nautilus ./' #GNOME
-     # alias e='nemo ./' #MINT
-     # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-     
-     # # Homebrew
-     # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-     ;;
-
-   CYGWIN*|MINGW*|MINGW32*|MSYS*)
-     echo 'MS Windows'
-     ;;
-
-   # Add here more strings to compare
-   # See correspondence table at the bottom of this answer
-
-   *)
-     echo 'Other OS' 
-     ;;
-esac
-
-######################
-# Global Aliases
-######################
-alias cl='clear'
-
-#bat for other
-if command -v bat &>/dev/null; then
-  # --style=plain - removes line numbers and git modifications
-  # --paging=never - doesnt pipe it through less
-  alias catt='bat --paging=never --style=plain'
-  alias cat='bat'
-  alias cata='bat --show-all --paging=never'
-fi
-
-#bat for ubuntu
-if command -v batcat &>/dev/null; then
-  # --style=plain - removes line numbers and git modifications
-  # --paging=never - doesnt pipe it through less
-  alias catt='batcat --paging=never --style=plain'
-  alias cat='batcat'
-  alias cata='batcat --show-all --paging=never'
-fi
-
-if command -v eza &>/dev/null
-then
-  EZA_CONFIG_DIR='~/.config/eza/'
-  alias ls="eza --color=always --git -1 --no-filesize --icons=always --no-time --no-user --no-permissions"
-  alias ll='eza --long --all --bytes --git --git-repos --icons=auto'
-  alias lld='eza --long -D -H --all --bytes --octal-permissions --total-size --git --git-repos --icons=auto --no-permissions'
-  alias llf='eza --long -f -H --all --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
-  alias tree='eza --tree --level=5 --icons=auto --git'
-fi
-
-#Git
-alias fsb='~/.scripts/fsb.sh'
-alias fshow='~/.scripts/fshow.sh'
-alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
-
-#Docker
-# alias dco="docker compose"
-# alias dps="docker ps"
-# alias dpa="docker ps -a"
-# alias dl="docker ps -l -q"
-# alias dx="docker exec -it"
+source $HOME/.scripts/zsh/autocomplete.zsh
 
 ######################
 # Editor
@@ -141,10 +51,6 @@ alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bol
 # helix
 export VISUAL=helix
 export EDITOR=helix
-# neovim
-alias v='nvim'
-alias kvim='NVIM_APPNAME="kickstart-nvim" nvim'
-alias tvim='NVIM_APPNAME="test-nvim" nvim'
 
 ######################
 # Functions 
@@ -194,87 +100,7 @@ function fsize() {
 # Pomodoro
 ######################
 
-declare -A pomo_options
-pomo_options["work"]="45"
-pomo_options["break"]="10"
-pomo_options["test"]="0.05"
-
-case "$(uname -sr)" in
-
-   Darwin*)
-    alias wo="timer ${pomo_options["work"]}m && terminal-notifier -message 'Pomodoro'\
-            -title 'Work Timer is up! Take a Break 😊'\
-            -appIcon '~/.scripts/pomodoro/assets/pomodoro.png'\
-            -sound Crystal"
-        
-    alias br="timer ${pomo_options["break"]}m && terminal-notifier -message 'Pomodoro'\
-            -title 'Break is over! Get back to work 😬'\
-            -appIcon '~/.scripts/pomodoro/assets/pomodoro.png'\
-            -sound Crystal"
-    alias test-pomodoro="timer ${pomo_options["test"]}m  && terminal-notifier -message 'Pomodoro'\
-            -title 'Test ended!'\
-            -appIcon '~/.scripts/pomodoro/assets/pomodoro.png'\
-            -sound Crystal"
-     ;;
-
-   Linux*)
-    
-    function pomodoro() {
-    if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
-       val=$1
-       echo $val | lolcat
-       timer ${pomo_options["$val"]}m
-       # spd-say "'$val' session done"
-    
-       if command -v play &>/dev/null; then
-          play $HOME/.scripts/pomodoro/assets/pomodoro.mp3 &>/dev/null
-       elif command -v ffplay &>/dev/null; then
-	  ffplay -autoexit -t '5' $HOME/.scripts/pomodoro/assets/pomodoro.mp3 -nodisp -nostats -hide_banner
-       else
-          echo "Koniec"
-       fi
-    fi
-    }
-
-    alias wo="pomodoro 'work'"
-    alias br="pomodoro 'break'"
-    alias pomodoro-test="pomodoro 'test'"
-    ;;
-
-   *)
-     echo 'Other OS' 
-     ;;
-esac
-
-function start-pomodoro() {
-    echo -n "How many rounds you want to do? "
-    read count	  
-
-    if [ -z $count ]; then
-    # Default loops
-      echo "Selected default option: 2"
-      count=2
-    fi
-
-    for i in $(seq 1 $count); do
-      if command -v lolcat &>/dev/null; then	      
-        echo "Round: $i" | lolcat
-      else
-	echo "Round: $i"
-      fi
-      wo
-      br
-    done
-}
-
-function change-pomo() {
-  if [ -n "$1" ] && [ -n "$2" ]; then
-     pomo_options["$1"]="$2"
-     echo "The $1 time has been changed to $2 minutes"
-  else
-     echo "Please provide valid parameters: change_pomo [work/break] [time_in_minutes]"
-  fi
-}
+source $HOME/.scripts/pomodoro/src/pomodoro-setup.sh
 
 ######################
 # Themes
@@ -292,7 +118,8 @@ function set-kitty-theme {
   $HOME/.config/kitty/lib/theme.sh
 }
 
-alias switch-kitty-mode='$HOME/.config/kitty/lib/switcher-light-dark.sh'
+# It's in .aliases
+#alias switch-kitty-mode='$HOME/.config/kitty/lib/switcher-light-dark.sh'
 
 bat cache --build > /dev/null 2>&1 # it's outside to update cache with downloaded custom themes
 
@@ -309,11 +136,6 @@ export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
 
 #bat
 # export BAT_THEME=gruvbox-dark
-
-#helix - dynamic theme
-alias hx-up='~/.config/helix/lib/bash.sh'
-alias set-helix-theme='~/.config/helix/lib/bash.sh' # for consistency
-
 
 ######################
 # Autosuggestions
@@ -414,18 +236,6 @@ _fzf_comprun() {
 # Zoxide
 ######################
 eval "$(zoxide init zsh)"
-alias cd='z'
-alias cdi'zi'
-alias cdd='cd -'
-
-######################
-# Directories
-######################
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
 
 ######################
 # VI Mode
