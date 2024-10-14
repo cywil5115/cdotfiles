@@ -7,136 +7,32 @@ export PATH=$HOME/.local/bin:$PATH
 ######################
 # Autocompletion settings
 ######################
-fpath=(~/.scripts/zsh/zsh-completions/src $fpath)
-# https://github.com/Phantas0s/.dotfiles/blob/master/zsh/completion.zsh
-# These have to be on the top, I remember I had issues with some autocompletions if not
-zmodload zsh/complist
-autoload -U compinit
-compinit
-_comp_options+=(globdots) # With hidden files
-# setopt MENU_COMPLETE        # Automatically highlight first element of completion menu
-setopt AUTO_LIST        # Automatically list choices on ambiguous completion.
-setopt COMPLETE_IN_WORD # Complete from both ends of a word.
-# Define completers
-zstyle ':completion:*' completer _extensions _complete _approximate
-# Use cache for commands using cache
-zstyle ':completion:*' use-cache on
-# You have to use $HOME, because since in "" it will be treated as a literal string
-zstyle ':completion:*' cache-path "$HOME/.zcompcache"
-# Complete the alias when _expand_alias is used as a function
-zstyle ':completion:*' complete true
-# Allow you to select in a menu
-zstyle ':completion:*' menu select
-# Autocomplete options for cd instead of directory stack
-zstyle ':completion:*' complete-options true
-zstyle ':completion:*' file-sort modification
-zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
-zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %D %d --%f'
-zstyle ':completion:*:*:*:*:messages' format ' %F{purple} -- %d --%f'
-zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
-# zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-# Colors for files and directory
-# zstyle ':completion:*:*:*:*:default' list-colors '${(s.:.)LS_COLORS}'
-
+if [ -f "$HOME/.scripts/zsh/zsh-completions/settings.zsh" ]; then
+source $HOME/.scripts/zsh/zsh-completions/settings.zsh
+fi
 ######################
 # Aliases for OS
 ######################
 
-source $HOME/.scripts/zsh/autocomplete.zsh
+  # Aliases are in $HOME/.aliases
+if [ -f "$HOME/.scripts/zsh/autocomplete-aliases.zsh" ]; then
+source $HOME/.scripts/zsh/autocomplete-aliases.zsh
+fi
 
 ######################
 # Editor
 ######################
 
-# helix
+  # helix
 export VISUAL=helix
 export EDITOR=helix
 
 ######################
 # Functions 
 ######################
-function lg()  {
-    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
-
-    lazygit "$@"
-
-    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
-            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
-            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
-    fi
-}
-
-function r() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
-function day {
-    date +"%a %b %d %Y"
-}
-alias dzien='day'
-  
-function bytesConvert {
-  if [[ $# -eq 0 ]]
-  then
-      read -p "Size in bytes: " bytesVal
-  else
-      bytesVal=$1
-  fi
-  echo $bytesVal | awk '{ split( "B KB MB GB TB PB EB ZB YB" , v ); s=1; while( $1>1024 && s<9 ){ $1/=1024; s++ } printf "%.2f %s", $1, v[s] }'
-}
-
-function fsize() {
-  filename=$1
-  size="$(wc --bytes $filename)"
-  bytesConvert $size
-}
-
-######################
-# Pomodoro
-######################
-
-source $HOME/.scripts/pomodoro/src/pomodoro-setup.sh
-
-######################
-# Themes
-######################
-
-function set-yazi-theme {
-  $HOME/.cdotfiles/yazi/.config/yazi/theme.sh
-}
-
-function set-eza-theme {
-  $HOME/.config/eza/theme.sh
-}
-
-function set-kitty-theme {
-  $HOME/.config/kitty/lib/theme.sh
-}
-
-# It's in .aliases
-#alias switch-kitty-mode='$HOME/.config/kitty/lib/switcher-light-dark.sh'
-
-bat cache --build > /dev/null 2>&1 # it's outside to update cache with downloaded custom themes
-
-function set-bat-theme {
-    bat cache --build
-    sleep 1 && clear
-    selTheme=$(bat --list-themes | fzf --preview="bat --theme={} --color=always ~/.zshrc")
-    echo $selTheme > $(bat --config-dir)/themes/current_theme
-    bat cache --build
-    source ~/.zshrc
-}
-
-export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
-
-#bat
-# export BAT_THEME=gruvbox-dark
-
+if [ -f "$HOME/.functions" ]; then
+source $HOME/.functions
+fi
 ######################
 # Autosuggestions
 ######################
@@ -149,6 +45,7 @@ fi
 ######################
 # History
 ######################
+
 # Current number of entries Zsh is configured to store in memory (HISTSIZE)
 # How many commands Zsh is configured to save to the history file (SAVEHIST)
 # echo "HISTSIZE: $HISTSIZE"
