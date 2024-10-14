@@ -1,0 +1,81 @@
+function lg()  {
+    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+    lazygit "$@"
+
+    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    fi
+}
+
+function r() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+function day {
+    date +"%a %b %d %Y"
+}
+alias dzien='day'
+  
+function bytesConvert {
+  if [[ $# -eq 0 ]]
+  then
+      read -p "Size in bytes: " bytesVal
+  else
+      bytesVal=$1
+  fi
+  echo $bytesVal | awk '{ split( "B KB MB GB TB PB EB ZB YB" , v ); s=1; while( $1>1024 && s<9 ){ $1/=1024; s++ } printf "%.2f %s", $1, v[s] }'
+}
+
+function fsize() {
+  filename=$1
+  size="$(wc --bytes $filename)"
+  bytesConvert $size
+}
+
+######################
+# Pomodoro
+######################
+
+source $HOME/.scripts/pomodoro/src/pomodoro-setup.sh
+
+######################
+# Themes
+######################
+
+function set-yazi-theme {
+  $HOME/.cdotfiles/yazi/.config/yazi/theme.sh
+}
+
+function set-eza-theme {
+  $HOME/.config/eza/theme.sh
+}
+
+function set-kitty-theme {
+  $HOME/.config/kitty/lib/theme.sh
+}
+
+# It's in .aliases
+#alias switch-kitty-mode='$HOME/.config/kitty/lib/switcher-light-dark.sh'
+
+bat cache --build > /dev/null 2>&1 # it's outside to update cache with downloaded custom themes
+
+function set-bat-theme {
+    bat cache --build
+    sleep 1 && clear
+    selTheme=$(bat --list-themes | fzf --preview="bat --theme={} --color=always ~/.zshrc")
+    echo $selTheme > $(bat --config-dir)/themes/current_theme
+    bat cache --build
+    source ~/.zshrc
+}
+
+export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
+
+#bat
+# export BAT_THEME=gruvbox-dark
