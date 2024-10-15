@@ -21,9 +21,9 @@ case "$(uname -sr)" in
      alias zzz='sudo shutdown -h' 
      alias zzzz='shutdown -c'
      alias noshutdown='shutdown -c'
-     alias debian='distrobox-enter debian12-distrobox'
-     alias flatpak-up='flatpak update -y && flatpak upgrade -y'
-     alias updateall='sudo echo "Aktualizacja!" && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm'
+     balias debian='distrobox-enter debian12-distrobox'
+     balias flatpak-up='flatpak update -y && flatpak upgrade -y'
+     balias updateall='sudo echo "Aktualizacja!" && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm'
      # alias e='nautilus ./' #GNOME
      # alias e='nemo ./' #MINT
      # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
