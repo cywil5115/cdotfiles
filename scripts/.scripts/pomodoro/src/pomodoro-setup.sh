@@ -96,17 +96,25 @@ function set-default-pomodoro(){
   
 defaults_file="$HOME/.scripts/pomodoro/src/defaults.sh"
 
-work=$1
-break=$2
+if [ -n "$1" ] && [ -n "$2" ]
+then  
+  work=$1
+  break=$2
 
   cat >"$defaults_file" <<EOF
-#!/bin/sh
+  #!/bin/sh
 
-declare -A pomo_options
-pomo_options["work"]="$work"
-pomo_options["break"]="$break"
-pomo_options["test"]="0.05"
+  declare -A pomo_options
+  pomo_options["work"]="$work"
+  pomo_options["break"]="$break"
+  pomo_options["test"]="0.05"
 
 EOF
+
+echo "Please restart kitty to set default pomodoro"
+
+else
+  echo "Usage: set-default-pomodoro [work time in minutes] [break time in minutes]"
+fi
 
 }
