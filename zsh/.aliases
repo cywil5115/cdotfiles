@@ -131,4 +131,4 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
-ialias switch-kitty-mode='$HOME/.config/kitty/lib/switcher-light-dark.sh'
+# ialias switch-kitty-mode='$HOME/.config/kitty/lib/switcher-light-dark.sh'
