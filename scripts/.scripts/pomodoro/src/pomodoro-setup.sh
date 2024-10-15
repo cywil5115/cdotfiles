@@ -21,6 +21,14 @@ case "$(uname -sr)" in
             -title 'Test ended!'\
             -appIcon '~/.scripts/pomodoro/assets/pomodoro.png'\
             -sound Crystal"
+
+    function custom-pomodoro(){
+      
+    timer $1m  && terminal-notifier -message 'Pomodoro'\
+            -title 'Custom Pomodoro ended!'\
+            -appIcon '~/.scripts/pomodoro/assets/pomodoro.png'\
+            -sound Crystal
+    }
      ;;
 
    Linux*)
