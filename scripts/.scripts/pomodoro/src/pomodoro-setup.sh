@@ -1,9 +1,11 @@
 #!/bin/sh
 
-declare -A pomo_options
-pomo_options["work"]="45"
-pomo_options["break"]="10"
-pomo_options["test"]="0.05"
+source $HOME/.scripts/pomodoro/src/defaults.sh
+
+# declare -A pomo_options
+# pomo_options["work"]="45"
+# pomo_options["break"]="10"
+# pomo_options["test"]="0.05"
 
 case "$(uname -sr)" in
 
@@ -90,3 +92,21 @@ function change-pomo() {
   fi
 }
 
+function set-default-pomodoro(){
+  
+defaults_file="$HOME/.scripts/pomodoro/src/defaults.sh"
+
+work=$1
+break=$2
+
+  cat >"$defaults_file" <<EOF
+#!/bin/sh
+
+declare -A pomo_options
+pomo_options["work"]="$work"
+pomo_options["break"]="$break"
+pomo_options["test"]="0.05"
+
+EOF
+
+}
