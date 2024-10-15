@@ -137,7 +137,7 @@ eval "$(zoxide init zsh)"
 ######################
 # VI Mode
 ######################
-bindkey jj vi-cmd-mode
+#bindkey jj vi-cmd-mode
 
 ######################
 # StarShip

@@ -8,16 +8,16 @@ pomo_options["test"]="0.05"
 case "$(uname -sr)" in
 
    Darwin*)
-    alias wo="timer ${pomo_options["work"]}m && terminal-notifier -message 'Pomodoro'\
+    ialias wo="timer ${pomo_options["work"]}m && terminal-notifier -message 'Pomodoro'\
             -title 'Work Timer is up! Take a Break 😊'\
             -appIcon '~/.scripts/pomodoro/assets/pomodoro.png'\
             -sound Crystal"
         
-    alias br="timer ${pomo_options["break"]}m && terminal-notifier -message 'Pomodoro'\
+    ialias br="timer ${pomo_options["break"]}m && terminal-notifier -message 'Pomodoro'\
             -title 'Break is over! Get back to work 😬'\
             -appIcon '~/.scripts/pomodoro/assets/pomodoro.png'\
             -sound Crystal"
-    alias test-pomodoro="timer ${pomo_options["test"]}m  && terminal-notifier -message 'Pomodoro'\
+    ialias test-pomodoro="timer ${pomo_options["test"]}m  && terminal-notifier -message 'Pomodoro'\
             -title 'Test ended!'\
             -appIcon '~/.scripts/pomodoro/assets/pomodoro.png'\
             -sound Crystal"
@@ -50,9 +50,9 @@ case "$(uname -sr)" in
     fi
     }
 
-    alias wo="pomodoro 'work'"
-    alias br="pomodoro 'break'"
-    alias pomodoro-test="pomodoro 'test'"
+    ialias wo="pomodoro 'work'"
+    ialias br="pomodoro 'break'"
+    ialias pomodoro-test="pomodoro 'test'"
     ;;
 
    *)
