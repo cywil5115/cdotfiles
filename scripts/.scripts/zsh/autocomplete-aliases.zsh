@@ -56,8 +56,8 @@ bindkey -M isearch " " magic-space
 
 
 # file completion patterns
-zstyle ':completion:*:*:vim:*' file-patterns '^*.(pdf|odt|ods|doc|docx|xls|xlsx|odp|ppt|pptx|mp4|mkv|aux):source-files' '*:all-files'
-zstyle ':completion:*:*:(build-workshop|build-document):*' file-patterns '*.adoc'
+# zstyle ':completion:*:*:vim:*' file-patterns '^*.(pdf|odt|ods|doc|docx|xls|xlsx|odp|ppt|pptx|mp4|mkv|aux):source-files' '*:all-files'
+# zstyle ':completion:*:*:(build-workshop|build-document):*' file-patterns '*.adoc'
 
 
 sourceIfExists() {
