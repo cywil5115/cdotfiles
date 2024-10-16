@@ -119,7 +119,7 @@ alias set-helix-theme='~/.config/helix/lib/bash.sh' # for consistency
 # Zoxide
 ######################
 ialias cd='z'
-alias cdi'zi'
+alias cdi='zi'
 alias cdd='cd -'
 
 ######################
