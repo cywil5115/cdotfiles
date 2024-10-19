@@ -83,3 +83,8 @@ export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
 
 #bat
 # export BAT_THEME=gruvbox-dark
+
+funtion check-ssh-connection() {
+
+    ss -at '( dport = :22 or sport = :22 )'
+}
