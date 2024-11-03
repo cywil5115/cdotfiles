@@ -23,7 +23,7 @@ case "$(uname -sr)" in
      alias noshutdown='shutdown -c'
      balias debian='distrobox-enter debian12-distrobox'
      balias flatpak-up='flatpak update -y && flatpak upgrade -y'
-     ialias updateall='if command -v lolcat &>/dev/null; then sudo echo Aktualizacja! | lolcat; else sudo echo Aktualizacja!; fi && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm && cd && sudo ./.scripts/grubfix-arch-efi.sh /boot/efi'
+     ialias updateall='if command -v lolcat &>/dev/null; then sudo echo Update! | lolcat; else sudo echo Update!; fi && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm && cd && sudo ./.scripts/grubfix-arch-efi.sh /boot/efi'
      # alias e='nautilus ./' #GNOME
      # alias e='nemo ./' #MINT
      # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
