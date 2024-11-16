@@ -7,7 +7,6 @@ fd
 fzf
 git
 helix
-jesseduffield/lazygit/lazygit
 neovim
 ripgrep
 starship

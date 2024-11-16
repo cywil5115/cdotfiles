@@ -1,4 +1,3 @@
-age
 bat
 btop
 cmake
@@ -10,9 +9,7 @@ fd
 fzf
 git
 go
-go@1.22
 helix
-jandedobbeleer/oh-my-posh/oh-my-posh
 jesseduffield/lazygit/lazygit
 librsvg
 luarocks
@@ -21,7 +18,6 @@ marksman
 neovim
 ninja
 pandoc
-pipx
 ranger
 ripgrep
 ruby
@@ -30,7 +26,6 @@ slides
 starship
 stow
 swig
-taskell
 tldr
 tmux
 unzip
