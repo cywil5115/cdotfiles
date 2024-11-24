@@ -10,6 +10,7 @@ export PATH=$HOME/.local/bin:$PATH
 if [ -f "$HOME/.scripts/zsh/zsh-completions/settings.zsh" ]; then
 source $HOME/.scripts/zsh/zsh-completions/settings.zsh
 fi
+
 ######################
 # Aliases for OS
 ######################
