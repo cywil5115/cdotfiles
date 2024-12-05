@@ -11,6 +11,9 @@ if [ -f "$HOME/.scripts/zsh/zsh-completions/settings.zsh" ]; then
 source $HOME/.scripts/zsh/zsh-completions/settings.zsh
 fi
 
+bindkey '^I'   complete-word       # tab          | complete
+bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
+
 ######################
 # Aliases for OS
 ######################
