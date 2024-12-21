@@ -31,9 +31,9 @@ fi
 if ! command -v hx; then
   alias hx="helix"
 fi
+
 export VISUAL=helix
 export EDITOR=helix
-
 ######################
 # Functions 
 ######################

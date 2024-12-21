@@ -15,7 +15,8 @@ yazi-choose-theme () {
 # : Flavor {{{
 
 [flavor]
-use = "$chosen_theme"
+dark= "$chosen_theme"
+light= "$chosen_theme"
 
 EOF
 }

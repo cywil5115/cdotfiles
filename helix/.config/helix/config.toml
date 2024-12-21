@@ -7,8 +7,8 @@ mouse = true
 bufferline = "multiple"
 # Highlight all lines with a cursor
 cursorline = true
-# Show a ruler at column 120
-rulers = [120]
+# Show a ruler at column 120 but I don't like it
+# rulers = [120]
 # Force the theme to show colors
 true-color = true
 
