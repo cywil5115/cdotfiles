@@ -28,7 +28,7 @@ fi
 ######################
 
 # helix
-if ! command -v hx; then
+if ! command -v hx &>/dev/null; then
   alias hx="helix"
 fi
 
