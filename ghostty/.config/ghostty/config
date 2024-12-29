@@ -1,0 +1,6 @@
+theme="vesper"
+
+command = zsh
+
+font-size=15
+fullscreen=true
