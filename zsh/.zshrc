@@ -18,7 +18,7 @@ bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 # Aliases for OS
 ######################
 
-  # Aliases are in $HOME/.aliases
+# Aliases are in $HOME/.aliases
 if [ -f "$HOME/.scripts/zsh/autocomplete-aliases.zsh" ]; then
 source $HOME/.scripts/zsh/autocomplete-aliases.zsh
 fi

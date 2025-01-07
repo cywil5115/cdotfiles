@@ -1,6 +1,12 @@
-theme="vesper"
-
+# Theme
+theme = "Solarized Dark Higher Contrast (resources)"
+# zsh if it's not default
 command = zsh
 
-font-size=15
-fullscreen=true
+# Fonts
+font-size = 16
+
+# Options
+adjust-cell-height = 15%
+window-save-state = always
+keybind = alt+s>r=reload_config
