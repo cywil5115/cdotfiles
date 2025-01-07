@@ -1,5 +1,5 @@
 # Theme
-theme = "Solarized Dark Higher Contrast (resources)"
+theme = "tokyonight"
 # zsh if it's not default
 command = zsh
 
