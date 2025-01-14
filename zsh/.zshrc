@@ -24,6 +24,20 @@ source $HOME/.scripts/zsh/autocomplete-aliases.zsh
 fi
 
 ######################
+# MacOS
+######################
+
+case "$(uname -sr)" in
+   Darwin*)
+
+    if [ -f $HOME/.zprofile ]; then
+      touch .zprofile
+    fi
+    source $HOME/.zprofile
+    ;;
+esac
+
+######################
 # Editor
 ######################
 

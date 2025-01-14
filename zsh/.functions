@@ -99,7 +99,7 @@ function switch-kitty-mode(){
 	$HOME/.config/kitty/lib/switcher-light-dark.sh "$@" 
 }
 
-bat cache --build > /dev/null 2>&1 # it's outside to update cache with downloaded custom themes
+#bat cache --build > /dev/null 2>&1 # it's outside to update cache with downloaded custom themes
 
 function set-bat-theme {
     bat cache --build
@@ -107,15 +107,11 @@ function set-bat-theme {
     selTheme=$(bat --list-themes | fzf --preview="bat --theme={} --color=always ~/.zshrc")
     echo $selTheme > $(bat --config-dir)/themes/current_theme
     bat cache --build
+    export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
     source ~/.zshrc
 }
 
-export BAT_THEME=$(< $(bat --config-dir)/themes/current_theme)
-
-#bat
-# export BAT_THEME=gruvbox-dark
-
-funtion check-ssh-connection() {
+function check-ssh-connection() {
 
     ss -at '( dport = :22 or sport = :22 )'
 }
