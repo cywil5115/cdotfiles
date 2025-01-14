@@ -46,8 +46,8 @@ if ! command -v hx &>/dev/null; then
   alias hx="helix"
 fi
 
-export VISUAL=helix
-export EDITOR=helix
+export VISUAL=hx
+export EDITOR=hx
 ######################
 # Functions 
 ######################
