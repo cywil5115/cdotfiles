@@ -39,6 +39,7 @@ X = "select_line_above"
 "A-w" = ":buffer-close"
 "A-/" = "repeat_last_motion"
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+C-x = ":reset-diff-change"
 
 [keys.select]
 A-x = "extend_to_line_bounds"
