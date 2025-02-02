@@ -70,6 +70,31 @@ function pkill() {
   ' --
 }
 
+# Copy file with a progress bar
+function cpp() {
+	if [[ -x "$(command -v rsync)" ]]; then
+		# rsync -avh --progress "${1}" "${2}"
+		rsync -ah --info=progress2 "${1}" "${2}"
+	else
+		set -e
+		strace -q -ewrite cp -- "${1}" "${2}" 2>&1 \
+		| awk '{
+		count += $NF
+		if (count % 10 == 0) {
+			percent = count / total_size * 100
+			printf "%3d%% [", percent
+			for (i=0;i<=percent;i++)
+				printf "="
+				printf ">"
+				for (i=percent;i<100;i++)
+					printf " "
+					printf "]\r"
+				}
+			}
+		END { print "" }' total_size=$(stat -c '%s' "${1}") count=0
+	fi
+}
+
 ######################
 # Pomodoro
 ######################
@@ -111,7 +136,68 @@ function set-bat-theme {
     source ~/.zshrc
 }
 
+STREAM_ON=true
+function stream-mode() {
+ 
+    if [[ $# -eq 0 ]]
+    then
+        if $STREAM_ON ; then
+            echo "Stream mode is now ON"
+        else
+            echo "Stream mode is now OFF"
+        fi
+
+        echo "Use 'stream-mode switch' to change mode."
+    else
+        if [[ $1 == switch ]]; then
+            if $STREAM_ON ; then
+                STREAM_ON=false
+                echo "Stream mode is changed now to OFF"
+                echo $STREAM_ON
+            else
+                STREAM_ON=true
+                echo "Stream mode is changed now ON"
+                echo $STREAM_ON
+            fi
+        else
+            echo "Use 'stream-mode switch' to change mode."
+        fi
+    fi
+}
+
 function check-ssh-connection() {
 
     ss -at '( dport = :22 or sport = :22 )'
+}
+
+# Get local IP addresses
+if [[ -x "$(command -v ip)" ]]; then
+    alias iplocal="ip -br -c a"
+else
+    alias iplocal="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+fi
+
+# Get public IP addresses
+function ipexternal(){
+
+    if $STREAM_ON ; then
+        echo "Stream Mode is ON!!!"
+    fi
+
+    echo "Are you sure?[y/n]: "
+    read decision
+
+    sleep 1
+
+    if [[ $decision == "y" ]] ; then
+        if $STREAM_ON ; then
+            echo "If you are streaming, I just saved you!!!"
+        else
+            if [[ -x "$(command -v curl)" ]]; then
+                curl -s ifconfig.me && echo
+            elif [[ -x "$(command -v wget)" ]]; then
+                wget -qO- ifconfig.me && echo
+            fi
+        fi
+    fi
 }
