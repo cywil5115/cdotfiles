@@ -11,6 +11,7 @@ if [ -f "$HOME/.scripts/zsh/zsh-completions/settings.zsh" ]; then
 source $HOME/.scripts/zsh/zsh-completions/settings.zsh
 fi
 
+# test
 bindkey '^I'   complete-word       # tab          | complete
 bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 bindkey '^k' history-search-backward
