@@ -18,6 +18,8 @@ bindkey '^j' history-search-forward
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 bindkey '^H' backward-word
 bindkey '^D' kill-line
+bindkey '^L' forward-word
+
 
 #######################################################
 # ZSH Basic Options
