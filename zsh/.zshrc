@@ -15,9 +15,9 @@ bindkey '^I'   complete-word       # tab          | complete
 bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
-bindkey "^[[A" history-beginning-search-backward  # search history with up key
-bindkey "^[[B" history-beginning-search-forward   # search history with down key
 bindkey -M menuselect '^[[Z' reverse-menu-complete
+bindkey '^H' backward-word
+bindkey '^D' kill-line
 
 #######################################################
 # ZSH Basic Options
