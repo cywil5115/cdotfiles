@@ -1,5 +1,5 @@
 # Theme
-theme = "tokyonight"
+theme = "rose-pine"
 # zsh if it's not default
 command = zsh
 
