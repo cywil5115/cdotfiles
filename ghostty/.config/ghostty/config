@@ -2,6 +2,8 @@
 theme = "rose-pine"
 # zsh if it's not default
 command = zsh
+background-opacity = 0.91
+background-blur = 7
 
 # Fonts
 font-size = 16
