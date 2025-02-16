@@ -18,5 +18,12 @@ use = "yazi-rs/plugins:chmod"
 rev = "8945e54"
 hash = "f28138c2e11e87962b66d583fef724c3"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "ashen-org/ashen:ashen"
+rev = "c436652"
+hash = "a6f097910912721681300869a94d1fd8"
+
+[[flavor.deps]]
+use = "marcosvnmelo/kanagawa-dragon"
+rev = "2ddff30"
+hash = "c9e9fcf6b11c9fe63d4ac7c9408f628c"
