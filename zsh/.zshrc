@@ -20,6 +20,11 @@ bindkey '^H' backward-word
 bindkey '^D' kill-line
 bindkey '^L' forward-word
 
+# Edit cmd in editor
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
 
 #######################################################
 # ZSH Basic Options
