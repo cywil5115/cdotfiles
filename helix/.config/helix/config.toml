@@ -11,6 +11,11 @@ cursorline = true
 # rulers = [120]
 # Force the theme to show colors
 true-color = true
+color-modes = true
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
 
 [editor.statusline]
 mode.normal = "NORMAL"
