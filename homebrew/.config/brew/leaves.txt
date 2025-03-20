@@ -15,6 +15,7 @@ librsvg
 luarocks
 make
 marksman
+mediainfo
 neovim
 ninja
 pandoc
