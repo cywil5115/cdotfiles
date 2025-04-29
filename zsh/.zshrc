@@ -67,13 +67,13 @@ esac
 ######################
 
 # helix
-if ! command -v hx &>/dev/null; then
-  alias hx="helix"
-fi
+# if ! command -v hx &>/dev/null; then
+#   alias hx="helix"
+# fi
 
-export VISUAL=helix
-export EDITOR=helix
-export SUDO_EDITOR=helix
+export VISUAL=hx
+export EDITOR=hx
+export SUDO_EDITOR=hx
 
 ######################
 # Functions 

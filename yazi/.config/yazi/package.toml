@@ -18,11 +18,6 @@ use = "yazi-rs/plugins:chmod"
 rev = "beb586a"
 hash = "f28138c2e11e87962b66d583fef724c3"
 
-[[plugin.deps]]
-use = "boydaihungst/mediainfo"
-rev = "f565c5a"
-hash = "15d0dbb4e9ba84eb1f2dbb8e9e249bf6"
-
 [[flavor.deps]]
 use = "ashen-org/ashen:ashen"
 rev = "c436652"

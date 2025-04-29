@@ -1,5 +1,5 @@
 # Theme
-theme = "vesper"
+theme = "Kanagawa Wave"
 # zsh if it's not default
 command = zsh
 background-opacity = 0.98
