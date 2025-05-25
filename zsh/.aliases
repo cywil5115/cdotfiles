@@ -4,6 +4,7 @@ case "$(uname -sr)" in
      
      alias zzz='sudo shutdown -h' 
      alias nozzz='sudo killall shutdown'
+     alias zzzz='sudo killall shutdown'
      alias noshutdown='sudo killall shutdown'
      alias e='open ./' #MACOS
      # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
