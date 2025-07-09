@@ -33,10 +33,10 @@ if not type -q hx
 end
 
 # Ustaw preferowany edytor zależnie od dostępności
-if type -q hx
-    set -gx EDITOR hx
-else if type -q helix
+if type -q helix
     set -gx EDITOR helix
+else if type -q hx
+    set -gx EDITOR hx
 else if type -q nvim
     set -gx EDITOR nvim
 else if type -q micro

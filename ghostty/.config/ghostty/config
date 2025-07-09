@@ -1,12 +1,12 @@
 # Theme
 theme = "Kanagawa Wave"
 # zsh if it's not default
-command = zsh
-background-opacity = 0.98
+# command = zsh
+background-opacity = 0.85
 background-blur = 17
 
 # Fonts
-font-size = 19
+font-size = 13
 
 # Options
 adjust-cell-height = 15%
