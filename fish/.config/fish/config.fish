@@ -16,7 +16,7 @@ set -gx PATH $HOME/.local/bin $PATH
 ########################################
 
 # Key bindings
-bind \t complete
+bind \t accept-autosuggestion
 bind \cl forward-word
 bind \cd kill-line
 bind \ch backward-word
