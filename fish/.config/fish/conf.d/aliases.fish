@@ -1,6 +1,3 @@
-########################################
-# 🧠 Rozpoznawanie systemu
-########################################
 switch (uname -sr)
     case "Darwin*"
         abbr zzz "sudo shutdown -h"
@@ -18,7 +15,6 @@ switch (uname -sr)
         alias noshutdown="shutdown -c"
         alias debian="distrobox-enter debian12-distrobox"
         alias flatpak-up="flatpak update -y && flatpak upgrade -y"
-        # Możesz odkomentować odpowiedni alias w zależności od środowiska graficznego
         # abbr e "nautilus ./"
         # abbr e "nemo ./"
 
@@ -29,9 +25,6 @@ switch (uname -sr)
         echo 'Other OS'
 end
 
-########################################
-# 🧼 Globalne abbr
-########################################
 abbr cl clear
 
 ########################################
@@ -65,10 +58,9 @@ end
 ########################################
 alias fsb="~/.scripts/fsb.sh"
 alias fshow="~/.scripts/fshow.sh"
-alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
 ########################################
-# 🐳 Docker (możesz odkomentować)
+# 🐳 Docker 
 ########################################
 # abbr dco "docker compose"
 # abbr dps "docker ps"
@@ -80,14 +72,6 @@ alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bol
 # 📝 Neovim
 ########################################
 abbr v nvim
-alias kvim='NVIM_APPNAME="kickstart-nvim" nvim'
-alias tvim='NVIM_APPNAME="test-nvim" nvim'
-
-########################################
-# 🧠 Helix
-########################################
-alias hx-up='~/.config/helix/lib/bash.sh'
-alias set-helix-theme='~/.config/helix/lib/bash.sh'
 
 ########################################
 # 📁 Zoxide

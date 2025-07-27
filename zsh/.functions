@@ -48,19 +48,6 @@ function fsize() {
   bytesConvert $size
 }
 
-function manual() {
-    if command -v fzf >/dev/null 2>&1; then
-        # If fzf is available, use it for searching
-        local page=$(command man -k . | fzf --prompt='Man> ' | awk '{print $1}')
-        if [[ -n $page ]]; then
-            nvim +"Man $page | only"
-        fi
-    else
-        # If fzf is not available, use the argument directly
-        nvim +"Man $1 | only"
-    fi
-}
-
 function pkill() {
   ps aux | 
   fzf --height 40% \
@@ -129,7 +116,6 @@ function set-kitty-theme {
 # It's in .aliases
 #alias switch-kitty-mode='$HOME/.config/kitty/lib/switcher-light-dark.sh'
 function switch-kitty-mode(){
-
 	$HOME/.config/kitty/lib/switcher-light-dark.sh "$@" 
 }
 
@@ -145,37 +131,7 @@ function set-bat-theme {
     source ~/.zshrc
 }
 
-STREAM_ON=true
-function stream-mode() {
- 
-    if [[ $# -eq 0 ]]
-    then
-        if $STREAM_ON ; then
-            echo "Stream mode is now ON"
-        else
-            echo "Stream mode is now OFF"
-        fi
-
-        echo "Use 'stream-mode switch' to change mode."
-    else
-        if [[ $1 == switch ]]; then
-            if $STREAM_ON ; then
-                STREAM_ON=false
-                echo "Stream mode is changed now to OFF"
-                echo $STREAM_ON
-            else
-                STREAM_ON=true
-                echo "Stream mode is changed now ON"
-                echo $STREAM_ON
-            fi
-        else
-            echo "Use 'stream-mode switch' to change mode."
-        fi
-    fi
-}
-
 function check-ssh-connection() {
-
     ss -at '( dport = :22 or sport = :22 )'
 }
 
@@ -185,28 +141,3 @@ if [[ -x "$(command -v ip)" ]]; then
 else
     alias iplocal="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 fi
-
-# Get public IP addresses
-function ipexternal(){
-
-    if $STREAM_ON ; then
-        echo "Stream Mode is ON!!!"
-    fi
-
-    echo "Are you sure?[y/n]: "
-    read decision
-
-    sleep 1
-
-    if [[ $decision == "y" ]] ; then
-        if $STREAM_ON ; then
-            echo "If you are streaming, I just saved you!!!"
-        else
-            if [[ -x "$(command -v curl)" ]]; then
-                curl -s ifconfig.me && echo
-            elif [[ -x "$(command -v wget)" ]]; then
-                wget -qO- ifconfig.me && echo
-            fi
-        fi
-    fi
-}

@@ -1,5 +1,5 @@
 # Theme
-theme = "Kanagawa Wave"
+theme = "nord"
 # zsh if it's not default
 # command = zsh
 background-opacity = 0.87
@@ -9,6 +9,6 @@ background-blur = 50
 font-size = 13
 
 # Options
-adjust-cell-height = 15%
+adjust-cell-height = 10%
 window-save-state = always
 keybind = alt+s>r=reload_config

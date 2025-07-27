@@ -21,7 +21,7 @@ end
 function day
     date "+%a %b %d %Y"
 end
-abbr dzien 'day'
+abbr dzien day
 
 function bytesConvert
     if test (count $argv) -eq 0
@@ -36,17 +36,6 @@ function fsize
     set filename $argv[1]
     set size (wc -c < $filename)
     bytesConvert $size
-end
-
-function manual
-    if type -q fzf
-        set page (man -k . | fzf --prompt='Man> ' | awk '{print $1}')
-        if test -n "$page"
-            nvim "+Man $page | only"
-        end
-    else
-        nvim "+Man $argv[1] | only"
-    end
 end
 
 function pkill
@@ -95,47 +84,6 @@ function set-bat-theme
     source ~/.config/fish/config.fish
 end
 
-set -g STREAM_ON true
-function stream-mode
-    if test (count $argv) -eq 0
-        if test $STREAM_ON = true
-            echo "Stream mode is now ON"
-        else
-            echo "Stream mode is now OFF"
-        end
-        echo "Use 'stream-mode switch' to change mode."
-    else if test $argv[1] = switch
-        if test $STREAM_ON = true
-            set -g STREAM_ON false
-            echo "Stream mode is changed now to OFF"
-        else
-            set -g STREAM_ON true
-            echo "Stream mode is changed now to ON"
-        end
-    else
-        echo "Use 'stream-mode switch' to change mode."
-    end
-end
-
 function check-ssh-connection
     ss -at '( dport = :22 or sport = :22 )'
-end
-
-function ipexternal
-    if test $STREAM_ON = true
-        echo "Stream Mode is ON!!!"
-    end
-    read -l -P "Are you sure? [y/n]: " decision
-    sleep 1
-    if test "$decision" = y
-        if test $STREAM_ON = true
-            echo "If you are streaming, I just saved you!!!"
-        else if type -q curl
-            curl -s ifconfig.me
-            echo
-        else if type -q wget
-            wget -qO- ifconfig.me
-            echo
-        end
-    end
 end

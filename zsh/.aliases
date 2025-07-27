@@ -8,13 +8,6 @@ case "$(uname -sr)" in
      alias noshutdown='sudo killall shutdown'
      alias e='open ./' #MACOS
      # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
-     ;;
-
-   Linux*Microsoft*)
-     echo 'WSL'  # Windows Subsystem for Linux
-
-     # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
      ;;
 
    Linux*)
@@ -28,14 +21,6 @@ case "$(uname -sr)" in
      # alias e='nautilus ./' #GNOME
      # alias e='nemo ./' #MINT
      # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-     
-     # # Homebrew
-     # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-     ;;
-
-   CYGWIN*|MINGW*|MINGW32*|MSYS*)
-     echo 'MS Windows'
      ;;
 
    # Add here more strings to compare
@@ -52,7 +37,7 @@ esac
 alias cl='clear'
 
 ######################
-# bat for other
+# bat
 ######################
 if command -v bat &>/dev/null; then
   # --style=plain - removes line numbers and git modifications
@@ -74,7 +59,7 @@ if command -v batcat &>/dev/null; then
 fi
 
 ######################
-# Eza
+# eza
 ######################
 if command -v eza &>/dev/null
 then
@@ -106,15 +91,6 @@ alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bol
 # neovim
 ######################
 alias v='nvim'
-ialias kvim='NVIM_APPNAME="kickstart-nvim" nvim'
-ialias tvim='NVIM_APPNAME="test-nvim" nvim'
-
-
-######################
-# helix - dynamic theme
-######################
-alias hx-up='~/.config/helix/lib/bash.sh'
-alias set-helix-theme='~/.config/helix/lib/bash.sh' # for consistency
 
 ######################
 # Zoxide
@@ -131,5 +107,3 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
-
-# ialias switch-kitty-mode='$HOME/.config/kitty/lib/switcher-light-dark.sh'
