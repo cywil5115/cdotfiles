@@ -1,4 +1,4 @@
-  #!/bin/sh
+  #!usr/bin/env sh
 
   declare -A pomo_options
   pomo_options["work"]="45"

@@ -1,3 +1,6 @@
+######################
+# OS Aliases
+######################
 case "$(uname -sr)" in
 
    Darwin*)
@@ -15,16 +18,13 @@ case "$(uname -sr)" in
      alias zzz='sudo shutdown -h' 
      alias zzzz='shutdown -c'
      alias noshutdown='shutdown -c'
-     balias debian='distrobox-enter debian12-distrobox'
-     balias flatpak-up='flatpak update -y && flatpak upgrade -y'
-     ialias updateall='if command -v lolcat &>/dev/null; then sudo echo Update! | lolcat; else sudo echo Update!; fi && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm && cd && sudo ./.scripts/grubfix-arch-efi.sh /boot/efi'
+     alias debian='distrobox-enter debian12-distrobox'
+     alias flatpak-up='flatpak update -y && flatpak upgrade -y'
+     alias updateall='if command -v lolcat &>/dev/null; then sudo echo Update! | lolcat; else sudo echo Update!; fi && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm && cd && sudo ./.scripts/grubfix-arch-efi.sh /boot/efi'
      # alias e='nautilus ./' #GNOME
      # alias e='nemo ./' #MINT
      # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
      ;;
-
-   # Add here more strings to compare
-   # See correspondence table at the bottom of this answer
 
    *)
      echo 'Other OS' 
@@ -42,9 +42,9 @@ alias cl='clear'
 if command -v bat &>/dev/null; then
   # --style=plain - removes line numbers and git modifications
   # --paging=never - doesnt pipe it through less
-  ialias catt='bat --paging=never --style=plain'
+  alias catt='bat --paging=never --style=plain'
   alias cat='bat'
-  ialias cata='bat --show-all --paging=never'
+  alias cata='bat --show-all --paging=never'
 fi
 
 ######################
@@ -53,9 +53,9 @@ fi
 if command -v batcat &>/dev/null; then
   # --style=plain - removes line numbers and git modifications
   # --paging=never - doesnt pipe it through less
-  ialias catt='batcat --paging=never --style=plain'
+  alias catt='batcat --paging=never --style=plain'
   alias cat='batcat'
-  ialias cata='batcat --show-all --paging=never'
+  alias cata='batcat --show-all --paging=never'
 fi
 
 ######################
@@ -64,38 +64,29 @@ fi
 if command -v eza &>/dev/null
 then
   EZA_CONFIG_DIR='~/.config/eza/'
-  ialias ls="eza --color=always --git -1 --no-filesize --icons=always --no-time --no-user --no-permissions"
-  ialias ll='eza --long --all --bytes --git --git-repos --icons=auto'
-  ialias lld='eza --long -D -H --all --bytes --octal-permissions --total-size --git --git-repos --icons=auto --no-permissions'
-  ialias llf='eza --long -f -H --all --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
-  ialias tree='eza --tree --level=5 --icons=auto --git'
+  alias ls="eza --color=always --git -1 --no-filesize --icons=always --no-time --no-user --no-permissions"
+  alias ll='eza --long --all --bytes --git --git-repos --icons=auto'
+  alias lld='eza --long -D -H --all --bytes --octal-permissions --total-size --git --git-repos --icons=auto --no-permissions'
+  alias llf='eza --long -f -H --all --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
+  alias tree='eza --tree --level=5 --icons=auto --git'
 fi
 
 ######################
 # Git
 ######################
-ialias fsb='~/.scripts/fsb.sh'
-ialias fshow='~/.scripts/fshow.sh'
+alias fsb='~/.scripts/fsb.sh'
+alias fshow='~/.scripts/fshow.sh'
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
 ######################
-# Docker
-######################
-# alias dco="docker compose"
-# alias dps="docker ps"
-# alias dpa="docker ps -a"
-# alias dl="docker ps -l -q"
-# alias dx="docker exec -it"
-
-######################
-# neovim
+# Neovim
 ######################
 alias v='nvim'
 
 ######################
 # Zoxide
 ######################
-ialias cd='z'
+alias cd='z'
 alias cdi='zi'
 alias cdd='cd -'
 
