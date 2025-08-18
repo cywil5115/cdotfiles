@@ -100,7 +100,7 @@ source $HOME/.scripts/pomodoro/src/pomodoro-setup.sh
 ######################
 
 function set-yazi-theme {
-  $HOME/.cdotfiles/yazi/.config/yazi/theme.sh
+  $HOME/.cdotfiles/yazi/.config/yazi/theme.sh "$@"
 }
 
 function set-eza-theme {
