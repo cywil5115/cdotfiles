@@ -60,9 +60,11 @@ if ! command -v hx &>/dev/null; then
   export SUDO_EDITOR=helix
 fi
 
-export VISUAL=hx
-export EDITOR=hx
-export SUDO_EDITOR=hx
+if ! command -v helix &>/dev/null; then
+  export VISUAL=hx
+  export EDITOR=hx
+  export SUDO_EDITOR=hx
+fi
 
 ######################
 # Functions 

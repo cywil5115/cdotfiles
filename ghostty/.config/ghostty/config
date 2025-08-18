@@ -1,8 +1,9 @@
 # Theme
-theme = "nord"
-# zsh if it's not default
+theme = "themecywil"
+
+ # zsh if it's not default
 # command = zsh
-background-opacity = 0.87
+background-opacity = 0.95
 background-blur = 50
 
 # Fonts
