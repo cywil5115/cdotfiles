@@ -147,7 +147,7 @@ eval "$(zoxide init zsh)"
 ######################
 if command -v starship 2>&1 > /dev/null
 then
-  export STARSHIP_CONFIG=$HOME/.config/active-config.toml
+  export STARSHIP_CONFIG=$HOME/.config/starship/active-config.toml
   eval "$(starship init zsh)"
 fi
 

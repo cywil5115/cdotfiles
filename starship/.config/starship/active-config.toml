@@ -14,7 +14,7 @@ $character"""
 style = "blue"
 
 [character]
-success_symbol = "[❯](purple)"
+success_symbol = "[❯](yellow)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](blue)"
 
@@ -22,7 +22,6 @@ vimcmd_symbol = "[❮](blue)"
 format = "[$branch]($style)"
 style = "bright-blue"
 symbol = '🌱 '
-
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
@@ -80,8 +79,6 @@ symbol = '💧 '
 
 [zig]
 symbol = '⚡️ '
-
-
 
 
 [container]
