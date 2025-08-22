@@ -84,6 +84,29 @@ alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bol
 alias v='nvim'
 
 ######################
+# Nix
+######################
+if command -v nix 2>&1 > /dev/null
+then
+case "$(uname -sr)" in
+
+   Darwin*)
+     
+     alias fup="'cd' /etc/nix-darwin && nix flake update && sudo darwin-rebuild switch --flake .#prodrinz && 'cd' -"
+     alias genlist='sudo darwin-rebuild --list-generations'
+     ;;
+
+   Linux*)
+    # nothing for now, maybe change location later
+     ;;
+
+   *)
+    # nothing for now, maybe change location later
+     ;;
+esac
+fi
+
+######################
 # Zoxide
 ######################
 alias cd='z'
