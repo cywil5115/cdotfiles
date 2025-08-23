@@ -40,7 +40,7 @@ setopt promptsubst         # enable command substitution in prompt
 case "$(uname -sr)" in
    Darwin*)
 
-    clear # because I don't want to see last login when shell starts
+    touch ~/.hushlogin # because I don't want to see last login when shell starts
 
     if [ ! -f $HOME/.zprofile ]; then
       touch $HOME/.zprofile
