@@ -92,8 +92,9 @@ case "$(uname -sr)" in
 
    Darwin*)
      
-     alias fup="'cd' /etc/nix-darwin && nix flake update && sudo darwin-rebuild switch --flake .#prodrinz && 'cd' -"
+     alias genclean='sudo nix-collect-garbage --delete-older-than 7d'
      alias genlist='sudo darwin-rebuild --list-generations'
+     alias fup="sudo echo Update flake && 'cd' /etc/nix-darwin && nix flake update && sudo darwin-rebuild switch --flake .#prodrinz && sudo nix-collect-garbage --delete-older-than 30d && 'cd' -"
      ;;
 
    Linux*)
