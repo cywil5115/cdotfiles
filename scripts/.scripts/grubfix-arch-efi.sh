@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 #Fix the grub boot on arch linux.
 #Use it after you chrooted into the main system from live iso

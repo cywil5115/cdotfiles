@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Fuzzy search Git branches in a repo
 # Looks for local and remote branches
