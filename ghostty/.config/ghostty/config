@@ -13,4 +13,4 @@ font-family = "CommitMono Nerd Font"
 # Options
 adjust-cell-height = 10%
 window-save-state = always
-keybind = alt+s>r=reload_config
+# keybind = alt+s>r=reload_config
