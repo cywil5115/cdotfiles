@@ -1,16 +1,13 @@
 # Theme
-theme = "themecywil"
-
- # zsh if it's not default
-# command = zsh
-background-opacity = 0.95
+theme = "nightfox"
+background-opacity = 0.97
 background-blur = 50
 
 # Fonts
 font-size = 19
 font-family = "CommitMono Nerd Font"
+adjust-cell-height = 37%
 
 # Options
-adjust-cell-height = 10%
 window-save-state = always
-# keybind = alt+s>r=reload_config
+mouse-hide-while-typing = true

@@ -1,4 +1,5 @@
 export PATH=$HOME/.local/bin:$PATH
+[ -d $HOME/Projects/code/odin/Odin ] && export PATH=$HOME/Projects/code/odin/Odin:$PATH
 
 ######################
 # Autocompletion settings

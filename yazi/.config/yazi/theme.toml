@@ -5,6 +5,6 @@
 
 # flavor taken from: https://github.com/dangooddd/kanagawa.yazi
 # : Flavor {{{
-# [flavor]
-# dark= ""
-# light= ""
+[flavor]
+dark= "kanagawa-dragon"
+light= "kanagawa-dragon"
