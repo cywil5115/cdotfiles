@@ -33,6 +33,13 @@ setopt nonomatch           # hide error message if there is no match for the pat
 setopt notify              # report the status of background jobs immediately
 setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
+zstyle ':completion:*' special-dirs true # force . and .. to show in cmp menu
+zstyle ':completion:*' squeeze-slashes false # explicit disable to allow /*/ expansion
+setopt auto_param_slash # when a dir is completed, add a / instead of a trailing space
+setopt no_case_glob no_case_match # make cmp case insensitive
+setopt globdots # include dotfiles (example: .file)
+setopt extended_glob # match ~ # ^
+setopt interactive_comments # allow comments in shell
 
 ######################
 # MacOS
