@@ -1,0 +1,53 @@
+# Słowa kluczowe i operatory ("import", "proc", "for", "::", ":=")
+"keyword" = "pink"
+"operator" = "pink"
+
+# Nazwy funkcji, typów i metod ("Println", "InitWindow", "Vector2")
+"function" = "blue"
+"type" = "blue"
+"variable.other.member" = "blue"
+
+# Ciągi znaków ("Hello YouTube", "Raylib was here")
+"string" = "cyan"
+
+# Nazwy modułów/bibliotek ("rl", "fmt")
+"namespace" = "yellow"
+
+# Stałe i wartości predefiniowane ("rl.BLACK", "rl.RED")
+"constant.builtin" = "purple"
+
+# Liczby (800, 600, 20, 100)
+"constant.numeric" = "orange"
+
+# Zmienne i domyślny tekst ("main", "pos", "size")
+"variable" = "fg"
+"punctuation" = "fg"
+
+# Komentarze ("// Draw a color...")
+"comment" = { fg = "grey", modifiers = ["italic"] }
+
+# --- Interfejs Użytkownika ---
+"ui.background" = { bg = "bg_dark" }
+"ui.selection" = { bg = "bg_selection" } # <-- DODANA LINIA
+"ui.statusline" = { fg = "fg", bg = "bg_status" }
+"ui.statusline.normal" = { fg = "bg_dark", bg = "green", modifiers = ["bold"] }
+"ui.popup" = { fg = "fg", bg = "bg_status" }
+
+
+# --- Paleta Kolorów ---
+[palette]
+# Tekst
+fg = "#c0caf5"
+pink = "#f7768e"
+blue = "#7aa2f7"
+cyan = "#73daca"
+yellow = "#e0af68"
+purple = "#bb9af7"
+orange = "#a7955e"
+green = "#9ece6a"
+grey = "#5c6370"
+
+# Tło
+bg_dark = "#01001a"
+bg_status = "#1f2335"
+bg_selection = "#212030" # <-- DODANY KOLOR
