@@ -1,3 +1,6 @@
+######################
+# Programming Paths
+######################
 export PATH=$HOME/.local/bin:$PATH
 [ -d $HOME/Projects/code/odin/Odin ] && export PATH=$HOME/Projects/code/odin/Odin:$PATH
 
@@ -9,7 +12,7 @@ source $HOME/.scripts/zsh/zsh-completions/settings.zsh
 fi
 
 #######################################################
-# ZSH Basic Options
+# zsh
 #######################################################
 bindkey '^I'   complete-word       # tab          | complete
 bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
@@ -55,7 +58,6 @@ case "$(uname -sr)" in
     fi
     source $HOME/.zprofile
     ;;
-
 esac
 
 ######################
@@ -138,7 +140,7 @@ function clearhis () {
 }
 
 ######################
-# FZF
+# fzf
 ######################
 source <(fzf --zsh)
 
