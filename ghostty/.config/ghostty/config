@@ -11,3 +11,4 @@ adjust-cell-height = 37%
 # Options
 window-save-state = always
 mouse-hide-while-typing = true
+macos-option-as-alt = left
