@@ -1,7 +1,7 @@
 theme = "base16_terminal"
 
 [editor]
-line-number = "relative"
+line-number = "absolute"
 mouse = true
 # Show currently open buffers, only when more than one exists.
 bufferline = "multiple"
