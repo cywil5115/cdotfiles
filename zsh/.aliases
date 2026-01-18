@@ -6,11 +6,9 @@ case "$(uname -sr)" in
    Darwin*)
      
      alias zzz='sudo shutdown -h' 
-     alias nozzz='sudo killall shutdown'
      alias zzzz='sudo killall shutdown'
      alias noshutdown='sudo killall shutdown'
      alias e='open ./' #MACOS
-     # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
      ;;
 
    Linux*)
@@ -21,9 +19,6 @@ case "$(uname -sr)" in
      alias debian='distrobox-enter debian12-distrobox'
      alias flatpak-up='flatpak update -y && flatpak upgrade -y'
      alias updateall='if command -v lolcat &>/dev/null; then sudo echo Update! | lolcat; else sudo echo Update!; fi && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm && cd && sudo ./.scripts/grubfix-arch-efi.sh /boot/efi'
-     # alias e='nautilus ./' #GNOME
-     # alias e='nemo ./' #MINT
-     # alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
      ;;
 
    *)
@@ -39,6 +34,10 @@ alias cl='clear'
 ######################
 # bat
 ######################
+if command -v batcat &>/dev/null; then
+# Ubuntu case
+  alias bat='batcat'
+fi
 if command -v bat &>/dev/null; then
   # --style=plain - removes line numbers and git modifications
   # --paging=never - doesnt pipe it through less
@@ -48,26 +47,15 @@ if command -v bat &>/dev/null; then
 fi
 
 ######################
-# bat for ubuntu
-######################
-if command -v batcat &>/dev/null; then
-  # --style=plain - removes line numbers and git modifications
-  # --paging=never - doesnt pipe it through less
-  alias catt='batcat --paging=never --style=plain'
-  alias cat='batcat'
-  alias cata='batcat --show-all --paging=never'
-fi
-
-######################
 # eza
 ######################
 if command -v eza &>/dev/null
 then
   EZA_CONFIG_DIR='~/.config/eza/'
   alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-  alias ll='eza --long --all --bytes --git --git-repos --icons=auto'
-  alias lld='eza --long -D -H --all --bytes --octal-permissions --total-size --git --git-repos --icons=auto --no-permissions'
-  alias llf='eza --long -f -H --all --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
+  alias ll='eza --long --all --bytes --git --git-repos --icons=auto --no-time'
+  alias lld='eza --long -D --all --show-symlinks  --time-style long-iso --bytes --octal-permissions --total-size --git --git-repos-no-status --icons=auto --no-permissions'
+  alias llf='eza --long -f --all --show-symlinks  --time-style long-iso --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
   alias tree='eza --tree --level=5 --icons=auto --git'
 fi
 
@@ -79,41 +67,17 @@ alias fshow='~/.scripts/fshow.sh'
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 
 ######################
-# Neovim
-######################
-alias v='nvim'
-
-######################
-# Nix
-######################
-if command -v nix 2>&1 > /dev/null
-then
-case "$(uname -sr)" in
-
-   Darwin*)
-     alias genclear='sudo nix-collect-garbage --delete-older-than 7d'
-     alias genlist='sudo darwin-rebuild --list-generations'
-     alias fup="sudo echo Update flake && 'cd' /etc/nix-darwin && nix flake update && sudo darwin-rebuild switch --flake .#prodrinz && sudo nix-collect-garbage --delete-older-than 30d && 'cd' -"
-     ;;
-   Linux*)
-    # nothing for now, maybe change location later
-     ;;
-   *)
-    # nothing for now, maybe change location later
-     ;;
-esac
-fi
-
-######################
 # Zoxide
 ######################
-alias cd='z'
-alias cdi='zi'
-alias cdd='cd -'
+if command -v zoxide &>/dev/null; then
+  alias cd='z'
+  alias cdi='zi'
+fi
 
 ######################
 # Directories
 ######################
+alias cdd='cd -'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."

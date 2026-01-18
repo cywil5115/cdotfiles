@@ -28,7 +28,6 @@ function r() {
 function day {
     date +"%a %b %d %Y"
 }
-alias dzien='day'
   
 function bytesConvert {
   if [[ $# -eq 0 ]]
