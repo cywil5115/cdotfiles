@@ -12,3 +12,5 @@ adjust-cell-height = 37%
 window-save-state = always
 mouse-hide-while-typing = true
 macos-option-as-alt = left
+
+# keybind = super+shift+j=write_scrollback_file:open

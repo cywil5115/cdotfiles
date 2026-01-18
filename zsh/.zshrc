@@ -7,18 +7,25 @@ export PATH=$HOME/.local/bin:$PATH
 ######################
 # Autocompletion settings
 ######################
-if [ -f "$HOME/.scripts/zsh/zsh-completions/settings.zsh" ]; then
-source $HOME/.scripts/zsh/zsh-completions/settings.zsh
+if [ -f "$HOME/.scripts/zsh/zsh-completions/zsh-completions.plugin.zsh" ]; then
+  source $HOME/.scripts/zsh/zsh-completions/zsh-completions.plugin.zsh
 fi
 
+autoload -U compinit && compinit
+zmodload zsh/complist
 #######################################################
 # zsh
 #######################################################
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z A-Z}={A-Z a-z}'
+zstyle ':completion:*' special-dirs true # force . and .. to show in cmp menu
+zstyle ':completion:*' squeeze-slashes false # explicit disable to allow /*/ expansion
+
 bindkey '^I'   complete-word       # tab          | complete
 bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
-bindkey -M menuselect '^[[Z' reverse-menu-complete
+bindkey -M menuselect '^b' reverse-menu-complete
 bindkey '^H' backward-word
 bindkey '^D' kill-line
 bindkey '^L' forward-word
@@ -36,8 +43,6 @@ setopt nonomatch           # hide error message if there is no match for the pat
 setopt notify              # report the status of background jobs immediately
 setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
-zstyle ':completion:*' special-dirs true # force . and .. to show in cmp menu
-zstyle ':completion:*' squeeze-slashes false # explicit disable to allow /*/ expansion
 setopt auto_param_slash # when a dir is completed, add a / instead of a trailing space
 setopt no_case_glob no_case_match # make cmp case insensitive
 setopt globdots # include dotfiles (example: .file)
