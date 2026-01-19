@@ -4,7 +4,7 @@
 
 For Arch Linux:
 ```
-sudo pacman -S stow
+sudo pacman -S stow cos
 ```
 For MacOS (using brew):
 ```
