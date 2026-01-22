@@ -86,14 +86,15 @@ fi
 ######################
 # Functions 
 ######################
-if [ -f "$HOME/.functions" ]; then
-source $HOME/.functions
+if [ -f "$HOME/.functions.zsh" ]; then
+source $HOME/.functions.zsh
+
 fi
 ######################
 # Aliases 
 ######################
-if [ -f "$HOME/.aliases" ]; then
-source $HOME/.aliases
+if [ -f "$HOME/.aliases.zsh" ]; then
+source $HOME/.aliases.zsh
 fi
 
 ######################
