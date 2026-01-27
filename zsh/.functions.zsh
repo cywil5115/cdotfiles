@@ -98,10 +98,6 @@ source $HOME/.scripts/pomodoro/src/pomodoro-setup.sh
 # Themes
 ######################
 
-function set-yazi-theme {
-  $HOME/.cdotfiles/yazi/.config/yazi/theme.sh "$@"
-}
-
 function set-eza-theme {
   $HOME/.config/eza/theme.sh
 }
