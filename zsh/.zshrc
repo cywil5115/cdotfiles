@@ -4,6 +4,11 @@
 export PATH=$HOME/.local/bin:$PATH
 [ -d $HOME/Projects/code/odin/Odin ] && export PATH=$HOME/Projects/code/odin/Odin:$PATH
 
+if command -v mise 2>&1 > /dev/null
+then
+  eval "$(mise activate zsh)"
+fi
+
 ######################
 # Autocompletion settings
 ######################
