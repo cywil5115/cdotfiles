@@ -70,8 +70,8 @@ alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bol
 # Zoxide
 ######################
 if command -v zoxide &>/dev/null; then
-  alias cd='z'
-  alias cdi='zi'
+  # alias cd='z'
+  # alias cdi='zi'
 fi
 
 ######################
