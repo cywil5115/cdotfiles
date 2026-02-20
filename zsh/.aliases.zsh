@@ -64,7 +64,7 @@ fi
 ######################
 alias fsb='~/.scripts/fsb.sh'
 alias fshow='~/.scripts/fshow.sh'
-alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
+alias glog='git log --oneline --topo-order --decorate --graph --parents --abbrev-commit'
 
 ######################
 # Zoxide

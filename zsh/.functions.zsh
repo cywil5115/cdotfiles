@@ -3,7 +3,7 @@ function update_dotfiles () {
     git reset --hard HEAD
     git pull
     git log --oneline main..origin/main
-    stow --restow */
+    make restow
     cd -
 }
 

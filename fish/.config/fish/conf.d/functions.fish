@@ -57,13 +57,6 @@ function cpp
     end
 end
 
-function set-yazi-theme
-    ~/.cdotfiles/yazi/.config/yazi/theme.sh
-end
-
-function set-eza-theme
-    ~/.config/eza/theme.sh
-end
 
 function set-kitty-theme
     ~/.config/kitty/lib/theme.sh

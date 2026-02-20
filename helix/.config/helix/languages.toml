@@ -9,11 +9,6 @@ auto-format = false
 indent = { tab-width = 4, unit = "    " }
 
 [[language]]
-name = "rust"
-auto-format = false
-indent = { tab-width = 4, unit = "    " }
-
-[[language]]
 name = "c"
 auto-format = false
 indent = { tab-width = 4, unit = "    " }
@@ -25,6 +20,28 @@ indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "hyprlang"
+auto-format = false
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "odin"
+auto-format = false
+file-types = ["odin"]
+language-servers = [ "ols" ]
+comment-token = "//"
+indent = { tab-width = 2, unit = " " }
+injection-regex = "odin"
+formatter = { command = "odinfmt", args = [ "-stdin", "true" ] }
+
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
+
+[language-server.tinymist]
+command = "tinymist"
+
+[[language]]
+name = "rust"
 auto-format = false
 indent = { tab-width = 4, unit = "    " }
 
