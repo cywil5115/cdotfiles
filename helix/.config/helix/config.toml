@@ -1,4 +1,4 @@
-theme = "compline"
+theme = "gruvbox"
 
 [editor]
 line-number = "absolute"

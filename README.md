@@ -1,53 +1,126 @@
 # My dotfiles managed by GNU/Stow
 
-## Install stow and any program that you want to add first
+## Clone (one-liners)
 
-For Arch Linux:
+**SSH:**
+
+```bash
+cd ~ && mkdir -p .cdotfiles && git clone git@github.com:cywil5115/cdotfiles.git ~/.cdotfiles/
 ```
+
+**HTTPS:**
+
+```bash
+cd ~ && mkdir -p .cdotfiles && git clone https://github.com/cywil5115/cdotfiles.git ~/.cdotfiles/
+```
+
+After cloning, initialize submodules (if any):
+
+```bash
+cd ~/.cdotfiles && git submodule update --init --recursive
+```
+
+---
+
+## Install dependencies
+
+You need **GNU Stow** installed before initializing the dotfiles.
+
+### Arch Linux
+
+```bash
 sudo pacman -S stow
 ```
-Using brew (ex. on MacOS):
+
+### Fedora
+
+```bash
+sudo dnf install stow
 ```
+
+### Fedora Atomic (Silverblue, Kinoite, etc.)
+
+```bash
+rpm-ostree install stow
+```
+
+Then reboot:
+
+```bash
+systemctl reboot
+```
+
+### macOS (Homebrew)
+
+```bash
 brew install stow
 ```
-## Shell -> ZSH
 
-Make sure you using zsh (if you using bash):
+---
+
+## Initialize dotfiles (using Makefile)
+
+The repository includes a `Makefile` to simplify working with Stow.
+
+Inside `~/.cdotfiles` run:
+
+```bash
+make help
 ```
+
+Available targets:
+
+* `make init`   → Initial stow of all packages
+* `make restow` → Update existing links (`--restow`)
+* `make unstow` → Remove all links (`--delete`)
+* `make dry`    → Preview what Stow would do (no changes)
+* `make help`   → Show help message
+
+Typical first-time setup:
+
+```bash
+cd ~/.cdotfiles
+make init
+```
+
+---
+
+## Shell → ZSH
+
+Check your current shell:
+
+```bash
 echo $SHELL
 ```
-Change if you need to (probably need a reboot after this):
-```
+
+If you're using `bash` and want to switch to `zsh`:
+
+```bash
 sudo chsh -s $(which zsh) $USER
 ```
 
-## Install leaves for brew (optional)
+You may need to log out or reboot after changing your shell.
+
+---
+
+## Homebrew leaves (optional)
+
+Path:
+
+```bash
+cd ~/.cdotfiles/homebrew/.config/brew/
 ```
-cd ~ && cd .cdotfiles/homebrew/.config/brew/
-```
-Usefull commands (example for my_brew.txt file name):
-```
-# save all your currently used programs:
+
+Useful commands (example file: `my_brew.txt`):
+
+Save currently installed packages:
+
+```bash
 brew leaves > my_brew.txt
+```
 
-# Install for a new machine:
+Install on a new machine:
+
+```bash
 xargs brew install < my_brew.txt
-```
-
-## One-Liners (for dotfiles)
-
-(by SSH)
-
-```
-cd ~ && mkdir .cdotfiles && git clone git@github.com:cywil5115/cdotfiles.git ~/.cdotfiles/
-```
-(by https)
-
-```
-cd ~ && mkdir .cdotfiles && git clone https://github.com/cywil5115/cdotfiles.git ~/.cdotfiles/
-```
-
-## Update Submodules:
-```
-cd ~/.cdotfiles/ && git submodule update --init --recursive
 ```
