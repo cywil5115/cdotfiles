@@ -98,20 +98,6 @@ source $HOME/.scripts/pomodoro/src/pomodoro-setup.sh
 # Themes
 ######################
 
-function set-eza-theme {
-  $HOME/.config/eza/theme.sh
-}
-
-function set-kitty-theme {
-  $HOME/.config/kitty/lib/theme.sh
-}
-
-# It's in .aliases
-#alias switch-kitty-mode='$HOME/.config/kitty/lib/switcher-light-dark.sh'
-function switch-kitty-mode(){
-	$HOME/.config/kitty/lib/switcher-light-dark.sh "$@" 
-}
-
 #bat cache --build > /dev/null 2>&1 # it's outside to update cache with downloaded custom themes
 
 function set-bat-theme {
