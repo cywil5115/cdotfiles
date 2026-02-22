@@ -57,13 +57,8 @@ function cpp
     end
 end
 
-
-function set-kitty-theme
-    ~/.config/kitty/lib/theme.sh
-end
-
-function switch-kitty-mode
-    ~/.config/kitty/lib/switcher-light-dark.sh $argv
+function pomodoro
+    $HOME/.scripts/pomodoro/src/pomodoro-setup.sh $argv
 end
 
 function set-bat-theme

@@ -46,11 +46,11 @@ end
 # 📂 Eza
 ########################################
 if type -q eza
-    alias ls="eza --color=always --git -1 --no-filesize --icons=always --no-time --no-user --no-permissions"
-    alias ll="eza --long --all --bytes --git --git-repos --icons=auto"
-    alias lld="eza --long -D -H --all --bytes --octal-permissions --total-size --git --git-repos --icons=auto --no-permissions"
-    alias llf="eza --long -f -H --all --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions"
-    alias tree="eza --tree --level=5 --icons=auto --git"
+    alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+    alias ll='eza --long --all --bytes --git --git-repos --icons=auto --no-time'
+    alias lld='eza --long -D --all --show-symlinks  --time-style long-iso --bytes --octal-permissions --total-size --git --git-repos-no-status --icons=auto --no-permissions'
+    alias llf='eza --long -f --all --show-symlinks  --time-style long-iso --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
+    alias tree='eza --tree --level=5 --icons=auto --git'
 end
 
 ########################################
@@ -58,26 +58,11 @@ end
 ########################################
 alias fsb="~/.scripts/fsb.sh"
 alias fshow="~/.scripts/fshow.sh"
-
-########################################
-# 🐳 Docker 
-########################################
-# abbr dco "docker compose"
-# abbr dps "docker ps"
-# abbr dpa "docker ps -a"
-# abbr dl "docker ps -l -q"
-# abbr dx "docker exec -it"
-
-########################################
-# 📝 Neovim
-########################################
-abbr v nvim
+alias glog='git log --oneline --topo-order --decorate --graph --parents --abbrev-commit'
 
 ########################################
 # 📁 Zoxide
 ########################################
-abbr cd z
-abbr cdi zi
 abbr cdd 'cd -'
 
 ########################################

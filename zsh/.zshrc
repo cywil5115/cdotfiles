@@ -110,7 +110,7 @@ if [ -f "$HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
   source $HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6f7680"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6f7680"
 
 ######################
 # History

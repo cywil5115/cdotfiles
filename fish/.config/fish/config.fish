@@ -2,26 +2,14 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# Prompt
 set -gx PATH $HOME/.local/bin $PATH
-########################################
-# Skróty klawiaturowe (Keybindings)
-########################################
-# TAB:            kompletowanie (complete)
-# Ctrl+H:         cofnij jedno słowo (backward-word)
-# Ctrl+L:         przejdź do przodu o jedno słowo (forward-word)
-# Ctrl+D:         usuń linię od kursora (kill-line)
-# Ctrl+X E:       edytuj bieżące polecenie w edytorze
-# Ctrl+X Ctrl+E:  to samo co powyżej (edit_command_buffer)
-########################################
 
 # Key bindings
 bind \t accept-autosuggestion
 bind \cl forward-word
 bind \cd kill-line
 bind \ch backward-word
-# Open current command in editor (Fish does this with `edit_command_buffer`)
-bind \cx\ce edit_command_buffer
+bind \cx\ce edit_command_buffer # Open current command in editor (Fish does this with `edit_command_buffer`)
 
 #########################
 # Editor config
@@ -32,7 +20,6 @@ if not type -q hx
     end
 end
 
-# Ustaw preferowany edytor zależnie od dostępności
 if type -q helix
     set -gx EDITOR helix
 else if type -q hx
@@ -47,7 +34,6 @@ else
     set -gx EDITOR nano
 end
 
-# VISUAL i SUDO_EDITOR ustaw tak samo
 set -gx VISUAL $EDITOR
 set -gx SUDO_EDITOR $EDITORset -gx VISUAL hx
 set -gx EDITOR hx
@@ -99,7 +85,3 @@ end
 if type -q starship
     starship init fish | source
 end
-
-cd ~
-# clear screen at startup (optional)
-# clear
