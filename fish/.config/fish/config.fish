@@ -1,3 +1,5 @@
+set -U fish_greeting ""
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
@@ -14,6 +16,11 @@ set -gx XDG_STATE_HOME $HOME/.local/state
 # Paths
 #########################
 fish_add_path $HOME/.local/bin
+
+# Brew
+if test -d /opt/homebrew/bin
+    fish_add_path /opt/homebrew/bin
+end
 
 # Odin
 if test -d $HOME/.toolchains/odin
