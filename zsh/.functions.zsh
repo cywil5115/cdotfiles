@@ -92,7 +92,7 @@ function cpp() {
 # Pomodoro
 ######################
 
-source $HOME/.scripts/pomodoro/src/pomodoro-setup.sh
+source $HOME/.local/bin/pomodoro/src/pomodoro-setup.sh
 
 ######################
 # Themes

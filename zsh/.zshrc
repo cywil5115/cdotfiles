@@ -1,8 +1,24 @@
 ######################
+# Paths
+######################
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+######################
 # Programming Paths
 ######################
 export PATH=$HOME/.local/bin:$PATH
-[ -d $HOME/Projects/code/odin/Odin ] && export PATH=$HOME/Projects/code/odin/Odin:$PATH
+[ -d $HOME/.toolchains/odin ] && export PATH=$HOME/.toolchains/odin:$PATH
+
+# Go
+export GOPATH="$HOME/.local/share/go"
+export PATH="$GOPATH/bin:$PATH"
+
+#Swift
+export SWIFT_PM_CONFIG=$XDG_CONFIG_HOME/swiftpm
+export SWIFT_PM_CACHE=$XDG_CACHE_HOME/swiftpm
 
 if command -v mise 2>&1 > /dev/null
 then
@@ -12,8 +28,8 @@ fi
 ######################
 # Autocompletion settings
 ######################
-if [ -f "$HOME/.scripts/zsh/zsh-completions/zsh-completions.plugin.zsh" ]; then
-  source $HOME/.scripts/zsh/zsh-completions/zsh-completions.plugin.zsh
+if [ -f "$HOME/.local/bin/zsh/zsh-completions/zsh-completions.plugin.zsh" ]; then
+  source $HOME/.local/bin/zsh/zsh-completions/zsh-completions.plugin.zsh
 fi
 
 autoload -U compinit && compinit
@@ -22,6 +38,8 @@ zmodload zsh/complist
 #######################################################
 # zsh
 #######################################################
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump"
+
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z A-Z}={A-Z a-z}'
 zstyle ':completion:*' special-dirs true # force . and .. to show in cmp menu
@@ -106,8 +124,8 @@ fi
 ######################
 # Autosuggestions
 ######################
-if [ -f "$HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-  source $HOME/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f "$HOME/.local/bin/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source $HOME/.local/bin/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6f7680"
@@ -189,8 +207,8 @@ fi
 # Syntax-highlighting
 ######################
 
-if [ -f "$HOME/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-  source $HOME/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f "$HOME/.local/bin/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source $HOME/.local/bin/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 ######################

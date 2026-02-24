@@ -1,9 +1,9 @@
-[submodule "scripts/.scripts/zsh/zsh-autosuggestions"]
-	path = scripts/.scripts/zsh/zsh-autosuggestions
+[submodule "scripts/.local/bin/zsh/zsh-autosuggestions"]
+	path = scripts/.local/bin/zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "scripts/.scripts/zsh/zsh-completions"]
-	path = scripts/.scripts/zsh/zsh-completions
+[submodule "scripts/.local/bin/zsh/zsh-completions"]
+	path = scripts/.local/bin/zsh/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
-[submodule "scripts/.scripts/zsh/zsh-syntax-highlighting"]
-	path = scripts/.scripts/zsh/zsh-syntax-highlighting
+[submodule "scripts/.local/bin/zsh/zsh-syntax-highlighting"]
+	path = scripts/.local/bin/zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

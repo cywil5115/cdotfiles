@@ -8,7 +8,7 @@ if command -v brew &> /dev/null; then
   fi
 fi
 
-source $HOME/.scripts/pomodoro/src/defaults.sh
+source $HOME/.local/bin/pomodoro/src/defaults.sh
 
 # declare -A pomo_options
 # pomo_options["work"]="45"
@@ -27,9 +27,9 @@ if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
    # spd-say "'$val' session done"
 
    if command -v play &>/dev/null; then
-      play $HOME/.scripts/pomodoro/assets/pomodoro.mp3 &>/dev/null
+      play $HOME/.local/bin/pomodoro/assets/pomodoro.mp3 &>/dev/null
    elif command -v ffplay &>/dev/null; then
-      ffplay -autoexit -t '5' $HOME/.scripts/pomodoro/assets/pomodoro.mp3 -nodisp -nostats -hide_banner &>/dev/null
+      ffplay -autoexit -t '5' $HOME.local/bin/pomodoro/assets/pomodoro.mp3 -nodisp -nostats -hide_banner &>/dev/null
    else
       echo "Koniec"
    fi
@@ -70,7 +70,7 @@ function change-pomo() {
 
 function set-default-pomodoro(){
   
-  defaults_file="$HOME/.scripts/pomodoro/src/defaults.sh"
+  defaults_file="$HOME.local/bin/pomodoro/src/defaults.sh"
 
   if [ -n "$1" ] && [ -n "$2" ]
   then  
