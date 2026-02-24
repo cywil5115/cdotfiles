@@ -7,12 +7,14 @@ function update_dotfiles () {
     cd -
 }
 
-function lg()  {
-    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
-    lazygit "$@"
-    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
-            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
-            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+lg() {
+    local tmpfile
+    tmpfile="$(mktemp)"
+    LAZYGIT_NEW_DIR_FILE="$tmpfile" lazygit "$@"
+
+    if [[ -f "$tmpfile" ]]; then
+        cd -- "$(cat "$tmpfile")"
+        rm -f -- "$tmpfile"
     fi
 }
 
