@@ -1,11 +1,14 @@
 function lg
-    set -gx LAZYGIT_NEW_DIR_FILE ~/.lazygit/newdir
-    lazygit $argv
+    set tmpfile (mktemp)
+    env LAZYGIT_NEW_DIR_FILE="$tmpfile" lazygit $argv
+    set status_code $status
 
-    if test -f $LAZYGIT_NEW_DIR_FILE
-        cd (cat $LAZYGIT_NEW_DIR_FILE)
-        rm -f $LAZYGIT_NEW_DIR_FILE >/dev/null
+    if test -f "$tmpfile"
+        cd (cat "$tmpfile")
     end
+
+    rm -f "$tmpfile"
+    return $status_code
 end
 
 function r
@@ -58,7 +61,7 @@ function cpp
 end
 
 function pomodoro
-    $HOME/.scripts/pomodoro/src/pomodoro-setup.sh $argv
+    $HOME/.local/bin/pomodoro/src/pomodoro-setup.sh $argv
 end
 
 function set-bat-theme

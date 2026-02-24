@@ -56,8 +56,8 @@ end
 ########################################
 # 🔧 Git
 ########################################
-alias fsb="~/.scripts/fsb.sh"
-alias fshow="~/.scripts/fshow.sh"
+alias fsb="~/.local/bin/fsb.sh"
+alias fshow="~/.local/bin/fshow.sh"
 alias glog='git log --oneline --topo-order --decorate --graph --parents --abbrev-commit'
 
 ########################################

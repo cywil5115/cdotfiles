@@ -2,9 +2,35 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-set -gx PATH $HOME/.local/bin $PATH
+#########################
+# XDG
+#########################
+set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx XDG_CACHE_HOME $HOME/.cache
+set -gx XDG_DATA_HOME $HOME/.local/share
+set -gx XDG_STATE_HOME $HOME/.local/state
 
+#########################
+# Paths
+#########################
+fish_add_path $HOME/.local/bin
+
+# Odin
+if test -d $HOME/.toolchains/odin
+    fish_add_path $HOME/.toolchains/odin
+end
+
+# Go
+set -gx GOPATH $XDG_DATA_HOME/go
+fish_add_path $GOPATH/bin
+
+# Swift
+set -gx SWIFT_PM_CONFIG $XDG_CONFIG_HOME/swiftpm
+set -gx SWIFT_PM_CACHE $XDG_CACHE_HOME/swiftpm
+
+#########################
 # Key bindings
+#########################
 bind \t accept-autosuggestion
 bind \cl forward-word
 bind \cd kill-line
