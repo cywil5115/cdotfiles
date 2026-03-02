@@ -32,13 +32,16 @@ if [ -f "$HOME/.local/bin/zsh/zsh-completions/zsh-completions.plugin.zsh" ]; the
   source $HOME/.local/bin/zsh/zsh-completions/zsh-completions.plugin.zsh
 fi
 
-autoload -U compinit && compinit
-zmodload zsh/complist
+autoload -U compinit
 
+ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+mkdir -p "$ZSH_CACHE_DIR"
+
+compinit -d "$ZSH_CACHE_DIR/zcompdump"
+zmodload zsh/complist
 #######################################################
 # zsh
 #######################################################
-export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump"
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z A-Z}={A-Z a-z}'
