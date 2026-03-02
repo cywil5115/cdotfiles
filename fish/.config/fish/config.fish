@@ -76,35 +76,25 @@ set -gx SUDO_EDITOR hx
 # FZF
 #########################
 if type -q fzf
-    set -gx FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS \
-        --info=inline-right \
-        --ansi \
-        --layout=reverse \
-        --border=rounded \
-        --color=border:#27a1b9 \
-        --color=fg:#c0caf5 \
-        --color=gutter:#16161e \
-        --color=header:#ff9e64 \
-        --color=hl+:#2ac3de \
-        --color=hl:#2ac3de \
-        --color=info:#545c7e \
-        --color=marker:#ff007c \
-        --color=pointer:#ff007c \
-        --color=prompt:#2ac3de \
-        --color=query:#c0caf5:regular \
-        --color=scrollbar:#27a1b9 \
-        --color=separator:#ff9e64 \
-        --color=spinner:#ff007c"
 
-    alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+    set -gx FZF_DEFAULT_OPTS "
+    --info=inline-right
+    --ansi
+    --layout=reverse
+    --border=rounded
+    "
+
+    if type -q bat
+        set -gx FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+    end
 
     if type -q xdg-open
-        alias preview='xdg-open (fzf --info=inline --query="$argv")'
-    else
-        alias preview='edit (fzf --info=inline --query="$argv")'
+        function preview
+            xdg-open (fzf --info=inline --query="$argv")
+        end
     end
-end
 
+end
 #########################
 # Zoxide
 #########################
