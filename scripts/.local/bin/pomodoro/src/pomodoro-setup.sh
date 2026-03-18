@@ -29,7 +29,7 @@ if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
    if command -v play &>/dev/null; then
       play $HOME/.local/bin/pomodoro/assets/pomodoro.mp3 &>/dev/null
    elif command -v ffplay &>/dev/null; then
-      ffplay -autoexit -t '5' $HOME.local/bin/pomodoro/assets/pomodoro.mp3 -nodisp -nostats -hide_banner &>/dev/null
+      ffplay -autoexit -t '5' $HOME/.local/bin/pomodoro/assets/pomodoro.mp3 -nodisp -nostats -hide_banner &>/dev/null
    else
       echo "Koniec"
    fi
@@ -70,7 +70,7 @@ function change-pomo() {
 
 function set-default-pomodoro(){
   
-  defaults_file="$HOME.local/bin/pomodoro/src/defaults.sh"
+  defaults_file="$HOME/.local/bin/pomodoro/src/defaults.sh"
 
   if [ -n "$1" ] && [ -n "$2" ]
   then  
