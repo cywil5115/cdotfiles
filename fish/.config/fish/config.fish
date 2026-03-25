@@ -38,12 +38,11 @@ set -gx SWIFT_PM_CACHE $XDG_CACHE_HOME/swiftpm
 #########################
 # Key bindings
 #########################
-bind \t accept-autosuggestion
-bind \cl forward-word
-bind \cd kill-line
-bind \ch backward-word
-bind \cx\ce edit_command_buffer # Open current command in editor (Fish does this with `edit_command_buffer`)
-
+bind \t accept-autosuggestion # Tab → accept autosuggestion
+bind \cl forward-word # Ctrl+L → move cursor forward one word
+bind \cd kill-line # Ctrl+D → delete from cursor to end of line
+bind \ch backward-word # Ctrl+H → move cursor backward one word
+bind \cx\ce edit_command_buffer # Ctrl+X then Ctrl+E → open command in editor
 #########################
 # Editor config
 #########################
