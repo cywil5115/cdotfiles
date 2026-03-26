@@ -9,6 +9,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 ######################
 # Programming Paths
 ######################
+# Odin
 export PATH=$HOME/.local/bin:$PATH
 [ -d $HOME/.toolchains/odin ] && export PATH=$HOME/.toolchains/odin:$PATH
 
@@ -20,6 +21,7 @@ export PATH="$GOPATH/bin:$PATH"
 export SWIFT_PM_CONFIG=$XDG_CONFIG_HOME/swiftpm
 export SWIFT_PM_CACHE=$XDG_CACHE_HOME/swiftpm
 
+# Mise
 if command -v mise 2>&1 > /dev/null
 then
   eval "$(mise activate zsh)"
@@ -111,14 +113,14 @@ if ! command -v helix &>/dev/null; then
 fi
 
 ######################
-# Functions 
+# Functions
 ######################
 if [ -f "$HOME/.functions.zsh" ]; then
 source $HOME/.functions.zsh
 
 fi
 ######################
-# Aliases 
+# Aliases
 ######################
 if [ -f "$HOME/.aliases.zsh" ]; then
 source $HOME/.aliases.zsh
