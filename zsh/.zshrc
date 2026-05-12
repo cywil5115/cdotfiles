@@ -17,7 +17,7 @@ export PATH=$HOME/.local/bin:$PATH
 export GOPATH="$HOME/.local/share/go"
 export PATH="$GOPATH/bin:$PATH"
 
-#Swift
+# Swift
 export SWIFT_PM_CONFIG=$XDG_CONFIG_HOME/swiftpm
 export SWIFT_PM_CACHE=$XDG_CACHE_HOME/swiftpm
 

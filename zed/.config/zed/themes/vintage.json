@@ -1,0 +1,67 @@
+{
+  "name": "Vintage Helix",
+  "author": "rojebd<roniellberrios@gmail.com>",
+  "themes": [
+    {
+      "name": "Vintage Helix",
+      "appearance": "dark",
+      "style": {
+        "cursor": "#d1c6ad",
+        "background": "#1F1F21FF",
+        "status_bar.background": "#1F1F21FF",
+        "title_bar.background": "#1F1F21FF",
+        "toolbar.background": "#1F1F21FF",
+        "tab_bar.background": "#111112FF",
+        "tab.inactive_background": "#111112FF",
+        "tab.active_background": "#1F1F21FF",
+        "panel.background": "#111112FF",
+        "editor.background": "#1F1F21FF",
+        "editor.gutter.background": "#1F1F21FF",
+        "editor.subheader.background": "#111112FF",
+        "editor.active_line_background": "#111112FF",
+        "editor.foreground": "#DEDEB4FF",
+        "syntax": {
+          "boolean": {
+            "color": "#F1C875FF"
+          },
+          "comment": {
+            "color": "#F5F5F5FF"
+          },
+          "constant": {
+            "color": "#ABC3D2FF"
+          },
+          "function": {
+            "color": "#C68F67FF"
+          },
+          "keyword": {
+            "color": "#A4A2B3FF"
+          },
+          "number": {
+            "color": "#AC7AADFF"
+          },
+          "operator": {
+            "color": "#C58E67FF"
+          },
+          "property": {
+            "color": "#7B8D66FF"
+          },
+          "string": {
+            "color": "#CEA76AFF"
+          },
+          "string.escape": {
+            "color": "#BB625AFF"
+          },
+          "type": {
+            "color": "#E7C060FF"
+          },
+          "variable": {
+            "color": "#7B8D66FF"
+          },
+          "variable.special": {
+            "color": "#DEDEB4FF"
+          }
+        }
+      }
+    }
+  ]
+}

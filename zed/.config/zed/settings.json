@@ -7,10 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_font_family": "Ioskeley Mono",
+  "buffer_font_weight": 400.0,
+  "excerpt_context_lines": 2,
   "diff_view_style": "unified",
   "autosave": "off",
   "base_keymap": "VSCode",
   "outline_panel": {
+    "expand_outlines_with_depth": 100,
     "dock": "left",
   },
   "collaboration_panel": {
@@ -52,8 +56,9 @@
   "expand_excerpt_lines": 5,
   "disable_ai": true,
   "relative_line_numbers": "disabled",
-  "buffer_line_height": "standard",
-  "buffer_font_family": "Ioskeley Mono",
+  "buffer_line_height": {
+    "custom": 1.5399999618530273
+  },
   "icon_theme": {
     "mode": "dark",
     "light": "JetBrains Icons Dark",
@@ -63,11 +68,11 @@
     "metrics": false,
   },
   "ui_font_size": 16,
-  "buffer_font_size": 15.0,
+  "buffer_font_size": 17.0,
   "theme": {
     "mode": "dark",
     "light": "Lauds",
-    "dark": "Compline",
+    "dark": "Vintage Helix",
   },
   "helix_mode": true,
 }
