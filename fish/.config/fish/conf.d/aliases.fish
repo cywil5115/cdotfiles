@@ -13,8 +13,6 @@ switch (uname -sr)
         abbr zzz "sudo shutdown -h"
         alias zzzz="shutdown -c"
         alias noshutdown="shutdown -c"
-        alias debian="distrobox-enter debian12-distrobox"
-        alias flatpak-up="flatpak update -y && flatpak upgrade -y"
         # abbr e "nautilus ./"
         # abbr e "nemo ./"
 
@@ -47,6 +45,7 @@ end
 ########################################
 if type -q eza
     alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+    alias la="eza --all --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
     alias ll='eza --long --all --bytes --git --git-repos --icons=auto --no-time'
     alias lld='eza --long -D --all --show-symlinks  --time-style long-iso --bytes --octal-permissions --total-size --git --git-repos-no-status --icons=auto --no-permissions'
     alias llf='eza --long -f --all --show-symlinks  --time-style long-iso --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
@@ -61,13 +60,9 @@ alias fshow="~/.local/bin/fshow.sh"
 alias glog='git log --oneline --topo-order --decorate --graph --parents --abbrev-commit'
 
 ########################################
-# 📁 Zoxide
-########################################
-abbr cdd 'cd -'
-
-########################################
 # 📁 Directory jumps
 ########################################
+abbr cdd 'cd -'
 abbr .. 'cd ..'
 abbr ... 'cd ../..'
 abbr .... 'cd ../../..'

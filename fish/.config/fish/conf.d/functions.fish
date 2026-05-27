@@ -52,27 +52,8 @@ function pkill
     ' --
 end
 
-function cpp
-    if type -q rsync
-        rsync -ah --info=progress2 $argv[1] $argv[2]
-    else
-        echo "Rsync not found. Fallback not implemented in fish."
-    end
-end
-
 function pomodoro
     $HOME/.local/bin/pomodoro/src/pomodoro-setup.sh $argv
-end
-
-function set-bat-theme
-    bat cache --build
-    sleep 1
-    clear
-    set selTheme (bat --list-themes | fzf --preview="bat --theme={} --color=always ~/.config/fish/config.fish")
-    echo $selTheme >(bat --config-dir)/themes/current_theme
-    bat cache --build
-    set -gx BAT_THEME (cat (bat --config-dir)/themes/current_theme)
-    source ~/.config/fish/config.fish
 end
 
 function check-ssh-connection

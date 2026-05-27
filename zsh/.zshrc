@@ -9,9 +9,11 @@ export XDG_STATE_HOME="$HOME/.local/state"
 ######################
 # Programming Paths
 ######################
-# Odin
 export PATH=$HOME/.local/bin:$PATH
+
+# Odin
 [ -d $HOME/.toolchains/odin ] && export PATH=$HOME/.toolchains/odin:$PATH
+[ -d $HOME/.toolchains/ols ] && export PATH=$HOME/.toolchains/ols:$PATH
 
 # Go
 export GOPATH="$HOME/.local/share/go"

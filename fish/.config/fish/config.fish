@@ -27,6 +27,10 @@ if test -d $HOME/.toolchains/odin
     fish_add_path $HOME/.toolchains/odin
 end
 
+if test -d $HOME/.toolchains/ols
+    fish_add_path $HOME/.toolchains/ols
+end
+
 # Go
 set -gx GOPATH $XDG_DATA_HOME/go
 fish_add_path $GOPATH/bin
