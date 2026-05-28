@@ -90,6 +90,15 @@ function cpp() {
 	fi
 }
 
+clear_zsh_suggestions() {
+  fc -p
+  : > "${HISTFILE:-$HOME/.zsh_history}"
+
+  rm -f "${XDG_CACHE_HOME:-$HOME/.cache}"/zsh/zcompdump*
+
+  exec zsh
+} 
+
 ######################
 # Pomodoro
 ######################
