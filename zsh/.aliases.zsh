@@ -52,8 +52,8 @@ fi
 if command -v eza &>/dev/null
 then
   EZA_CONFIG_DIR='~/.config/eza/'
-  alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-  alias la="eza --all --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+  alias ls="eza --group-directories-first --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+  alias la="eza --group-directories-first --all --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
   alias ll='eza --long --all --bytes --git --git-repos --icons=auto --no-time'
   alias lld='eza --long -D --all --show-symlinks  --time-style long-iso --bytes --octal-permissions --total-size --git --git-repos-no-status --icons=auto --no-permissions'
   alias llf='eza --long -f --all --show-symlinks  --time-style long-iso --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
