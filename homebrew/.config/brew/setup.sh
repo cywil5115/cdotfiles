@@ -1,24 +1,26 @@
-#! usr/bin/env bash
+#!/usr/bin/env bash
 
 #Install brew on MacOS
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! command -v brew &> /dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-if [ ! -f $HOME/.zprofile ]; then
-  touch ~/.zprofile
+  if [ ! -f $HOME/.zprofile ]; then
+    touch ~/.zprofile
+  fi
+
+  echo "eval "$(/opt/homebrew/bin/brew shellenv)"" > $HOME/.zprofile
+  exec zsh
 fi
 
-echo "eval "$(/opt/homebrew/bin/brew shellenv)"" > $HOME/.zprofile
-exec zsh
-
-# Install essentials
-xargs brew install < essentials.txt
-# Install other
+# Install leaves
 xargs brew install < leaves.txt
 
-# Install Borders and start service
-brew tap FelixKratz/formulae
-brew install borders
-brew services start borders
+# Install Borders and start service (if MacOS)
+if [ "$(uname)" = "Darwin" ]; then
+  brew tap FelixKratz/formulae
+  brew install borders
+  brew services start borders
+fi
 
 if command -v brew &> /dev/null; then
   if ! command -v timer &> /dev/null; then
