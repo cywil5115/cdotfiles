@@ -1,0 +1,191 @@
+# Kanso Mist for Helix
+# https://github.com/webhooked/kanso.nvim.git
+
+"attribute" = "constant"
+"type" = "type"
+"type.builtin" = "type"
+"constructor" = "special1"
+"constant" = "constant"
+"constant.builtin" = "constant"
+"constant.character" = "string"
+"constant.character.escape" = "regex"
+"constant.numeric" = "number"
+"string" = "string"
+"string.regexp" = "regex"
+"string.special" = "identifier"
+"string.special.symbol" = "identifier"
+"string.special.path" = "string"
+"string.special.url" = { fg = "special1", modifiers = ["underlined"] }
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.error" = { fg = "fg", bg = "diag_error", modifiers = ["bold"] }
+"comment.warning" = { fg = "fg_reverse", bg = "diag_warning", modifiers = ["bold"] }
+"comment.todo" = { fg = "fg_reverse", bg = "diag_info", modifiers = ["bold"] }
+"comment.note" = { fg = "fg_reverse", bg = "diag_hint", modifiers = ["bold"] }
+"variable" = "fg"
+"variable.builtin" = { fg = "special2", modifiers = ["italic"] }
+"variable.parameter" = "parameter"
+"variable.other.member" = "identifier"
+"label" = "special2"
+"punctuation" = "punct"
+"punctuation.delimiter" = "punct"
+"punctuation.bracket" = "punct"
+"punctuation.special" = "special1"
+"operator" = "operator"
+"keyword" = { fg = "keyword", modifiers = ["italic"] }
+"keyword.control" = "keyword"
+"keyword.control.conditional" = "keyword"
+"keyword.control.repeat" = "keyword"
+"keyword.control.import" = "preproc"
+"keyword.control.return" = { fg = "special3", modifiers = ["italic"] }
+"keyword.control.exception" = "special3"
+"keyword.function" = "keyword"
+"keyword.operator" = "operator"
+"keyword.directive" = "preproc"
+"keyword.storage" = "keyword"
+"function" = "func"
+"function.builtin" = "func"
+"function.call" = "func"
+"function.method" = "func"
+"function.method.call" = "func"
+"function.macro" = "preproc"
+"tag" = "keyword"
+"tag.attribute" = "identifier"
+"tag.delimiter" = "punct"
+"namespace" = "type"
+"special" = "special1"
+
+"markup.heading" = { fg = "func", modifiers = ["bold"] }
+"markup.heading.marker" = "punct"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "special1", modifiers = ["underlined"] }
+"markup.link.text" = "func"
+"markup.link.label" = "identifier"
+"markup.raw" = "string"
+"markup.raw.inline" = "string"
+"markup.raw.block" = "string"
+"markup.quote" = "parameter"
+"markup.list" = "special1"
+"markup.list.checked" = "diag_ok"
+"markup.list.unchecked" = "nontext"
+
+"diff.plus" = "vcs_added"
+"diff.minus" = "vcs_removed"
+"diff.delta" = "vcs_changed"
+
+"diagnostic" = { underline = { color = "diag_hint", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "diag_hint", style = "curl" } }
+"diagnostic.info" = { underline = { color = "diag_info", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "diag_warning", style = "curl" } }
+"diagnostic.error" = { underline = { color = "diag_error", style = "curl" } }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"hint" = "diag_hint"
+"info" = "diag_info"
+"warning" = "diag_warning"
+"error" = "diag_error"
+
+"ui.background" = { fg = "fg", bg = "bg" }
+"ui.background.separator" = "bg_p2"
+"ui.cursor" = { fg = "cursor_fg", bg = "cursor_bg" }
+"ui.cursor.primary" = { fg = "cursor_fg", bg = "cursor_bg" }
+"ui.cursor.normal" = { fg = "cursor_fg", bg = "cursor_bg" }
+"ui.cursor.insert" = { fg = "bg", bg = "diag_ok" }
+"ui.cursor.select" = { fg = "bg", bg = "keyword" }
+"ui.cursor.match" = { fg = "diag_warning", modifiers = ["bold"] }
+"ui.cursorline.primary" = { bg = "bg_p2" }
+"ui.cursorline.secondary" = { bg = "bg_p1" }
+"ui.cursorcolumn.primary" = { bg = "bg_p2" }
+"ui.cursorcolumn.secondary" = { bg = "bg_p1" }
+"ui.linenr" = "line_nr"
+"ui.linenr.selected" = { fg = "line_nr_active", modifiers = ["bold"] }
+"ui.statusline" = { fg = "fg_dim", bg = "bg_p1" }
+"ui.statusline.inactive" = { fg = "nontext", bg = "bg" }
+"ui.statusline.normal" = { fg = "bg", bg = "fg" }
+"ui.statusline.insert" = { fg = "bg", bg = "diag_ok" }
+"ui.statusline.select" = { fg = "bg", bg = "keyword" }
+"ui.statusline.separator" = "bg_p2"
+"ui.bufferline" = { fg = "fg_dim", bg = "bg" }
+"ui.bufferline.active" = { fg = "fg", bg = "bg_p1", modifiers = ["bold"] }
+"ui.bufferline.background" = { bg = "bg" }
+"ui.popup" = { fg = "float_fg", bg = "float_bg" }
+"ui.popup.info" = { fg = "float_fg", bg = "float_bg" }
+"ui.window" = "float_border"
+"ui.help" = { fg = "float_fg", bg = "float_bg" }
+"ui.text" = "fg"
+"ui.text.focus" = { fg = "fg2", bg = "bg_p2", modifiers = ["bold"] }
+"ui.text.inactive" = "fg_dim"
+"ui.text.info" = "fg_dim"
+"ui.virtual" = "nontext"
+"ui.virtual.ruler" = { bg = "bg_p1" }
+"ui.virtual.whitespace" = "whitespace"
+"ui.virtual.indent-guide" = "indent_line"
+"ui.virtual.inlay-hint" = { fg = "comment", modifiers = ["italic"] }
+"ui.virtual.wrap" = "nontext"
+"ui.menu" = { fg = "menu_fg", bg = "menu_bg" }
+"ui.menu.selected" = { fg = "fg2", bg = "menu_sel" }
+"ui.menu.scroll" = { fg = "bg_p2", bg = "menu_bg" }
+"ui.selection" = { bg = "visual" }
+"ui.selection.primary" = { bg = "visual" }
+"ui.highlight" = { bg = "search" }
+"ui.highlight.frameline" = { bg = "diff_text_bg" }
+"ui.debug.breakpoint" = "special1"
+"ui.debug.active" = { bg = "diff_delete_bg" }
+
+[palette]
+fg = "#C5C9C7"
+fg2 = "#f2f1ef"
+fg_dim = "#A4A7A4"
+fg_reverse = "#223249"
+bg = "#22262D"
+bg_dim = "#2a2c35"
+bg_p1 = "#393B44"
+bg_p2 = "#393B44"
+special = "#5C6066"
+indent_line = "#393B44"
+active_indent_line = "#5C6066"
+whitespace = "#5C6066"
+nontext = "#5C6066"
+visual = "#393B44"
+search = "#2D4F67"
+cursor_bg = "#f2f1ef"
+cursor_fg = "#22262D"
+line_nr = "#75797f"
+line_nr_active = "#f2f1ef"
+menu_fg = "#f2f1ef"
+menu_bg = "#22262D"
+menu_sel = "#393B44"
+float_fg = "#A4A7A4"
+float_bg = "#22262D"
+float_border = "#393B44"
+string = "#8a9a7b"
+number = "#a292a3"
+constant = "#b6927b"
+identifier = "#8992a7"
+parameter = "#909398"
+func = "#8ba4b0"
+keyword = "#8992a7"
+operator = "#909398"
+preproc = "#909398"
+type = "#8ea4a2"
+regex = "#c4746e"
+deprecated = "#717C7C"
+punct = "#909398"
+comment = "#75797f"
+special1 = "#c4b28a"
+special2 = "#8992a7"
+special3 = "#8992a7"
+diag_error = "#C34043"
+diag_ok = "#98BB6C"
+diag_warning = "#DCA561"
+diag_info = "#658594"
+diag_hint = "#6A9589"
+diff_add_bg = "#2B3328"
+diff_delete_bg = "#43242B"
+diff_change_bg = "#252535"
+diff_text_bg = "#49443C"
+vcs_added = "#76946A"
+vcs_removed = "#C34043"
+vcs_changed = "#DCA561"
+vcs_untracked = "#75797f"

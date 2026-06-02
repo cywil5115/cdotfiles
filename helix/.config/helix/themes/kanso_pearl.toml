@@ -1,0 +1,191 @@
+# Kanso Pearl for Helix
+# https://github.com/webhooked/kanso.nvim.git
+
+"attribute" = "constant"
+"type" = "type"
+"type.builtin" = "type"
+"constructor" = "special1"
+"constant" = "constant"
+"constant.builtin" = "constant"
+"constant.character" = "string"
+"constant.character.escape" = "regex"
+"constant.numeric" = "number"
+"string" = "string"
+"string.regexp" = "regex"
+"string.special" = "identifier"
+"string.special.symbol" = "identifier"
+"string.special.path" = "string"
+"string.special.url" = { fg = "special1", modifiers = ["underlined"] }
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.error" = { fg = "fg_reverse", bg = "diag_error", modifiers = ["bold"] }
+"comment.warning" = { fg = "fg_reverse", bg = "diag_warning", modifiers = ["bold"] }
+"comment.todo" = { fg = "fg_reverse", bg = "diag_info", modifiers = ["bold"] }
+"comment.note" = { fg = "fg_reverse", bg = "diag_hint", modifiers = ["bold"] }
+"variable" = "fg"
+"variable.builtin" = { fg = "special2", modifiers = ["italic"] }
+"variable.parameter" = "parameter"
+"variable.other.member" = "identifier"
+"label" = "special2"
+"punctuation" = "punct"
+"punctuation.delimiter" = "punct"
+"punctuation.bracket" = "punct"
+"punctuation.special" = "special1"
+"operator" = "operator"
+"keyword" = { fg = "keyword", modifiers = ["italic"] }
+"keyword.control" = "keyword"
+"keyword.control.conditional" = "keyword"
+"keyword.control.repeat" = "keyword"
+"keyword.control.import" = "preproc"
+"keyword.control.return" = { fg = "special3", modifiers = ["italic"] }
+"keyword.control.exception" = "special3"
+"keyword.function" = "keyword"
+"keyword.operator" = "operator"
+"keyword.directive" = "preproc"
+"keyword.storage" = "keyword"
+"function" = "func"
+"function.builtin" = "func"
+"function.call" = "func"
+"function.method" = "func"
+"function.method.call" = "func"
+"function.macro" = "preproc"
+"tag" = "keyword"
+"tag.attribute" = "identifier"
+"tag.delimiter" = "punct"
+"namespace" = "type"
+"special" = "special1"
+
+"markup.heading" = { fg = "func", modifiers = ["bold"] }
+"markup.heading.marker" = "punct"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "special1", modifiers = ["underlined"] }
+"markup.link.text" = "func"
+"markup.link.label" = "identifier"
+"markup.raw" = "string"
+"markup.raw.inline" = "string"
+"markup.raw.block" = "string"
+"markup.quote" = "parameter"
+"markup.list" = "special1"
+"markup.list.checked" = "diag_ok"
+"markup.list.unchecked" = "nontext"
+
+"diff.plus" = "vcs_added"
+"diff.minus" = "vcs_removed"
+"diff.delta" = "vcs_changed"
+
+"diagnostic" = { underline = { color = "diag_hint", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "diag_hint", style = "curl" } }
+"diagnostic.info" = { underline = { color = "diag_info", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "diag_warning", style = "curl" } }
+"diagnostic.error" = { underline = { color = "diag_error", style = "curl" } }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"hint" = "diag_hint"
+"info" = "diag_info"
+"warning" = "diag_warning"
+"error" = "diag_error"
+
+"ui.background" = { fg = "fg", bg = "bg" }
+"ui.background.separator" = "bg_p2"
+"ui.cursor" = { fg = "cursor_fg", bg = "cursor_bg" }
+"ui.cursor.primary" = { fg = "cursor_fg", bg = "cursor_bg" }
+"ui.cursor.normal" = { fg = "cursor_fg", bg = "cursor_bg" }
+"ui.cursor.insert" = { fg = "bg", bg = "diag_ok" }
+"ui.cursor.select" = { fg = "bg", bg = "keyword" }
+"ui.cursor.match" = { fg = "diag_warning", modifiers = ["bold"] }
+"ui.cursorline.primary" = { bg = "bg_p2" }
+"ui.cursorline.secondary" = { bg = "bg_p1" }
+"ui.cursorcolumn.primary" = { bg = "bg_p2" }
+"ui.cursorcolumn.secondary" = { bg = "bg_p1" }
+"ui.linenr" = "line_nr"
+"ui.linenr.selected" = { fg = "line_nr_active", modifiers = ["bold"] }
+"ui.statusline" = { fg = "fg_dim", bg = "bg_p1" }
+"ui.statusline.inactive" = { fg = "nontext", bg = "bg" }
+"ui.statusline.normal" = { fg = "bg", bg = "fg" }
+"ui.statusline.insert" = { fg = "bg", bg = "diag_ok" }
+"ui.statusline.select" = { fg = "bg", bg = "keyword" }
+"ui.statusline.separator" = "bg_p2"
+"ui.bufferline" = { fg = "fg_dim", bg = "bg" }
+"ui.bufferline.active" = { fg = "fg", bg = "bg_p1", modifiers = ["bold"] }
+"ui.bufferline.background" = { bg = "bg" }
+"ui.popup" = { fg = "float_fg", bg = "float_bg" }
+"ui.popup.info" = { fg = "float_fg", bg = "float_bg" }
+"ui.window" = "float_border"
+"ui.help" = { fg = "float_fg", bg = "float_bg" }
+"ui.text" = "fg"
+"ui.text.focus" = { fg = "fg_dim", bg = "bg_p2", modifiers = ["bold"] }
+"ui.text.inactive" = "fg_dim"
+"ui.text.info" = "fg_dim"
+"ui.virtual" = "nontext"
+"ui.virtual.ruler" = { bg = "bg_p1" }
+"ui.virtual.whitespace" = "whitespace"
+"ui.virtual.indent-guide" = "indent_line"
+"ui.virtual.inlay-hint" = { fg = "comment", modifiers = ["italic"] }
+"ui.virtual.wrap" = "nontext"
+"ui.menu" = { fg = "menu_fg", bg = "menu_bg" }
+"ui.menu.selected" = { fg = "fg_dim", bg = "menu_sel" }
+"ui.menu.scroll" = { fg = "bg_p2", bg = "menu_bg" }
+"ui.selection" = { bg = "visual" }
+"ui.selection.primary" = { bg = "visual" }
+"ui.highlight" = { bg = "search" }
+"ui.highlight.frameline" = { bg = "diff_text_bg" }
+"ui.debug.breakpoint" = "special1"
+"ui.debug.active" = { bg = "diff_delete_bg" }
+
+[palette]
+fg = "#22262D"
+fg2 = "#22262D"
+fg_dim = "#545464"
+fg_reverse = "#e2e1df"
+bg = "#f2f1ef"
+bg_dim = "#e2e1df"
+bg_p1 = "#e2e1df"
+bg_p2 = "#e2e1df"
+special = "#766b90"
+indent_line = "#dddddb"
+active_indent_line = "#dddddb"
+whitespace = "#cacac7"
+nontext = "#a09cac"
+visual = "#dddddb"
+search = "#b5cbd2"
+cursor_bg = "#22262D"
+cursor_fg = "#f2f1ef"
+line_nr = "#9F9F99"
+line_nr_active = "#22262D"
+menu_fg = "#43436c"
+menu_bg = "#f2f1ef"
+menu_sel = "#dddddb"
+float_fg = "#43436c"
+float_bg = "#f2f1ef"
+float_border = "#dddddb"
+string = "#6f894e"
+number = "#b35b79"
+constant = "#cc6d00"
+identifier = "#624c83"
+parameter = "#5d57a3"
+func = "#4d699b"
+keyword = "#624c83"
+operator = "#6D6D69"
+preproc = "#5C6068"
+type = "#597b75"
+regex = "#836f4a"
+deprecated = "#6D6D69"
+punct = "#6D6D69"
+comment = "#6D6D69"
+special1 = "#836f4a"
+special2 = "#624c83"
+special3 = "#624c83"
+diag_error = "#e82424"
+diag_ok = "#6f894e"
+diag_warning = "#e98a00"
+diag_info = "#5a7785"
+diag_hint = "#5e857a"
+diff_add_bg = "#b7d0ae"
+diff_delete_bg = "#d9a594"
+diff_change_bg = "#d7e3d8"
+diff_text_bg = "#f9d791"
+vcs_added = "#6e915f"
+vcs_removed = "#d7474b"
+vcs_changed = "#de9800"
+vcs_untracked = "#9F9F99"
