@@ -7,6 +7,22 @@ function update_dotfiles () {
     cd -
 }
 
+make_dirs_form_files() {
+  for f in *.*; do
+    # skip if not a file
+    [[ -f "$f" ]] || continue
+
+    # without the suffix
+    dir="${f:r}"
+
+    # make a directory
+    mkdir -p "$dir"
+
+    # move file to the directory
+    mv "$f" "$dir/"
+  done
+}
+
 lg() {
     local tmpfile
     tmpfile="$(mktemp)"
