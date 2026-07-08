@@ -2,11 +2,11 @@
 
 # https://github.com/caarlos0/timer
 
-if command -v brew &> /dev/null; then
-  if ! command -v timer &> /dev/null; then
-    brew install caarlos0/tap/timer
-  fi
-fi
+# if command -v brew &> /dev/null; then
+#   if ! command -v timer &> /dev/null; then
+#     brew install caarlos0/tap/timer
+#   fi
+# fi
 
 source $HOME/.local/bin/pomodoro/src/defaults.sh
 
