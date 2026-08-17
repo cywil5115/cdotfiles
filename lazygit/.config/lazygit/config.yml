@@ -1,0 +1,11 @@
+gui:
+  showFileTree: true
+  wrapLinesInStagingView: true
+  splitDiff: 'auto'
+  sidePanelWidth: 0.25
+git:
+  parseEmoji: true
+  autoFetch: true
+  fetchInterval: 60
+  pagers:
+    - colorArg: always

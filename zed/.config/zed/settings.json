@@ -10,7 +10,8 @@
   "agent_servers": {
     "opencode": {
       "default_config_options": {
-        "model": "opencode/gpt-5.5"
+        "mode": "build",
+        "model": "opencode/kimi-k3"
       },
       "type": "registry"
     }

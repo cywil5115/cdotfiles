@@ -52,5 +52,11 @@
     "bindings": {
       "&": "editor::AlignSelections"
     }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "alt-z": "editor::ToggleSoftWrap"
+    }
   }
 ]

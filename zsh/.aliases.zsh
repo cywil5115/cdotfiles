@@ -9,16 +9,21 @@ case "$(uname -sr)" in
      alias zzzz='sudo killall shutdown'
      alias noshutdown='sudo killall shutdown'
      alias e='open ./' #MACOS
+     alias cls="pbcopy < /dev/null"
      ;;
 
    Linux*)
 
+     if [[ -n "$WAYLAND_DISPLAY" ]]; then
+         alias cls="wl-copy --clear"
+     else
+         alias cls="xclip -selection clipboard /dev/null" # X11
+     fi
      alias zzz='sudo shutdown -h' 
      alias zzzz='shutdown -c'
      alias noshutdown='shutdown -c'
      alias debian='distrobox-enter debian12-distrobox'
      alias flatpak-up='flatpak update -y && flatpak upgrade -y'
-     alias updateall='if command -v lolcat &>/dev/null; then sudo echo Update! | lolcat; else sudo echo Update!; fi && flatpak update -y && flatpak upgrade -y && distrobox-upgrade -a && sudo pacman -Syu --noconfirm && cd && sudo ./.scripts/grubfix-arch-efi.sh /boot/efi'
      ;;
 
    *)

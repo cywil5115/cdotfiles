@@ -112,6 +112,7 @@ clear_zsh_suggestions() {
 
   rm -f "${XDG_CACHE_HOME:-$HOME/.cache}"/zsh/zcompdump*
 
+  pbcopy < /dev/null # clear a system clipboard just in case
   exec zsh
 } 
 
