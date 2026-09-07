@@ -6,7 +6,36 @@ function update_dotfiles () {
     make restow
     cd -
 }
+unicopy() {
+    if [[ -z "$1" ]]; then
+        echo "Usage: unicopy <hex_code>"
+        return 1
+    fi
 
+    # Pad with zeros to 8 characters for the \U format
+    local hex=$(printf "%08s" "$1" | tr ' ' '0')
+    
+    # Generate the actual character
+    local char=$(printf "\\U$hex")
+    
+    # Environment detection and copying
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        # macOS
+        printf "%s" "$char" | pbcopy
+        echo "Copied '$char' to clipboard!"
+    elif [[ "$XDG_SESSION_TYPE" == "wayland" ]] && command -v wl-copy &> /dev/null; then
+        # Linux Wayland
+        printf "%s" "$char" | wl-copy
+        echo "Copied '$char' to clipboard!"
+    elif command -v xclip &> /dev/null; then
+        # Linux X11 (and Wayland fallback)
+        printf "%s" "$char" | xclip -selection clipboard
+        echo "Copied '$char' to clipboard!"
+    else
+        echo "Error: Clipboard utility not found (please install xclip or wl-clipboard)."
+        return 1
+    fi
+}
 make_dirs_form_files() {
   for f in *.*; do
     # skip if not a file

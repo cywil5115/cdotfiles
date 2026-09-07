@@ -237,7 +237,7 @@
 		<key>keepAwakeAutoStart</key>
 		<false/>
 		<key>keepAwakeConnectedToPower</key>
-		<true/>
+		<false/>
 		<key>keepAwakeExternalDisplay</key>
 		<false/>
 		<key>keepAwakeIconTint</key>
@@ -685,13 +685,13 @@
 		<key>screenshotBackdropPresets</key>
 		<string>[]</string>
 		<key>screenshotBackdropStyle</key>
-		<string></string>
+		<string>{"padding":0.5,"cornerRadius":0,"blur":0,"kind":"preset","presetID":"ocean"}</string>
 		<key>screenshotClipboardShortcut</key>
 		<string>control+option+command:35</string>
 		<key>screenshotClipboardShortcutEnabled</key>
 		<false/>
 		<key>screenshotCopyToClipboard</key>
-		<false/>
+		<true/>
 		<key>screenshotDefaultAction</key>
 		<string></string>
 		<key>screenshotDelay</key>
@@ -725,13 +725,13 @@
 		<key>screenshotLastStroke</key>
 		<string>medium</string>
 		<key>screenshotLastTool</key>
-		<string>arrow</string>
+		<string>pixelate</string>
 		<key>screenshotOpenEditorDirectly</key>
 		<false/>
 		<key>screenshotPreviewPosition</key>
 		<string></string>
 		<key>screenshotSaveFolder</key>
-		<string></string>
+		<string>/Users/cywil5115/Pictures/ScreenShots</string>
 		<key>screenshotSaveSubfolder</key>
 		<string></string>
 		<key>screenshotSharingEnabled</key>
@@ -739,7 +739,7 @@
 		<key>screenshotShortcut</key>
 		<string>control+option+command:21</string>
 		<key>screenshotShortcutEnabled</key>
-		<false/>
+		<true/>
 		<key>screenshotShowLastRegion</key>
 		<true/>
 		<key>screenshotToolOrder</key>

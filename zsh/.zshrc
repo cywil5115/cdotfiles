@@ -11,6 +11,9 @@ export XDG_STATE_HOME="$HOME/.local/state"
 ######################
 export PATH=$HOME/.local/bin:$PATH
 
+# Helix Editor Master
+alias hxx="/Users/cywil5115/.local/share/cargo/bin/hx"
+
 # Odin
 [ -d $HOME/.toolchains/odin ] && export PATH=$HOME/.toolchains/odin:$PATH
 [ -d $HOME/.toolchains/ols ] && export PATH=$HOME/.toolchains/ols:$PATH
