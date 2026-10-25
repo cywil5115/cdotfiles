@@ -12,7 +12,7 @@ case "$(uname -sr)" in
       cat << 'EOF' > "$HOME/.zprofile"
         eval "$(/opt/homebrew/bin/brew shellenv)"
         export HOMEBREW_REQUIRE_TAP_TRUST=1
-      EOF
+EOF
 
     fi
     source $HOME/.zprofile
