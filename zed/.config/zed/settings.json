@@ -10,6 +10,7 @@
   "agent_servers": {
     "opencode": {
       "default_config_options": {
+        "effort": "high",
         "mode": "build",
         "model": "opencode/kimi-k3"
       },
@@ -22,7 +23,7 @@
   "excerpt_context_lines": 2,
   "diff_view_style": "unified",
   "autosave": "off",
-  "base_keymap": "VSCode",
+  "base_keymap": "SublimeText",
   "outline_panel": {
     "expand_outlines_with_depth": 100,
     "dock": "left",
@@ -56,7 +57,7 @@
       "breadcrumbs": false,
     },
     "copy_on_select": true,
-    "dock": "bottom",
+    "dock": "left",
   },
   "cursor_shape": "bar",
   "cursor_blink": false,
@@ -94,7 +95,7 @@
   "theme": {
     "mode": "dark",
     "light": "Lauds",
-    "dark": "Everforest Dark Hard (material)",
+    "dark": "Vintage",
   },
   "helix_mode": true,
 }

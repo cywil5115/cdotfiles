@@ -52,26 +52,6 @@ make_dirs_form_files() {
   done
 }
 
-lg() {
-    local tmpfile
-    tmpfile="$(mktemp)"
-    LAZYGIT_NEW_DIR_FILE="$tmpfile" lazygit "$@"
-
-    if [[ -f "$tmpfile" ]]; then
-        cd -- "$(cat "$tmpfile")"
-        rm -f -- "$tmpfile"
-    fi
-}
-
-function r() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
 function day {
     date +"%a %b %d %Y"
 }

@@ -1,4 +1,4 @@
-theme = "kanso_ink"
+theme = "everforest_dark"
 
 [editor]
 line-number = "absolute"
@@ -17,7 +17,7 @@ hidden = false
 enable = true
 max-wrap = 80 # increase value to reduce forced mid-word wrapping
 max-indent-retain = 0
-wrap-indicator = ""  # set wrap-indicator to "" to hide it
+# wrap-indicator = ""  # set wrap-indicator to "" to hide it
 
 [editor.inline-diagnostics]
 # cursor-line = "warning"
@@ -44,7 +44,7 @@ skip-levels = 1
 
 # Keys
 [keys.normal]
-D = "delete_char_backward"
+# D = "delete_char_backward"
 A-x = "extend_to_line_bounds"
 X = "select_line_above"
 # "A-," = "goto_previous_buffer"
