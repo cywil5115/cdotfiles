@@ -26,9 +26,3 @@ export PATH="$GOPATH/bin:$PATH"
 export SWIFT_PM_CONFIG=$XDG_CONFIG_HOME/swiftpm
 export SWIFT_PM_CACHE=$XDG_CACHE_HOME/swiftpm
 
-# Mise
-if command -v mise 2>&1 > /dev/null
-then
-  eval "$(mise activate zsh)"
-fi
-

@@ -2,11 +2,23 @@
 # Init for apps
 ######################
 
+# mise
+if command -v mise 2>&1 > /dev/null
+then
+  eval "$(mise activate zsh)"
+fi
+
 # fzf
+if command -v fzf 2>&1 > /dev/null
+then
 source <(fzf --zsh)
+fi
 
 # Zoxide
+if command -v zoxide 2>&1 > /dev/null
+then
 eval "$(zoxide init zsh)"
+fi
 
 # StarShip
 if command -v starship 2>&1 > /dev/null
@@ -23,22 +35,33 @@ fi
 
 # lazygit
 lg() {
-    local tmpfile
-    tmpfile="$(mktemp)"
-    LAZYGIT_NEW_DIR_FILE="$tmpfile" lazygit "$@"
+		if command -v lazygit 2>&1 > /dev/null
+		then
+	    local tmpfile
+	    tmpfile="$(mktemp)"
+	    LAZYGIT_NEW_DIR_FILE="$tmpfile" lazygit "$@"
 
-    if [[ -f "$tmpfile" ]]; then
-        cd -- "$(cat "$tmpfile")"
-        rm -f -- "$tmpfile"
-    fi
+	    if [[ -f "$tmpfile" ]]; then
+	        cd -- "$(cat "$tmpfile")"
+	        rm -f -- "$tmpfile"
+	    fi
+	  else
+			echo "Lazygit is not installed"
+	  fi
 }
 
 # yazi
 function r() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
+	
+	if command -v yazi 2>&1 > /dev/null
+	then
+		local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+		yazi "$@" --cwd-file="$tmp"
+		if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+			cd -- "$cwd"
+		fi
+		rm -f -- "$tmp"
+	else
+		echo "Yazi is not installed"
 	fi
-	rm -f -- "$tmp"
 }
