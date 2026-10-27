@@ -97,7 +97,7 @@ setopt histignoredups
 # Exclude commands that start with a space
 setopt histignorespace
 # Custom list of commands to ignore (adjust as needed)
-# HISTIGNORE='ls*:bg*:fg*:exit*:ll*'
+HISTIGNORE='cd*:ls*:bg*:fg*:exit*:ll*:r*:yazi*'
 # Shows the last 30 entries, default is 15
 alias history='history -30'
 
