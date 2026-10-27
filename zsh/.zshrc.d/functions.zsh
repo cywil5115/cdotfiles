@@ -119,7 +119,9 @@ clear_zsh_suggestions() {
   fc -p
   : > "${HISTFILE:-$HOME/.zsh_history}"
 
-  rm -f "${XDG_CACHE_HOME:-$HOME/.cache}"/zsh/zcompdump*
+  # Dump lives in ~/.zcompdump (macOS) or ~/.cache/zsh (Linux). Clear both.
+  # (N) = expand to nothing when no match, otherwise zsh aborts the command.
+  rm -f "${XDG_CACHE_HOME:-$HOME/.cache}"/zsh/zcompdump*(N) "$HOME"/.zcompdump*(N)
 
   pbcopy < /dev/null # clear a system clipboard just in case
   exec zsh

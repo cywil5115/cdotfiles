@@ -5,12 +5,22 @@ if [ -f "$HOME/.local/bin/zsh/zsh-completions/zsh-completions.plugin.zsh" ]; the
   source $HOME/.local/bin/zsh/zsh-completions/zsh-completions.plugin.zsh
 fi
 
-autoload -U compinit
+autoload -Uz compinit
 
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 mkdir -p "$ZSH_CACHE_DIR"
 
-compinit -d "$ZSH_CACHE_DIR/zcompdump"
+# macOS /etc/zshrc already runs compinit, don't run it twice.
+# Rebuild the dump once a day, otherwise trust the cache (-C skips the audit).
+if (( ! $+functions[compdef] )); then
+  _zsh_compdump="$ZSH_CACHE_DIR/zcompdump"
+  if [[ ! -f "$_zsh_compdump" ]] || [[ -n $(print -r -- "$_zsh_compdump"(N.mh+24)) ]]; then
+    compinit -d "$_zsh_compdump"
+  else
+    compinit -C -d "$_zsh_compdump"
+  fi
+  unset _zsh_compdump
+fi
 zmodload zsh/complist
 #######################################################
 # zsh

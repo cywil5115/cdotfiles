@@ -10,8 +10,8 @@ case "$(uname -sr)" in
     if [ ! -f $HOME/.zprofile ]; then
       touch $HOME/.zprofile
       cat << 'EOF' > "$HOME/.zprofile"
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-        export HOMEBREW_REQUIRE_TAP_TRUST=1
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export HOMEBREW_REQUIRE_TAP_TRUST=1
 EOF
 
     fi
