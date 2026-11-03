@@ -52,7 +52,6 @@ X = "select_line_above"
 "A-w" = ":buffer-close"
 # "A-/" = "repeat_last_motion"
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
-C-x = ":reset-diff-change"
 C-e = [
   ':sh rm -f /tmp/unique-file',
   ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
@@ -64,6 +63,7 @@ C-e = [
 [keys.normal.space]
 1 = ":toggle Isp.display-inlay-hints"
 B = ":echo Git Blame: %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
+X = ":reset-diff-change"
 
 [keys.select]
 A-x = "extend_to_line_bounds"
