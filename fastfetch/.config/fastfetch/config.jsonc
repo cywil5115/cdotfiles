@@ -27,12 +27,6 @@
     "keyColor": "yellow"
     },
     {
-    "type": "command",
-    "key": "│ ├",
-    "keyColor": "yellow",
-    "text": "birth_install=$(stat -c %W / 2>/dev/null); [ \"$birth_install\" = \"-\" ] || [ -z \"$birth_install\" ] || [ \"$birth_install\" -eq 0 ] && birth_install=$(stat -c %Y / 2>/dev/null || echo 0); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
-    },
-    {
     "type": "shell",
     "key": "│ └",
     "keyColor": "yellow"
