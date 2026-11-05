@@ -60,7 +60,8 @@ then
   alias ls="eza --group-directories-first --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
   alias la="eza --group-directories-first --all --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
   alias ll='eza --long --all --bytes --git --git-repos --icons=auto --no-time'
-  alias lld='eza --long -D --all --show-symlinks  --time-style long-iso --bytes --octal-permissions --total-size --git --git-repos-no-status --icons=auto --no-permissions'
+  alias li='eza --long --all --links --inode --icons=auto --no-time --no-filesize --no-time --no-user --no-permissions'
+  alias lld='eza --long -D --all --show-symlinks  --time-style long-iso --bytes --octal-permissions --git --git-repos-no-status --icons=auto --no-permissions'
   alias llf='eza --long -f --all --show-symlinks  --time-style long-iso --bytes --octal-permissions --smart-group --git --icons=auto --no-permissions'
   alias tree='eza --tree --level=5 --icons=auto --git'
 fi
