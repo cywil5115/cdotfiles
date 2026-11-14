@@ -1,5 +1,5 @@
 # Theme
-theme = "everforest_dark"
+theme = "miasma"
 # background-opacity = 0.94
 # background-blur = 50
 
@@ -11,8 +11,12 @@ font-style-bold-italic  = SemiBold Italic
 font-style-italic       = Light Italic
 font-style              = Regular
 
+font-thicken = true
+font-thicken-strength = 150
+adjust-cell-height = 15%
+
 adjust-cell-height      = 5%
-adjust-cell-width       = 0%
+# adjust-cell-width       = 4%
 window-padding-x        = 5
 window-padding-y        = 5
 

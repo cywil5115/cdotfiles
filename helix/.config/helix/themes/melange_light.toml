@@ -1,0 +1,140 @@
+"attribute" = { fg = "blue", modifiers = ["italic"] }
+"ui.virtual.wrap" = "softwrap"
+"keyword" = "keyword"
+"keyword.control.conditional" = { fg = "conditional", modifiers = ["italic"] }
+"keyword.directive" = "magenta" # -- preprocessor comments (#if in C)
+
+"namespace" = { fg = "namespace", modifiers = ["italic"] }
+
+"punctuation" = "gray06"
+"punctuation.delimiter" = "gray06"
+
+"operator" = "operator"
+"special" = "yellow"
+
+"variable" = { fg = "fg" }
+"variable.builtin" = "bright_blue"
+"variable.parameter" = { fg = "white", modifiers = ["italic"] }
+"variable.other.member" = "white"
+
+"type" = "bright_blue"
+"type.builtin" = "magenta"
+"type.enum.variant" = "magenta"
+
+"constructor" = "yellow"
+
+"function" = { fg = "function", modifiers = ["italic"] }
+"function.macro" = "bright_cyan"
+"function.builtin" = "support_function"
+
+"tag" = "tag"
+"comment" = { fg = "comment", modifiers = ["italic"] }
+
+"string" = "string"
+"string.regexp" = "green"
+"string.special" = "yellow"
+
+"constant" = "constant"
+"constant.builtin" = "yellow"
+"constant.numeric" = "numeric"
+"constant.character.escape" = "cyan"
+
+# used for lifetimes
+"label" = "yellow"
+
+"markup.heading.marker" = { fg = "gray06" }
+"markup.heading" = { fg = "bright_blue", modifiers = ["bold"] }
+"markup.list" = "gray06"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "green", modifiers = ["underlined"] }
+"markup.link.text" = { fg = "blue", modifiers = ["italic"] }
+"markup.raw" = "yellow"
+
+"diff.plus" = "bright_green"
+"diff.minus" = "red"
+"diff.delta" = "bright_blue"
+
+"ui.background" = { bg = "bg" }
+"ui.background.separator" = { fg = "fg" }
+
+"ui.linenr" = { fg = "gray04" }
+"ui.linenr.selected" = { fg = "fg" }
+
+"ui.statusline" = { fg = "status_line_fg", bg = "gray01" }
+"ui.statusline.inactive" = { fg = "fg", bg = "gray01", modifiers = ["dim"] }
+"ui.statusline.normal" = { fg = "bg", bg = "cyan", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "bg", bg = "blue", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "bg", bg = "magenta", modifiers = ["bold"] }
+
+"ui.popup" = { bg = "gray01" }
+"ui.window" = { fg = "gray02" }
+"ui.help" = { bg = "gray01", fg = "white" }
+
+"ui.text" = { fg = "fg" }
+"ui.text.focus" = { fg = "fg" }
+
+"ui.virtual" = { fg = "gray02" }
+"ui.virtual.ruler" = { bg = "gray02" }
+"ui.virtual.indent-guide" = { fg = "gray02" }
+"ui.virtual.inlay-hint" = { fg = "gray03" }
+
+"ui.selection" = { bg = "gray03" }
+"ui.selection.primary" = { bg = "gray03" }
+
+"ui.cursor" = { fg = "bg", bg = "cursor" }
+"ui.cursor.match" = { fg = "yellow", modifiers = ["bold", "underlined"] }
+"ui.cursorline.primary" = { bg = "gray01" }
+
+"ui.highlight" = { bg = "gray02" }
+
+"ui.menu" = { fg = "white", bg = "gray01" }
+"ui.menu.selected" = { fg = "bright_white", bg = "gray03" }
+"ui.menu.scroll" = { fg = "gray04", bg = "gray01" }
+
+diagnostic = { modifiers = ["underlined"] }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+warning = "yellow"
+error = "error"
+info = "bright_blue"
+hint = "bright_cyan"
+
+[palette]
+bg = "#F1F1F1"
+fg = "#54433A"
+green = "#6E9B72"
+bright_green = "#3A684A"
+yellow = "#BC5C00"
+bright_yellow = "#A06D00"
+blue = "#7892BD"
+bright_blue = "#465AA4"
+magenta = "#BE79BB"
+bright_magenta = "#904180"
+cyan = "#739797"
+bright_cyan = "#3D6568"
+white = "#7D6658"
+bright_white = "#54433A"
+gray01 = "#E9E1DB"
+gray02 = "#D9D3CE"
+gray03 = "#D9D3CE"
+gray04 = "#A98A78"
+gray06 = "#A98A78"
+gray07 = "#7D6658"
+comment = "#A98A78"
+red = "#C77B8B"
+function = "#BC5C00"
+support_function = "#A98A78"
+constant = "#BC5C00"
+string = "#7892BD"
+tag = "#6E9B72"
+keyword = "#BC5C00"
+namespace = "#BE79BB"
+numeric = "#A06D00"
+status_line_fg = "#BC5C00"
+operator = "#BC5C00"
+softwrap = "#A98A78"
+conditional = "#7892BD"
+cursor = "#BC5C00"
+error = "#BF0021"
