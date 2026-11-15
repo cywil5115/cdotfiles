@@ -1,11 +1,11 @@
 # Theme
-theme = "compline"
+theme = "caelus"
 # background-opacity = 0.94
 # background-blur = 50
 
 # Fonts
 font-size               = 19
-font-family             = "Ioskeley Mono"
+font-family             = "Ioskeley Mono Term Nerd Font"
 font-style-bold         = Bold
 font-style-bold-italic  = SemiBold Italic
 font-style-italic       = Light Italic

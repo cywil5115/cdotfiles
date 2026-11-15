@@ -1,0 +1,39 @@
+# Caelus (daccfiles)
+background = 0f0f0f
+foreground = f4decd
+cursor-color = d9cdb5
+cursor-text = 0f0f0f
+selection-background = 3b403c
+selection-foreground = f4decd
+
+# black
+palette = 0=#0f0f0f
+palette = 8=#3b403c
+
+# red
+palette = 1=#f16e65
+palette = 9=#f6a8a2
+
+# green
+palette = 2=#7ec97e
+palette = 10=#b4dfb4
+
+# yellow
+palette = 3=#ef934d
+palette = 11=#f6be93
+
+# blue
+palette = 4=#71a1d6
+palette = 12=#accae7
+
+# magenta
+palette = 5=#e28dc6
+palette = 13=#ecb6da
+
+# cyan
+palette = 6=#6fc3b5
+palette = 14=#a5d9d0
+
+# white
+palette = 7=#d9cdb5
+palette = 15=#f4decd
